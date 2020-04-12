@@ -20,4 +20,14 @@ CREATE TABLE login_activity
 
 );
 
-CREATE TABLE 
+CREATE TABLE booking
+(
+
+);
+
+CREATE TABLE bus
+(
+    BusNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    BusRoute varchar(50) NOT NULL,
+    
+);
