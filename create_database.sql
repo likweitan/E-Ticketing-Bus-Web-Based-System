@@ -13,3 +13,11 @@ CREATE TABLE account
 	Nationality varchar(50) NOT NULL DEFAULT 'Malaysian',
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
+
+CREATE TABLE login_activity
+(
+
+
+);
+
+CREATE TABLE 
