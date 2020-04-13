@@ -1,7 +1,7 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
+    $servername = "paneldatabase.humbleservers.com";
+    $username = "u900_A2FpBbq6yL";
+    $password = "Oy586LqLa6ivBx=yUN2.lsTX";
     $databasename = "IBM4202_JAN2020_Project";
 
     if(mysqli_connect_errno()){
