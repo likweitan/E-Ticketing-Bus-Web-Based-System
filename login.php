@@ -4,9 +4,9 @@
 <html>
     <body>
 
-        <form action="welcome.php" method="post">
-            Name: <input type="text" name="name"><br>
-            E-mail: <input type="text" name="email"><br>
+        <form action="login.inc.php" method="post">
+            E-mail: <input type="email" name="email"><br>
+            Password: <input type="password" name="password"><br>
             <input type="submit">
         </form>
 
