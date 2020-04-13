@@ -2,4 +2,4 @@
     require("loginheader.php");
     
 ?>
-<a href="logout.php">aa</a>
+<a href="logout.php">Logout</a>
