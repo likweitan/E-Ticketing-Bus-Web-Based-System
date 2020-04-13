@@ -14,6 +14,9 @@ CREATE TABLE account
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
+INSERT INTO account (AccountNo, FirstName, LastName, Email, Gender, BirthDate, AccountRole, MaritalStatus, Religion, Race, Nationality, AccountTimestamp)
+VALUES ("LIK WEI", "TAN", "likweitan@gmail.com", "male", "", "admin", "single", "");
+
 CREATE TABLE login_activity
 (
 
