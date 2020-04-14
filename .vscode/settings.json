@@ -1,0 +1,14 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 60,
+            "database": "s900_database",
+            "dialect": "MySQL",
+            "name": "humbleservers",
+            "password": "Oy586LqLa6ivBx=yUN2.lsTX",
+            "port": 3306,
+            "server": "paneldatabase.humbleservers.com",
+            "username": "u900_A2FpBbq6yL"
+        }
+    ]
+}
