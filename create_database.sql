@@ -83,7 +83,7 @@ CREATE TABLE booking_activity
     BookingNo varchar(50) NOT NULL PRIMARY KEY,
     AccountNo int NOT NULL,
     Quantity int NOT NULL,
-    BusNo varchar(50) NOT NULL,
+    ScheduleNo varchar(50) NOT NULL,
     BusSeat int NOT NULL,
     BusDateTime datetime NOT NULL,
     PromoCode varchar(50) NOT NULL,
