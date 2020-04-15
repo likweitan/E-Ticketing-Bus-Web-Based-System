@@ -14,6 +14,31 @@ CREATE TABLE account
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
+CREATE TABLE address
+(
+    AddressNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    Address1 varchar(50) NOT NULL,
+    Address2 varchar(50) NULL,
+    Country varchar(50) NOT NULL,
+    State varchar(50) NOT NULL,
+    Zip int NOT NULL,
+    AddressType varchar(50) NOT NULL,
+    AccountNo int NOT NULL,
+    FOREIGN KEY (AccountNo) REFERENCES account(AccountNo)
+);
+
+CREATE TABLE payment
+(
+    PaymentNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    PaymentType varchar(50) NOT NULL,
+    CardName varchar(50) NOT NULL,
+    CardNumber int NOT NULL,
+    CardExpiration varchar(50) NOT NULL,
+    CVV int NOT NULL,
+    AccountNo int NOT NULL,
+    FOREIGN KEY (AccountNo) REFERENCES account(AccountNo)
+);
+
 CREATE TABLE activity
 (
     ActivityNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -27,9 +52,18 @@ CREATE TABLE booking
     BookingNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
     AccountNo int NOT NULL,
     BusNo varchar(50) NOT NULL,
+    PromoCode varchar(50) NOT NULL,
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
     FOREIGN KEY (BusNo) REFERENCES account(BusNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+);
+
+CREATE TABLE promo_code
+(
+    PromoCode varchar(50) NOT NULL PRIMARY KEY,
+    PromoCodeDescription varchar(50) NOT NULL,
+    PromoCodeEndTimestamp date NOT NULL,
+    PromoCodeStartTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
 CREATE TABLE bus

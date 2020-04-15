@@ -21,7 +21,7 @@
       <div class="text-center mb-4">
         <img class="mb-4" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-icon%2Fbus-front_318-33490.png&f=1&nofb=1" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
-        <p>Don't have account? <a href="https://caniuse.com/#feat=css-placeholder-shown">Sign Up</a></p>
+        <p>Online Bus Booking</p>
       </div>
 
       <div class="form-label-group">
@@ -45,7 +45,7 @@
             ?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
       <p class="mt-3 mb-3 text-muted text-center">Don't have account? <a href="https://caniuse.com/#feat=css-placeholder-shown">Sign Up</a></p>
-      <p class="mt-2 mb-3 text-muted text-center">&copy; 2020</p>
+      <p class="mt-2 mb-3 text-muted text-center">&copy; 2020 blueBus</p>
     </form>
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
