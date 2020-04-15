@@ -63,11 +63,19 @@ CREATE TABLE promo_code
 CREATE TABLE bus
 (
     BusNo varchar(50) NOT NULL PRIMARY KEY,
+    BusCompany varchar(50) NOT NULL,
+    BusCapacity int NOT NULL
+);
+
+CREATE TABLE bus_schedule
+(
+    ScheduleNo varchar(50) NOT NULL PRIMARY KEY,
     BusFrom varchar(50) NOT NULL,
     BusTo varchar(50) NOT NULL,
-    BusDriver varchar(50) NOT NULL,
-    BusCapacity int NOT NULL
+    BusStartTime TIME NOT NULL,
+    BusDuration int(50) NOT NULL,
     BusPrice float(10) NOT NULL, 
+    FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
 );
 
 CREATE TABLE booking_activity
@@ -82,5 +90,6 @@ CREATE TABLE booking_activity
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
     FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
     FOREIGN KEY (PromoCode) REFERENCES promo_code(PromoCode),
+    FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
