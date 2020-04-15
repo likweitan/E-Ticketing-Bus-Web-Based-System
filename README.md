@@ -7,8 +7,6 @@
 - Forth Page: Promotions
 - Fifth Page: Setting
 
-> Fifth Page: a
-
 ## Built With
 - PHP
 - HTML
@@ -16,7 +14,7 @@
 - Bootstrap
 
 ## Authors
-- Chong Yang
-- Tan Lik Wei
-- Elvis Tiu Ying Jaan
-- 
+- [Chong703](https://github.com/Chong703)
+- [likweitan](https://github.com/Chong703)
+- [elvisjaan0405](https://github.com/elvisjaan0405)
+- [Rainnie625](https://github.com/Rainnie625)
