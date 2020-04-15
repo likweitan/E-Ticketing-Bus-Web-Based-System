@@ -63,8 +63,11 @@ CREATE TABLE promo_code
 CREATE TABLE bus
 (
     BusNo varchar(50) NOT NULL PRIMARY KEY,
-    BusRoute varchar(50) NOT NULL,
+    BusFrom varchar(50) NOT NULL,
+    BusTo varchar(50) NOT NULL,
+    BusDriver varchar(50) NOT NULL,
     BusCapacity int NOT NULL
+    BusPrice float(10) NOT NULL, 
 );
 
 CREATE TABLE booking_activity
@@ -73,12 +76,9 @@ CREATE TABLE booking_activity
     AccountNo int NOT NULL,
     Quantity int NOT NULL,
     BusNo varchar(50) NOT NULL,
-    BusFrom varchar(50) NOT NULL,
-    BusTo varchar(50) NOT NULL,
     BusSeat int NOT NULL,
     BusDateTime datetime NOT NULL,
     PromoCode varchar(50) NOT NULL,
-    BusPrice DOUBLE(10) NOT NULL, 
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
     FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
     FOREIGN KEY (PromoCode) REFERENCES promo_code(PromoCode),
