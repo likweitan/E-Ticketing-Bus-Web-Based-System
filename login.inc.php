@@ -3,22 +3,30 @@
 
     session_start();
 
-    $email = $_POST["inputEmail"];
-    $password = $_POST["inputPassword"];
+    $inputEmail = $_POST["inputEmail"];
+    $inputPassword = $_POST["inputPassword"];
 
-    if($email == "admin@gmail.com" && $password == "admin")
+    $stmt = $con->prepare("SELECT Email,Password FROM account WHERE Email = ?");
+    $stmt -> bind_param("s", $inputEmail);
+    $stmt -> execute();
+    $stmt -> store_result();
+
+    if($stmt -> num_rows > 0)
     {
-        header("location: index.php");
-        $_SESSION["username"] = "admin";
-    }
-    else if($email == "" || $password == "")
-    {
-        header("location: login.php?error=empty");
+        $stmt -> bind_result($accountEmail,$accountPassword);
+        $stmt -> fetch();
+        
+        if($inputPassword == $accountPassword)
+        {
+            header("location: index.php");
+        }
+        else
+        {
+            header("location: login.php?error=wrong_password");
+        }
     }
     else
     {
-        header("location: login.php?error=wrong");
+        header("location: login.php?error=no_account");
     }
-
-    echo $email;
 ?>

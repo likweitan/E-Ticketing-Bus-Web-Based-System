@@ -34,22 +34,22 @@
         <label for="inputPassword">Password</label>
       </div>
 
+      <div class="form-label-group">
+        <input type="password" id="inputPassword" name="inputConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+        <label for="inputConfirmPassword">Confirm Password</label>
+      </div>
+
       <div class="checkbox mb-3">
         <label>
-          <input type="checkbox" value="remember-me"> Remember me
+        <p class="text-muted">By signing up, you agree to our Terms & Conditions and Privacy Policy</p>
         </label>
       </div>
       <?php
-        if(!empty($_GET["error"]))
-        {
-          if($_GET["error"] == "wrong_password")
-            echo "Wrong password";
-          else
-            echo "Your account is not existed";
-        }
-      ?>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-3 mb-3 text-muted text-center">Don't have account? <a href="signup.php">Sign Up</a></p>
+                if(!empty($_GET["error"]))
+                    echo "Wrong email or password";
+            ?>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+      <p class="mt-3 mb-3 text-muted text-center">Have an account already? <a href="login.php">Sign in</a></p>
       <p class="mt-2 mb-3 text-muted text-center">&copy; 2020 blueBus</p>
     </form>
   </body>
