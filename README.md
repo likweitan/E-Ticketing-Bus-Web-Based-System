@@ -1,10 +1,11 @@
 # IBM4202_JAN2020_Project
 
 # Getting Started
-Main Page: Homepage (COVID-19 Info)
-Second Page: Booking
-Third Page: View Route
-Forth Page: 
+- Main Page: Homepage (COVID-19 Info)
+- Second Page: Purchase ticket
+- Third Page: Manage booking
+- Forth Page: Promotions
+- Fifth Page: Setting
 
 > Fifth Page: a
 
