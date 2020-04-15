@@ -3,8 +3,8 @@
 
     session_start();
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $email = $_POST["inputEmail"];
+    $password = $_POST["inputPassword"];
 
     if($email == "admin@gmail.com" && $password == "admin")
     {

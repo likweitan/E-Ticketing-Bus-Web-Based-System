@@ -14,29 +14,30 @@ CREATE TABLE account
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
-INSERT INTO account (FirstName, LastName, Email, Gender, BirthDate, AccountRole, MaritalStatus, Nationality)
-VALUES (LIK WEI", "TAN", "likweitan@gmail.com", "male", "1998-04-08", "admin", "single", "malaysian");
-
-CREATE TABLE login_activity
+CREATE TABLE activity
 (
-
-
+    ActivityNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    AccountNo int NOT NULL,
+    FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
+    ActivityTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
 CREATE TABLE booking
 (
     BookingNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
     AccountNo int NOT NULL,
+    BusNo varchar(50) NOT NULL,
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
+    FOREIGN KEY (BusNo) REFERENCES account(BusNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
 CREATE TABLE bus
 (
-    BusNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
+    BusNo int NOT NULL PRIMARY KEY,
     BusRoute varchar(50) NOT NULL,
-    BusCapacity int NOT NULL,
-    AccountNo int NOT NULL,
-    FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
-    BusTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+    BusCapacity int NOT NULL
 );
+
+INSERT INTO account (FirstName, LastName, Email, Gender, BirthDate, AccountRole, MaritalStatus, Nationality)
+VALUES (LIK WEI", "TAN", "likweitan@gmail.com", "male", "1998-04-08", "admin", "single", "malaysian");
