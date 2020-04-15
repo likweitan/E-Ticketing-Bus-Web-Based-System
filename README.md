@@ -8,10 +8,11 @@
 - Fifth Page: Setting
 
 ## Built With
-- PHP
 - HTML
 - CSS
 - Bootstrap
+- PHP
+- MySQL
 
 ## Authors
 - [Chong703](https://github.com/Chong703)
