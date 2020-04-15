@@ -70,11 +70,11 @@ CREATE TABLE bus
 CREATE TABLE bus_schedule
 (
     ScheduleNo varchar(50) NOT NULL PRIMARY KEY,
-    BusFrom varchar(50) NOT NULL,
-    BusTo varchar(50) NOT NULL,
-    BusStartTime TIME NOT NULL,
-    BusDuration int(50) NOT NULL,
-    BusPrice float(10) NOT NULL, 
+    ScheduleDepart varchar(50) NOT NULL,
+    ScheduleArrive varchar(50) NOT NULL,
+    ScheduleStartTime TIME NOT NULL,
+    ScheduleDuration int(50) NOT NULL,
+    TicketPrice float(10) NOT NULL, 
     FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
 );
 
