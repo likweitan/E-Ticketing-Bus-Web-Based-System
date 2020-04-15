@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Floating labels example for Bootstrap</title>
+    <title>blueBus</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -19,9 +19,9 @@
   <body>
     <form class="form-signin" action="login.inc.php" method="post">
       <div class="text-center mb-4">
-        <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>
-        <p>Build form controls with floating labels via the <code>:placeholder-shown</code> pseudo-element. <a href="https://caniuse.com/#feat=css-placeholder-shown">Works in latest Chrome, Safari, and Firefox.</a></p>
+        <img class="mb-4" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-icon%2Fbus-front_318-33490.png&f=1&nofb=1" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
+        <p>Don't have account? <a href="https://caniuse.com/#feat=css-placeholder-shown">Sign Up</a></p>
       </div>
 
       <div class="form-label-group">
@@ -44,7 +44,8 @@
                     echo "Wrong email or password";
             ?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-      <p class="mt-5 mb-3 text-muted text-center">&copy; 2020</p>
+      <p class="mt-3 mb-3 text-muted text-center">Don't have account? <a href="https://caniuse.com/#feat=css-placeholder-shown">Sign Up</a></p>
+      <p class="mt-2 mb-3 text-muted text-center">&copy; 2020</p>
     </form>
   </body>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
