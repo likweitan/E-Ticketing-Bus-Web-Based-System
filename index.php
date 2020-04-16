@@ -92,7 +92,7 @@
             </div>
           </div>
           <div class="carousel-item" data-interval="2000">
-            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            <img class="second-slide" src="https://blog.akbartravels.com/wp-content/uploads/2017/12/11111-2.png" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
                 <h1>Another example headline.</h1>
@@ -102,7 +102,7 @@
             </div>
           </div>
           <div class="carousel-item" data-interval="2000">
-            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+            <img class="third-slide" src="https://www.tripsavvy.com/thmb/6M8JAjoAmEdgU3y5sVhfncBXsKw=/4500x2531/filters:no_upscale():max_bytes(150000):strip_icc()/little-india-georgetown-penang-08d3e2bbb556432ab7f3837fdc5eb28f.jpg" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
                 <h1>One more for good measure.</h1>
