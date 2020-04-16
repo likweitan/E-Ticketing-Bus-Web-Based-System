@@ -1,5 +1,13 @@
 <?php
   require("loginheader.php");
+
+    if(isset($_SESSION['id']))
+    {
+        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
+        RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
+        WHERE AccountNo =".$_SESSION['id'];
+        $query = mysqli_query($con,$sql);
+    }
 ?>
 <!doctype html>
 <html lang="en">
@@ -83,7 +91,7 @@
       </div>
 
       <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Your upcoming bookings</h6>
+        <h5 class="border-bottom border-gray pb-2 mb-0">Your upcoming bookings</h5>
         <table class="table table-hover">
   <thead>
     <tr>
@@ -96,30 +104,31 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Confirmed</a></td>
-    </tr>
-    <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Confirmed</a></td>
-    </tr>
-    <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Confirmed</a></td>
-    </tr>
+  <?php  
+  while($row = mysqli_fetch_array($query))
+  {
+    echo "
+        <tr>
+            <td>";
+            echo $row['ScheduleDate'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleStartTime'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleDepart'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleArrive'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['BookingNo'];
+            echo "</td>";
+            echo "<td><a>Confirmed</a></td>
+        </tr>
+    ";
+}
+?>
   </tbody>
 </table>
 <small class="d-block text-right mt-3">
@@ -128,7 +137,7 @@
       </div>
 
       <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h6 class="border-bottom border-gray pb-2 mb-0">Your past bookings</h6>
+        <h5 class="border-bottom border-gray pb-2 mb-0">Your past bookings</h5>
         <table class="table table-hover">
   <thead>
     <tr>
@@ -141,14 +150,7 @@
     </tr>
   </thead>
   <tbody>
-  <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Completed</a></td>
-    </tr>
+   
     <tr>
       <td>Sat, 9 May 2020</td>
       <td>19:00</td>
