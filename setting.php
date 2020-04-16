@@ -23,7 +23,7 @@
 
   <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
     <img src="images/logo_white.png" width="30" height="30" class="d-inline-block align-top" alt="">
     
   </a>
@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Promotions</a>
