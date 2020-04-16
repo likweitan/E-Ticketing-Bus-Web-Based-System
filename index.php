@@ -81,17 +81,17 @@
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+          <div class="carousel-item active" data-interval="2000">
+            <img class="first-slide" src="http://www.thehappykid.blog/wp-content/uploads/2019/03/Sunway-14-of-19-1350x680.jpg" alt="First slide">
             <div class="container">
               <div class="carousel-caption text-left">
                 <h1>Example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
+                <p>Book tickets with blueBus</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">Book tickets now</a></p>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-interval="2000">
             <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
             <div class="container">
               <div class="carousel-caption">
@@ -101,7 +101,7 @@
               </div>
             </div>
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-interval="2000">
             <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
             <div class="container">
               <div class="carousel-caption text-right">
