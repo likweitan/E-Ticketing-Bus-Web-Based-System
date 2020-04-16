@@ -93,3 +93,5 @@ CREATE TABLE booking_activity
     FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
+
+INSERT INTO `s900_database`.`booking_activity` (`BookingNo`, `AccountNo`, `Quantity`, `BusNo`, `BusSeat`, `BusDateTime`, `PromoCode`) VALUES ('1', '1', '1', 'JJP2930', '23', '2020-04-17 10:00:00', '1');
