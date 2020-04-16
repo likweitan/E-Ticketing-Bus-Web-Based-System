@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
+    
     <title>Starter Template for Bootstrap</title>
 
     <!-- Bootstrap core CSS -->
@@ -14,6 +14,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/starter-template.css" rel="stylesheet">
+
+    <!-- Print.js -->
+    <link href="https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
   </head>
 
   <body>
@@ -75,7 +78,7 @@
     <?php include('invoice.php');?>
     <br>
     <div class="col-md-12 text-center">
-    <button type="button" class="btn btn-primary">Print</button>
+    <button type="button" class="btn btn-primary" onclick="printJS({ printable: 'invoice-box', type: 'html', css: 'css/invoice.css' })">Print</button>
 <button type="button" class="btn btn-danger">Cancel Booking</button>
         </div>
     </main><!-- /.container -->
@@ -88,5 +91,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.7/holder.min.js"></script>
+    <!-- Print.js-->
+    <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
   </body>
 </html>
