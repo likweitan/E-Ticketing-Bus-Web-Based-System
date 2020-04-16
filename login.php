@@ -21,7 +21,7 @@
       <div class="text-center mb-4">
         <img class="mb-4" src="images/logo_black.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
-        <p>Online Bus Booking</p>
+        <p>an online bus booking website</p>
       </div>
 
       <div class="form-label-group">
