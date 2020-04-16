@@ -47,8 +47,8 @@
 echo $myFirstName." ".$myLastName;
   echo '</button>
   <div class="dropdown-menu dropdown-menu-right">
-    <a class="dropdown-item" href="#">Manage Booking</a>
-    <a class="dropdown-item" href="#">Setting</a>
+    <a class="dropdown-item" href="#">My Bookings</a>
+    <a class="dropdown-item" href="setting.php">Setting</a>
     <a class="dropdown-item" href="logout.php">Logout</a>
   </div>
 </div>
@@ -63,6 +63,7 @@ echo $myFirstName." ".$myLastName;
             ?>
           
         </div>
+        
       </nav>
     </header>
 

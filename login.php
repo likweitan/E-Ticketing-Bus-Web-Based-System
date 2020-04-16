@@ -19,7 +19,7 @@
   <body>
     <form class="form-signin" action="login.inc.php" method="post">
       <div class="text-center mb-4">
-        <img class="mb-4" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimage.freepik.com%2Ffree-icon%2Fbus-front_318-33490.png&f=1&nofb=1" alt="" width="72" height="72">
+        <img class="mb-4" src="images/blueBus_logo.png" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
         <p>Online Bus Booking</p>
       </div>
