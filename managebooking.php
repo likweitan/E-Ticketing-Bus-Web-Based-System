@@ -92,25 +92,33 @@
       <th scope="col">Origin</th>
       <th scope="col">Destination</th>
       <th scope="col">Booking number</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Confirmed</a></td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Confirmed</a></td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Confirmed</a></td>
     </tr>
   </tbody>
 </table>
@@ -129,25 +137,33 @@
       <th scope="col">Origin</th>
       <th scope="col">Destination</th>
       <th scope="col">Booking number</th>
+      <th scope="col">Status</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+  <tr>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Completed</a></td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Completed</a></td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td colspan="2">Larry the Bird</td>
-      <td>@twitter</td>
+      <td>Sat, 9 May 2020</td>
+      <td>19:00</td>
+      <td>Johor Bahru</td>
+      <td>Kuala Lumpur</td>
+      <td>G59D7N</td>
+      <td><a>Completed</a></td>
     </tr>
   </tbody>
 </table>
