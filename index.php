@@ -1,6 +1,5 @@
 <?php
     require("loginheader.php");
-    
 ?>
 <!doctype html>
 <html lang="en">
@@ -39,10 +38,30 @@
               <a class="nav-link disabled" href="#">Disabled</a>
             </li>
           </ul>
-          <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            <?php
+            if(isset($_SESSION['id']))
+            {
+          echo '<form class="form-inline mt-2 mt-md-0"><div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    ';
+echo $myFirstName." ".$myLastName;
+  echo '</button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <a class="dropdown-item" href="#">Manage Booking</a>
+    <a class="dropdown-item" href="#">Setting</a>
+    <a class="dropdown-item" href="logout.php">Logout</a>
+  </div>
+</div>
+</form>';
+            }
+            else
+            {
+              echo '<form class="form-inline mt-2 mt-md-0" action="login.php">
+              <button type="submit" class="btn btn-secondary">Login</button>
+              </form>';
+            }
+            ?>
+          
         </div>
       </nav>
     </header>

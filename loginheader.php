@@ -1,14 +1,20 @@
 <?php
-//PUT THIS HEADER ON TOP OF EACH UNIQUE PAGE
+
+    require("db.php");
+
 session_start();
 
-if(!isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != "login.php")
+if(isset($_SESSION['id']))
 {
-    //header("location:login.php");
-}
-else if(isset($_SESSION['username']) && basename($_SERVER['PHP_SELF']) != "index.php")
-{
-    //header("location:index.php");
+    $sql = "SELECT * FROM account WHERE AccountNo =".$_SESSION['id'];
+    $query = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($query);
+
+    if($row)
+    {
+        $myFirstName = $row['FirstName'];
+        $myLastName = $row['LastName'];
+    }
 }
 
 ?>
