@@ -51,7 +51,7 @@
                 echo $myFirstName." ".$myLastName;
               echo '</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="managebooking.php">Manage Booking</a>
                 <a class="dropdown-item" href="setting.php">Setting</a>
                 <a class="dropdown-item" href="logout.php">Logout</a>
               </div>
