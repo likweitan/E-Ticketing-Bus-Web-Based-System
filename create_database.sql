@@ -9,9 +9,6 @@ CREATE TABLE account
 	Gender varchar(50) NOT NULL,
 	BirthDate date NOT NULL,
 	AccountRole varchar(50) NOT NULL,
-	MaritalStatus varchar(50) NOT NULL,
-	Religion varchar(50) NOT NULL,
-	Race varchar(50) NOT NULL,
 	Nationality varchar(50) NOT NULL DEFAULT 'Malaysian',
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
@@ -70,28 +67,31 @@ CREATE TABLE bus
 CREATE TABLE bus_schedule
 (
     ScheduleNo varchar(50) NOT NULL PRIMARY KEY,
+    BusNo varchar(50) NOT NULL,
     ScheduleDepart varchar(50) NOT NULL,
     ScheduleArrive varchar(50) NOT NULL,
     ScheduleStartTime TIME NOT NULL,
     ScheduleDuration int(50) NOT NULL,
     TicketPrice float(10) NOT NULL, 
-    FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
+    FOREIGN KEY (BusNo) REFERENCES bus(BusNo)
 );
 
-CREATE TABLE booking_activity
+CREATE TABLE booking
 (
     BookingNo varchar(50) NOT NULL PRIMARY KEY,
     AccountNo int NOT NULL,
-    Quantity int NOT NULL,
+    PromoCode varchar(50) NOT NULL,
     ScheduleNo varchar(50) NOT NULL,
+    Quantity int NOT NULL,
     BusSeat int NOT NULL,
     BusDateTime datetime NOT NULL,
-    PromoCode varchar(50) NOT NULL,
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
-    FOREIGN KEY (BusNo) REFERENCES bus(BusNo),
     FOREIGN KEY (PromoCode) REFERENCES promo_code(PromoCode),
     FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
-INSERT INTO `s900_database`.`booking_activity` (`BookingNo`, `AccountNo`, `Quantity`, `BusNo`, `BusSeat`, `BusDateTime`, `PromoCode`) VALUES ('1', '1', '1', 'JJP2930', '23', '2020-04-17 10:00:00', '1');
+INSERT INTO `s900_database`.`account` (`FirstName`, `LastName`, `Email`, `Password`, `Gender`, `BirthDate`, `AccountRole`, `Nationality`) VALUES ('Lik Wei', 'Tan', 'likweitan@gmail.com', 'admin', 'male', '1998-04-08', 'admin', 'malaysian');
+
+
+INSERT INTO `s900_database`.`booking` (`BookingNo`, `AccountNo`, `Quantity`, `BusNo`, `BusSeat`, `BusDateTime`, `PromoCode`) VALUES ('1', '1', '1', 'JJP2930', '23', '2020-04-17 10:00:00', '1');
