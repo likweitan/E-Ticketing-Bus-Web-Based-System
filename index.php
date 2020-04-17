@@ -35,11 +35,21 @@
               <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="promotion,php">Promotions</a>
+              <a class="nav-link" href="searchbus.php">Search Ticket</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="promotion,php">Promotions</a>
             </li>
+            <?php if(isset($_SESSION['id']))
+            {
+            echo '
+            <li class="nav-item">
+              <a class="nav-link" href="managebooking.php">My Bookings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="setting.php">My Account</a>
+            </li>';
+            }; ?>
           </ul>
             <?php
             if(isset($_SESSION['id']))
@@ -76,8 +86,8 @@
 
     <section class="jumbotron text-center">
         <div class="container">
-          <h1 class="jumbotron-heading">Album example</h1>
-          <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
+          <h1 class="jumbotron-heading">Discover the treasures of Malaysian culture</h1>
+          <p class="lead text-muted">with blueBus</p>
           <p>
             <a href="searchbus.php" class="btn btn-primary my-2">Book Ticket</a>
           </p>
@@ -162,7 +172,7 @@
       <!-- FOOTER -->
       <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        <p>&copy; 2020 blueBus Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
       </footer>
     </main>
 
