@@ -77,6 +77,7 @@
     </header>
 
     <main role="main" class="container">
+    
       <div data-aos="zoom-out">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
         <img class="mr-3" src="https://www.mc-heads.net/avatar/1/100/nohelm.png" alt="" width="48" height="48">
@@ -87,7 +88,19 @@
           </div>
       </div>
       <!-- points -->
-      
+      <?php
+        if(isset($_GET['email'])){
+            if($_GET['email'] == 'success')
+              echo '<div class="alert alert-success" role="alert">
+              Your email is updated successfully!
+            </div>';
+            else if($_GET['email'] == 'fail')
+            echo '<div class="alert alert-danger" role="alert">
+            Oops! There is something wrong happenned.
+          </div>';
+        }
+            ?>
+
     <div data-aos="zoom-out">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Membership</h6>
@@ -98,13 +111,15 @@
     <div class="media-body pb-3 mb-0 small lh-125">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Member</strong>
-              <a href="#">View Tier Benefits</a>
+              <a href="#" data-toggle="modal" data-target="#viewTierBenefits">View Tier Benefits</a>
             </div>
             <span class="d-block">Get 2,304 more points to upgrade to silver.</span>
           </div>
       </div>
       
       </div>
+
+            
 
     <div data-aos="zoom-out">
       <div class="my-3 p-3 bg-white rounded box-shadow">
@@ -114,10 +129,11 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Email</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editEmail">Edit</a>
             </div>
             <span class="d-block"><?=$myEmail?></span>
           </div>
+          
         </div>
         <div class="media text-muted pt-3">
         <img src="https://raw.githubusercontent.com/google/material-design-icons/master/communication/2x_web/ic_phone_black_48dp.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
@@ -191,6 +207,10 @@
       </div>
     </main>
 
+    <?php 
+
+  include("assets/modal.php");
+    ?>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
