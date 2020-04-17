@@ -22,7 +22,7 @@
 
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
     <img src="images/logo_white.png" width="30" height="30" class="d-inline-block align-top" alt="">
     
   </a>
@@ -32,10 +32,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Promotions</a>
+              <a class="nav-link" href="promotion,php">Promotions</a>
             </li>
             <li class="nav-item">
               <a class="nav-link disabled" href="#">Disabled</a>
@@ -79,7 +79,7 @@
           <h1 class="jumbotron-heading">Album example</h1>
           <p class="lead text-muted">Something short and leading about the collection below—its contents, the creator, etc. Make it short and sweet, but not too short so folks don't simply skip over it entirely.</p>
           <p>
-            <a href="#" class="btn btn-primary my-2">Book Ticket</a>
+            <a href="searchbus.php" class="btn btn-primary my-2">Book Ticket</a>
           </p>
         </div>
       </section>
