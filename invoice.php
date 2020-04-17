@@ -12,11 +12,15 @@
         {
             $bookingNo = $row['BookingNo'];
             $purchasedDate = $row['BookingTimestamp'];
+            $bookingDate = $row['BusDateTime'];
             $firstName = $row['FirstName'];
             $lastName = $row['LastName'];
             $email = $row['Email'];
             $quantity = $row['Quantity'];
             $ticketPrice = $row['TicketPrice'];
+            $depart = $row['ScheduleDepart'];
+            $arrive = $row['ScheduleArrive'];
+            $seatNo = $row['BusSeat'];
         }
     }
 ?>
@@ -24,7 +28,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>A simple, clean, and responsive HTML invoice template</title>
+    <title>Receipt</title>
     <link href="css/invoice.css" rel="stylesheet">
 </head>
 
@@ -36,98 +40,102 @@
                     <table>
                         <tr>
                             <td class="title">
-                                <img src="images/logo_black.png" style="width:20%; max-width:500px;">
+                                <img src="images/logo_black.png" style="width:20%; max-width:300px;">
                             </td>
                             
                             <td>
-                                Booking No: <?=$bookingNo?><br>
-                                Date Purchased: <?=$purchasedDate?>
+                                <p><small>Need Help? Toll Number: +60-339882525 Email: support@bluebus.my</small></p>
                             </td>
                         </tr>
                     </table>
                 </td>
             </tr>
             
-            <tr class="information">
-                <td colspan="2">
-                    <table>
-                        <tr>
-                            <td>
-                                Sparksuite, Inc.<br>
-                                12345 Sunny Road<br>
-                                Sunnyville, CA 12345
-                            </td>
-                            
-                            <td>
-                                <?=$firstName." ".$lastName?><br>
-                                <?=$email?>
-                            </td>
-                        </tr>
-                    </table>
-                </td>
-            </tr>
-            
+            <!-- Trip Details -->
             <tr class="heading">
                 <td>
-                    Payment Method
+                    TRIP DETAILS
                 </td>
                 
                 <td>
                     
                 </td>
-                <td>
-                    Remarks
-                </td>
             </tr>
             
             <tr class="details">
                 <td>
-                    Debit
+                    KKKL express
                 </td>
-                <td></td>
                 <td>
-                    1000
+                    <?=$depart." > ".$arrive?>
+                    <br>
+                    <?=$bookingDate?>
                 </td>
             </tr>
-            
+
+            <!-- Boarding Dropping -->
             <tr class="heading">
                 <td>
-                    Item
+                    TRAVELLER DETAILS
                 </td>
                 
                 <td>
-                    Quantity
-                </td>
-
-                <td>
-                    Price
+                    
                 </td>
             </tr>
             
             <tr class="item">
                 <td>
-                    Bus Ticket
+                    <?=$firstName." ".$lastName?>
+                    <p><small>Primary Passenger</small></p>
+                </td>
+                <td>
+                    <?=$seatNo?>
+                    <p><small>Seat Number</small></p>
+                </td>
+            </tr>
+            <tr class="item">
+                <td>
+                    <?=$bookingNo?>
+                    <br>
+                    <p><small>Booking Number</small></p>
+                </td>
+                <td>
+                    <?=$bookingDate?>
+                    <br>
+                    <p><small>Departure Time</small></p>
+                </td>
+            </tr>
+            
+            <tr class="heading">
+                <td>
+                    CONTACT DETAILS
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+            
+            <tr class="item">
+                <td>
+                <?=$email?>
+                    <p><small>Email</small></p>
                 </td>
                 
                 <td>
-                    <?=$quantity?>
-                </td>
-
-                <td>
-                    $300.00
                 </td>
             </tr>
             
             <tr class="total">
                 <td></td>
                 <td>
-                   Total:
-                </td>
-                <td>
-                   $385.00
+                Total Amount: RM<?=$quantity*$ticketPrice?>
                 </td>
             </tr>
         </table>
+        <p style="text-align:center;"><img src="https://api.qrserver.com/v1/create-qr-code/?data=<?=$bookingNo?>&amp;size=100x100" alt="<?=$bookingNo?>" title="" /></p>
+        <p><strong>Note:</strong> <small>Customers are advised to present a print out of this ticket along with an identity proof to redeem the boarding pass at check-in counter. Failing to
+do so, the boarding might be denied.</small></p>
     </div>
 </body>
 </html>
