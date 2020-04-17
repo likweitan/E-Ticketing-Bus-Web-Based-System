@@ -17,6 +17,11 @@ if(isset($_SESSION['id']))
     {
         $myFirstName = $row['FirstName'];
         $myLastName = $row['LastName'];
+        $myEmail = $row['Email'];
+        $myPassword = $row['Password'];
+        $myGender = $row['Gender'];
+        $myAccountRole = $row['AccountRole'];
+        $myNationality = $row['Nationality'];
         $sinceYear = $row['SinceYear'];
     }
 }

@@ -121,7 +121,9 @@
             echo "<td>";
             echo $row['BookingNo'];
             echo "</td>";
-            echo "<td><a href='viewbooking.php'>Confirmed</a></td>
+            echo "<td><a href='viewbooking.php?bookingno=";
+            echo $row['BookingNo'];
+            echo "'>Confirmed</a></td>
         </tr>
     ";
 }
