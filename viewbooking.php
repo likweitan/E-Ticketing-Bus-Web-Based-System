@@ -20,13 +20,16 @@
 
     <!-- Print.js -->
     <link href="https://printjs-4de6.kxcdn.com/print.min.css" rel="stylesheet">
+
+    <!-- Aos.js -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body>
 
   <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.php">
     <img src="images/logo_white.png" width="30" height="30" class="d-inline-block align-top" alt="">
     
   </a>
@@ -35,8 +38,8 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Promotions</a>
@@ -77,12 +80,14 @@
     </header>
 
     <main role="main" class="container">
-
+    <div data-aos="fade-up" data-aos-duration="3000">
     <?php include('invoice.php');?>
+    
     <br>
     <div class="col-md-12 text-center">
     <button type="button" class="btn btn-primary" onclick="printJS({ printable: 'invoice-box', type: 'html', css: 'css/invoice.css' })">Print</button>
 <button type="button" class="btn btn-danger">Cancel Booking</button>
+        </div>
         </div>
     </main><!-- /.container -->
 
@@ -96,5 +101,10 @@
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.7/holder.min.js"></script>
     <!-- Print.js-->
     <script src="https://printjs-4de6.kxcdn.com/print.min.js"></script>
+    <!-- Aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>
