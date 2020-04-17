@@ -44,7 +44,7 @@
                             </td>
                             
                             <td>
-                                <p><small>Need Help? Toll Number: +60-339882525 Email: support@bluebus.my</small></p>
+                                <p><small>Need Help? Toll Number: +60-339882525<br>Email: support@bluebus.my</small></p>
                             </td>
                         </tr>
                     </table>
