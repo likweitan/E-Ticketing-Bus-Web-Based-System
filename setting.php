@@ -86,8 +86,27 @@
         </div>
           </div>
       </div>
+      <!-- points -->
       
-      <div data-aos="zoom-out">
+    <div data-aos="zoom-out">
+      <div class="my-3 p-3 bg-white rounded box-shadow">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Membership</h6>
+        <div class="progress">
+  <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <br>
+    <div class="media-body pb-3 mb-0 small lh-125">
+            <div class="d-flex justify-content-between align-items-center w-100">
+              <strong class="text-gray-dark">Member</strong>
+              <a href="#">View Tier Benefits</a>
+            </div>
+            <span class="d-block">Get 2,304 more points to upgrade to silver.</span>
+          </div>
+      </div>
+      
+      </div>
+
+    <div data-aos="zoom-out">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Account</h6>
         <div class="media text-muted pt-3">
