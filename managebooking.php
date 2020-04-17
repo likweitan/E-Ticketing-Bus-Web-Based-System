@@ -5,8 +5,12 @@
     {
         $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
         RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
-        WHERE AccountNo =".$_SESSION['id'];
-        $query = mysqli_query($con,$sql);
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP()";
+        $query_upcoming = mysqli_query($con,$sql);
+        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
+        RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime < CURRENT_TIMESTAMP()";
+        $query_past = mysqli_query($con,$sql);
     }
 ?>
 <!doctype html>
@@ -108,7 +112,7 @@
   </thead>
   <tbody>
   <?php  
-  while($row = mysqli_fetch_array($query))
+  while($row = mysqli_fetch_array($query_upcoming))
   {
     echo "
         <tr>
@@ -136,9 +140,6 @@
 ?>
   </tbody>
 </table>
-<small class="d-block text-right mt-3">
-          <a href="#">More</a>
-        </small>
       </div>
 </div>
 
@@ -157,28 +158,35 @@
     </tr>
   </thead>
   <tbody>
-   
-    <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Completed</a></td>
-    </tr>
-    <tr>
-      <td>Sat, 9 May 2020</td>
-      <td>19:00</td>
-      <td>Johor Bahru</td>
-      <td>Kuala Lumpur</td>
-      <td>G59D7N</td>
-      <td><a>Completed</a></td>
-    </tr>
+  <?php  
+  while($row = mysqli_fetch_array($query_past))
+  {
+    echo "
+        <tr>
+            <td>";
+            echo $row['ScheduleDate'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleStartTime'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleDepart'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['ScheduleArrive'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['BookingNo'];
+            echo "</td>";
+            echo "<td><a href='viewbooking.php?bookingno=";
+            echo $row['BookingNo'];
+            echo "'>Completed</a></td>
+        </tr>
+    ";
+}
+?>
   </tbody>
 </table>
-<small class="d-block text-right mt-3">
-          <a href="#">More</a>
-        </small>
       </div>
 </div>
     </main>
