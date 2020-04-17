@@ -9,8 +9,9 @@ CREATE TABLE account
     Password varchar(50) NOT NULL,
 	Gender varchar(50) NOT NULL,
 	BirthDate date NOT NULL,
-	AccountRole varchar(50) NOT NULL,
+	AccountRole varchar(50) NOT NULL DEFAULT 'User',
 	Country varchar(50) NOT NULL DEFAULT 'Malaysia',
+    PhoneNumber varchar(50) NOT NULL,
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
