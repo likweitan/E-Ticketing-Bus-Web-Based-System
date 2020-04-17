@@ -5,27 +5,13 @@ CREATE TABLE account
 	FirstName varchar(50) NOT NULL,
 	LastName varchar(50) NOT NULL,
 	Email varchar(50) NOT NULL,
+    Phone varchar(50) NOT NULL,
     Password varchar(50) NOT NULL,
 	Gender varchar(50) NOT NULL,
 	BirthDate date NOT NULL,
 	AccountRole varchar(50) NOT NULL,
-	Nationality varchar(50) NOT NULL DEFAULT 'Malaysian',
+	Country varchar(50) NOT NULL DEFAULT 'Malaysia',
     AccountTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-);
-
-CREATE TABLE address_line
-(
-    AddressNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    FirstName varchar(50) NOT NULL,
-	LastName varchar(50) NOT NULL,
-    Address1 varchar(50) NOT NULL,
-    Address2 varchar(50) NULL,
-    AddressCountry varchar(50) NOT NULL,
-    AddressState varchar(50) NOT NULL,
-    AddressZip int NOT NULL,
-    AddressType varchar(50) NOT NULL,
-    AccountNo int NOT NULL,
-    FOREIGN KEY (AccountNo) REFERENCES account(AccountNo)
 );
 
 CREATE TABLE payment
