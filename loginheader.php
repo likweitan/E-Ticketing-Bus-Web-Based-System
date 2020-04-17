@@ -21,7 +21,7 @@ if(isset($_SESSION['id']))
         $myPassword = $row['Password'];
         $myGender = $row['Gender'];
         $myAccountRole = $row['AccountRole'];
-        $myNationality = $row['Nationality'];
+        $myCountry = $row['Nationality'];
         $sinceYear = $row['SinceYear'];
     }
 }
