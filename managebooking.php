@@ -25,6 +25,9 @@
 
     <!-- Custom styles for this template -->
     <link href="css/offcanvas.css" rel="stylesheet">
+
+    <!-- Aos.js -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <body class="bg-light">
@@ -79,6 +82,7 @@
     </header>
 
     <main role="main" class="container">
+    <div data-aos="zoom-out">
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
         <img class="mr-3" src="https://www.mc-heads.net/avatar/1/100/nohelm.png" alt="" width="48" height="48">
         <div class="lh-100">
@@ -86,7 +90,9 @@
           <small>Since <?=$sinceYear?></small>
         </div>
       </div>
+        </div>
 
+        <div data-aos="fade-left" data-aos-duration="2000">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h5 class="border-bottom border-gray pb-2 mb-0">Your upcoming bookings</h5>
         <table class="table table-hover">
@@ -134,7 +140,9 @@
           <a href="#">More</a>
         </small>
       </div>
+</div>
 
+<div data-aos="fade-right" data-aos-duration="2000">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h5 class="border-bottom border-gray pb-2 mb-0">Your past bookings</h5>
         <table class="table table-hover">
@@ -172,6 +180,7 @@
           <a href="#">More</a>
         </small>
       </div>
+</div>
     </main>
 
     <!-- Bootstrap core JavaScript
@@ -182,5 +191,10 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.7/holder.min.js"></script>
     <script src="js/offcanvas.js"></script>
+    <!-- Aos.js -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
   </body>
 </html>
