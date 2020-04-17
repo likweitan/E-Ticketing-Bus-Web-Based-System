@@ -14,6 +14,7 @@
   </div>
 </div>
 
+<!-- Email -->
 <div class="modal fade" id="editEmail" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -28,6 +29,35 @@
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">New email</label>
             <input type="email" class="form-control" id="newEmail" name="newEmail">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Continue</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Email -->
+<div class="modal fade" id="editName" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="assets/update.inc.php" method="post">
+          <div class="form-group">
+            <label for="recipient-name" class="col-form-label">First name</label>
+            <input type="text" class="form-control" id="newFirstName" name="newFirstName">
+            <label for="recipient-name" class="col-form-label">Last name</label>
+            <input type="text" class="form-control" id="newLastName" name="newLastName">
           </div>
         
       </div>

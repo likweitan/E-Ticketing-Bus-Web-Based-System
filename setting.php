@@ -13,8 +13,7 @@
     <title>blueBus - Setting</title>
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Custom styles for this template -->
     <link href="css/offcanvas.css" rel="stylesheet">
 
@@ -87,21 +86,11 @@
         </div>
           </div>
       </div>
+      
       <!-- points -->
-      <?php
-        if(isset($_GET['email'])){
-            if($_GET['email'] == 'success')
-              echo '<div class="alert alert-success" role="alert">
-              Your email is updated successfully!
-            </div>';
-            else if($_GET['email'] == 'fail')
-            echo '<div class="alert alert-danger" role="alert">
-            Oops! There is something wrong happenned.
-          </div>';
-        }
-            ?>
+      
 
-    <div data-aos="zoom-out">
+    <div data-aos="fade-zoom-in">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Membership</h6>
         <div class="progress">
@@ -121,8 +110,20 @@
 
             
 
-    <div data-aos="zoom-out">
+    <div data-aos="fade-right">
       <div class="my-3 p-3 bg-white rounded box-shadow">
+      <?php
+        if(isset($_GET['email'])){
+            if($_GET['email'] == 'success')
+              echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+              Your email is updated successfully!
+            </div>';
+            else if($_GET['email'] == 'fail')
+            echo '<div class="alert alert-danger" role="alert">
+            Oops! There is something wrong happenned.
+          </div>';
+        }
+            ?>
         <h6 class="border-bottom border-gray pb-2 mb-0">Account</h6>
         <div class="media text-muted pt-3">
           <img src="https://raw.githubusercontent.com/google/material-design-icons/master/communication/2x_web/ic_email_black_48dp.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
@@ -158,15 +159,27 @@
       </div>
       </div>
 
-      <div data-aos="zoom-out">
+      <div data-aos="fade-left">
       <div class="my-3 p-3 bg-white rounded box-shadow">
+        <?php
+          if(isset($_GET['name'])){
+            if($_GET['name'] == 'success')
+              echo '<div class="alert alert-success" role="alert">
+              Your name is updated successfully!
+            </div>';
+            else if($_GET['name'] == 'fail')
+            echo '<div class="alert alert-danger" role="alert">
+            Oops! There is something wrong happenned.
+          </div>';
+        }
+        ?>
         <h6 class="border-bottom border-gray pb-2 mb-0">Profile</h6>
         <div class="media text-muted pt-3">
           <img src="https://raw.githubusercontent.com/google/material-design-icons/master/social/2x_web/ic_person_black_48dp.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Name</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editName">Edit</a>
             </div>
             <span class="d-block"><?=$myFirstName." ".$myLastName?></span>
           </div>
@@ -216,7 +229,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/holderjs@2.9.7/holder.min.js"></script>
     <script src="js/offcanvas.js"></script>
     <!-- Aos.js -->
