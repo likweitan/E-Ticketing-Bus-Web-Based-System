@@ -21,6 +21,7 @@
             $depart = $row['ScheduleDepart'];
             $arrive = $row['ScheduleArrive'];
             $seatNo = $row['BusSeat'];
+            $totalamount = number_format((float)$quantity*$ticketPrice, 2, '.', '');
         }
     }
 ?>
@@ -129,7 +130,7 @@
             <tr class="total">
                 <td></td>
                 <td>
-                Total Amount: RM<?=$quantity*$ticketPrice?>
+                Total Amount: RM<?=$totalamount?>
                 </td>
             </tr>
         </table>

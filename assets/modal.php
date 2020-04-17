@@ -19,7 +19,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Change Email</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -46,7 +46,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Email</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Change Name</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -58,6 +58,60 @@
             <input type="text" class="form-control" id="newFirstName" name="newFirstName">
             <label for="recipient-name" class="col-form-label">Last name</label>
             <input type="text" class="form-control" id="newLastName" name="newLastName">
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Continue</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Gender -->
+<div class="modal fade" id="editGender" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Gender</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="assets/update.inc.php" method="post">
+          <div class="form-group">
+          <label class="radio-inline"><input type="radio" name="optradio" checked>Male</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+          </div>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Continue</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Country -->
+<div class="modal fade" id="editGender" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Change Gender</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="assets/update.inc.php" method="post">
+          <div class="form-group">
+          <label class="radio-inline"><input type="radio" name="optradio" checked>Male</label>
+            <label class="radio-inline"><input type="radio" name="optradio">Female</label>
           </div>
         
       </div>

@@ -97,7 +97,7 @@
   <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br>
-    <div class="media-body pb-3 mb-0 small lh-125">
+    <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Member</strong>
               <a href="#" data-toggle="modal" data-target="#viewTierBenefits">View Tier Benefits</a>
@@ -141,7 +141,7 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Contact number</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editPhone">Edit</a>
             </div>
             <span class="d-block">012-29399329932</span>
           </div>
@@ -189,7 +189,7 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Gender</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editGender">Edit</a>
             </div>
             <span class="d-block"><?=$myGender?></span>
           </div>
