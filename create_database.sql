@@ -72,9 +72,11 @@ CREATE TABLE booking
     Quantity int NOT NULL,
     BusSeat int NOT NULL,
     BusDateTime datetime NOT NULL,
+    PaymentNo int NOT NULL,
     FOREIGN KEY (AccountNo) REFERENCES account(AccountNo),
     FOREIGN KEY (PromoCode) REFERENCES promo_code(PromoCode),
     FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
+    FOREIGN KEY (PaymentNo) REFERENCES payment(PaymentNo),
     BookingTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
