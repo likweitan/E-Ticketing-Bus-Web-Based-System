@@ -13,13 +13,21 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/floating-labels.css" rel="stylesheet">
+    <link href="form-validation.css" rel="stylesheet">
+
   </head>
  
   <body>
 
 
-
+  <div class="container col-md-6">
+  <div class="col-md-6 mb-3">
+  </div>
+  <div class="text-center mb-6">
+        <img class="mb-4" src="images/logo_black.png" alt="" width="72" height="72">
+        <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
+        <p>Sign Up today to manage your booking!</p>
+  </div>
 
   <form  action="signup.inc.php" method="post">
   <div class="form-row">
@@ -50,7 +58,6 @@
       <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" required>
     </div>
   </div>
-
   <div class="form-row">
     
     <div class="form-group col-md-6">
@@ -321,30 +328,28 @@
             <option value="Zimbabwe">Zimbabwe</option>
         </select>
     </div>
-
+    
     <div class="form-group col-md-6">
+    
       <label for="inputPhoneNumber">Phone Number</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="tel" class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" placeholder="Phone Number" required>
     </div>
     </div>
+    <p class="mt-2 mb-3 text-muted text-left">
+    <span style="color: red !important; display: inline; float: none;">*</span> 
+    By clicking Sign Up, I agree the Terms and Conditions.</p>
+    <p class="mt-3 mb-3 text-muted text-left">Already have account? <a href="login.php">Sign In</a></p>
+   <center><button class="mt-3 mb-3 btn btn-lg btn-primary " name= "submit" type="submit">Sign Up</button>
+    </center><p class="mt-2 mb-3 text-muted text-center">&copy; 2020 blueBus</p>
   </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck" required>
-      <label class="form-check-label" for="gridCheck">
-        By clicking submit, I agreee to the Terms and Conditions.
-      </label>
-    </div>
-  </div>
-  <p>Already have an account? <a href="./login.php">Click here to Sign In.</a></p>
-  <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 </form>
-
+</div>
 
    
   </body>
 <!-- Bootstrap-->
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
