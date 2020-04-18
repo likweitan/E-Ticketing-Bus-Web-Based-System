@@ -15,31 +15,38 @@
     <!-- Custom styles for this template -->
     <link href="css/floating-labels.css" rel="stylesheet">
   </head>
-
+ 
   <body>
-    
+
+
+
+
   <form  action="signup.inc.php" method="post">
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputFirstName">First Name</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="First Name" required autofocus>
     </div>
     <div class="form-group col-md-6">
       <label for="inputLastName">Last Name</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Last Name" required>
     </div>
   </div>
   <div class="form-group">
     <label for="inputEmail">Email</label>
+    <span style="color: red !important; display: inline; float: none;">*</span> 
     <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="email@example.com" required>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputPassword">Password</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputConfirmPassword">Confirm Password</label>
+      <label for="inputConfirmPassword">Confirm Password</label><span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" required>
     </div>
   </div>
@@ -47,7 +54,8 @@
   <div class="form-row">
     
     <div class="form-group col-md-6">
-      <label for="inputGender">Gender</label><span style="color: red !important; display: inline; float: none;">*</span> 
+      <label for="inputGender">Gender</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <select id="inputGender" name="inputGender" class="form-control" required>
         <option selected>Choose...</option>
         <option>Male</option>
@@ -55,14 +63,16 @@
       </select>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputCity">Date</label><span style="color: red !important; display: inline; float: none;">*</span> 
+      <label for="inputCity">Date</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="date" class="form-control" id="inputDate" name="inputDate" required>
     </div>
   </div>
   <div class="form-row">
     
     <div class="form-group col-md-6">
-    <label for="country">Country</label><span style="color: red !important; display: inline; float: none;">*</span>      
+    <label for="country">Country</label>
+    <span style="color: red !important; display: inline; float: none;">*</span>      
         
         <select id="country" name="country" class="form-control" required>
             <option value="Afghanistan">Afghanistan</option>
@@ -277,7 +287,7 @@
             <option value="Sweden">Sweden</option>
             <option value="Switzerland">Switzerland</option>
             <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-            <option value="Taiwan, Province of China">Taiwan, Province of China</option>
+            <option value="Taiwan">Taiwan</option>
             <option value="Tajikistan">Tajikistan</option>
             <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
             <option value="Thailand">Thailand</option>
@@ -314,22 +324,24 @@
 
     <div class="form-group col-md-6">
       <label for="inputPhoneNumber">Phone Number</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="tel" class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" placeholder="Phone Number" required>
     </div>
     </div>
   </div>
   <div class="form-group">
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck">
+      <input class="form-check-input" type="checkbox" id="gridCheck" required>
       <label class="form-check-label" for="gridCheck">
-        Check me out
+        By clicking submit, I agreee to the Terms and Conditions.
       </label>
     </div>
   </div>
-  <button type="submit" name="submit" class="btn btn-primary">Sign in</button>
+  <p>Already have an account? <a href="./login.php">Click here to Sign In.</a></p>
+  <button type="submit" name="submit" class="btn btn-primary">Sign Up</button>
 </form>
-      
-     
+
+
    
   </body>
 <!-- Bootstrap-->

@@ -12,12 +12,18 @@
     $inputDate =  mysqli_real_escape_string($con,$_POST["inputDate"]);
     $country =  mysqli_real_escape_string($con,$_POST["country"]);
     $inputPhoneNumber = mysqli_real_escape_string($con,$_POST["inputPhoneNumber"]);
-    
-    if($inputPassword==$inputConfirmPassword){
+    $email = mysqli_query($con,"SELECT * FROM account WHERE Email = '$inputEmail'");
+
+    if($inputPassword==$inputConfirmPassword && mysqli_num_rows($email) < 0){
     $insert =  mysqli_query($con,"INSERT INTO account (FirstName,LastName,Email,Password,Gender,BirthDate,Nationality, PhoneNumber)
       VALUES('$inputFirstName', '$inputLastName', '$inputEmail', '$inputPassword', '$inputGender','$inputDate','$country','$inputPhoneNumber')");
+      header("location: login.php");
     }
-    else
-    echo   "Confirm password invalid! Please match your password!";
+    else if(mysqli_num_rows($email) > 0){
+      header("location:signupfail.php");
+    }
+    else{
+    header("location:signupfail1.php");
   }
+}
 ?>
