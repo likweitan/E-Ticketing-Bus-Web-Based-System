@@ -81,7 +81,7 @@
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="images/melaka.jpg" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="images/melaka.jpg" alt="Melaka image">
           </div>
         </div>
 
@@ -93,7 +93,7 @@
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           </div>
           <div class="col-md-5 order-md-1">
-            <img class="featurette-image img-fluid mx-auto" src="images/penang.jpg" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="images/penang.jpg" alt="Penang image">
           </div>
         </div>
 
@@ -105,7 +105,7 @@
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
           </div>
           <div class="col-md-5">
-            <img class="featurette-image img-fluid mx-auto" src="images/ipoh.png" alt="Generic placeholder image">
+            <img class="featurette-image img-fluid mx-auto" src="images/ipoh.png" alt="Ipoh placeholder image">
           </div>
         </div>
 
