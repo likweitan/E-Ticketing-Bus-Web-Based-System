@@ -16,7 +16,7 @@
               <a class="nav-link" href="searchbus.php">Search Ticket</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="promotion,php">Promotions</a>
+              <a class="nav-link" href="promotion.php">Promotions</a>
             </li>
             <?php if(isset($_SESSION['id']))
             {
