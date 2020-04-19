@@ -20,7 +20,7 @@
   <body>
 
 
-  <div class="container col-md-6">
+  <div class="container col-md-6" >
   <div class="col-md-6 mb-3">
   </div>
   <div class="text-center mb-6">
