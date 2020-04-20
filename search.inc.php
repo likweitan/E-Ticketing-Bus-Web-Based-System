@@ -2,12 +2,11 @@
     require("db.php");
     require("loginheader.php");
 
-    session_start();
     if(isset($_POST['book_ticket'])){
     $inputFrom = $_POST["inputFrom"];
     $inputTo = $_POST["inputTo"];
     $inputDepartDate = $_POST["inputDepartDate"];
-    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = 'inputTo'");
+    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
 }
 ?>
 
@@ -21,7 +20,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>blueBus - Manage Bookings</title>
+    <title>blueBus - Search Bus</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -41,32 +40,36 @@
   ?>
 
     <main role="main" class="container">
-
         <div data-aos="fade-left" data-aos-duration="2000">
       <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h5 class="border-bottom border-gray pb-2 mb-0">Bus From <?php echo $inputFrom?> To <?php echo $inputTo?> </h5>
+        <h5 class="border-bottom border-gray pb-2 mb-0">Here is your bus information </h5>
         <table class="table table-hover">
   <thead>
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
+      <th scope="col">Bus No</th>
       <th scope="col">Origin</th>
       <th scope="col">Destination</th>
-      <th scope="col">Booking number</th>
-      <th scope="col">Status</th>
+      <th scope="col">Duration</th>
+      <th scope="col">Ticket Price</th>
     </tr>
   </thead>
   <tbody>
   <?php  
-  while($row = mysqli_fetch_array($query_upcoming))
+
+  while($row = mysqli_fetch_array($busInfo))
   {
     echo "
-        <tr>
-            <td>";
-            echo $row['ScheduleDate'];
+        <tr>";
+            echo "<td>";
+            echo $inputDepartDate;
             echo "</td>";
             echo "<td>";
             echo $row['ScheduleStartTime'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['BusNo'];
             echo "</td>";
             echo "<td>";
             echo $row['ScheduleDepart'];
@@ -75,13 +78,12 @@
             echo $row['ScheduleArrive'];
             echo "</td>";
             echo "<td>";
-            echo $row['BookingNo'];
+            echo $row['ScheduleDuration'];
             echo "</td>";
-            echo "<td><a href='viewbooking.php?bookingno=";
-            echo $row['BookingNo'];
-            echo "'>Confirmed</a></td>
-        </tr>
-    ";
+            echo "<td>";
+            echo $row['TicketPrice'];
+            echo "</td></tr>";       
+    
 }
 ?>
   </tbody>
@@ -89,52 +91,6 @@
       </div>
 </div>
 
-<div data-aos="fade-right" data-aos-duration="2000">
-      <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h5 class="border-bottom border-gray pb-2 mb-0">Your past bookings</h5>
-        <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
-      <th scope="col">Origin</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Booking number</th>
-      <th scope="col">Status</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php  
-  while($row = mysqli_fetch_array($query_past))
-  {
-    echo "
-        <tr>
-            <td>";
-            echo $row['ScheduleDate'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleStartTime'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleDepart'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleArrive'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['BookingNo'];
-            echo "</td>";
-            echo "<td><a href='viewbooking.php?bookingno=";
-            echo $row['BookingNo'];
-            echo "'>Completed</a></td>
-        </tr>
-    ";
-}
-?>
-  </tbody>
-</table>
-      </div>
-</div>
     </main>
 
     <!-- Bootstrap core JavaScript

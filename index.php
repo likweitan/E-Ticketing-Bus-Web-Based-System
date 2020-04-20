@@ -24,7 +24,7 @@
   <?php
     include('assets/header.php');
   ?>
-  <form action="search.inc.php" method="post">
+ 
     <main role="main">
     <div class="alert alert-danger alert-dismissible">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -38,6 +38,7 @@
           <p class="lead text-muted" style="color:#f8f9fa!important">with blueBus</p>
     
     <!-- Book  Ticket Start Here-->
+    <form action="search.inc.php" method="post">
     <div class="form-row  col-md-12">
        <div class="form-group col-md-4 text-left">
           <label for="inputFrom"  style="color:white;">From</label>
@@ -75,11 +76,12 @@
    
   </div>
           <p class="text-right">
-            <a href="searchbus.php" type="submit" name="book_ticket" class="btn btn-primary my-2">Book Ticket</a>
+            <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
           </p>
         </div>
+        </form>
       </section>
-   </form>
+   
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
