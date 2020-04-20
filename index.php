@@ -36,7 +36,33 @@
         <div class="container" >
           <h1 class="jumbotron-heading" style="color:white;">Discover the treasures of Malaysian culture</h1>
           <p class="lead text-muted" style="color:#f8f9fa!important">with blueBus</p>
-          <p>
+          <div class="form-row  col-md-12">
+    <div class="form-group col-md-4 text-left">
+    <label for="inputGender"  style="color:white;">From</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
+      <select id="inputGender" name="inputGender" class="form-control" required>
+        <option selected>From...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4 text-left">
+    <label for="inputGender" style="color:white;">To</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
+      <select id="inputGender" name="inputGender" class="form-control" required>
+        <option selected>To...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+    </div>
+    <div class="form-group col-md-4 text-left">
+    <label for="inputDepartDate" style="color:white;">Depart Date</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
+      <input type="date" class="form-control" id="inputDepartDate" name="inputDepartDate" required>
+    </div>
+   
+  </div>
+          <p class="text-right">
             <a href="searchbus.php" class="btn btn-primary my-2">Book Ticket</a>
           </p>
         </div>

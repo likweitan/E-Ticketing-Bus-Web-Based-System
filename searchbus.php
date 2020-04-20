@@ -36,10 +36,9 @@
   <main role="main" class="inner cover" >
   
   <div class="container col-md-12" >
-  <div class="col-md-12 mb-6">
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
+
+  <div class="form-row  col-md-12">
+    <div class="form-group col-md-4">
     <label for="inputGender">From</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <select id="inputGender" name="inputGender" class="form-control" required>
@@ -48,7 +47,7 @@
         <option>Female</option>
       </select>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
     <label for="inputGender">To</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <select id="inputGender" name="inputGender" class="form-control" required>
@@ -57,17 +56,15 @@
         <option>Female</option>
       </select>
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-4">
     <label for="inputDepartDate">Depart Date</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="date" class="form-control" id="inputDepartDate" name="inputDepartDate" required>
     </div>
-    <div class="form-group col-md-6">
-    <label for="inputReturnDate">Return Date</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="date" class="form-control" id="inputReturnDate" name="inputReturnDate" required>
-    </div>
+   
   </div>
+  <center><button class="mt-3 mb-3 btn btn-lg btn-primary " name= "submit" type="submit">Search</button>
+    </center>
   </div>
   </main>
 
@@ -82,6 +79,11 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
+    <script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("inputDepartDate")[0].setAttribute('min', today);
+    document.getElementsByName("inputReturnDate")[0].setAttribute('min', today);
+    </script>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
