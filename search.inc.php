@@ -6,7 +6,7 @@
     $inputFrom = $_GET["inputFrom"];
     $inputTo = $_GET["inputTo"];
     $inputDepartDate = $_GET["inputDepartDate"];
-    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
+    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
 }
 ?>
 
@@ -99,6 +99,7 @@
     <tr>
       <th scope="col">Date</th>
       <th scope="col">Time</th>
+      <th scope="col">Bus Company</th>
       <th scope="col">Bus No</th>
       <th scope="col">Origin</th>
       <th scope="col">Destination</th>
@@ -118,6 +119,9 @@
             echo "</td>";
             echo "<td>";
             echo $row['ScheduleStartTime'];
+            echo "</td>";
+            echo "<td>";
+            echo $row['BusCompany'];
             echo "</td>";
             echo "<td>";
             echo $row['BusNo'];
