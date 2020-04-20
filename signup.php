@@ -65,8 +65,8 @@
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <select id="inputGender" name="inputGender" class="form-control" required>
         <option selected>Choose...</option>
-        <option>Male</option>
-        <option>Female</option>
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
       </select>
     </div>
     <div class="form-group col-md-6">

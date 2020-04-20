@@ -24,7 +24,7 @@
   <?php
     include('assets/header.php');
   ?>
-
+  <form action="search.inc.php" method="post">
     <main role="main">
     <div class="alert alert-danger alert-dismissible">
       <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -36,25 +36,37 @@
         <div class="container" >
           <h1 class="jumbotron-heading" style="color:white;">Discover the treasures of Malaysian culture</h1>
           <p class="lead text-muted" style="color:#f8f9fa!important">with blueBus</p>
-          <div class="form-row  col-md-12">
-    <div class="form-group col-md-4 text-left">
-    <label for="inputGender"  style="color:white;">From</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <select id="inputGender" name="inputGender" class="form-control" required>
-        <option selected>From...</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-    </div>
-    <div class="form-group col-md-4 text-left">
-    <label for="inputGender" style="color:white;">To</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <select id="inputGender" name="inputGender" class="form-control" required>
-        <option selected>To...</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-    </div>
+    
+    <!-- Book  Ticket Start Here-->
+    <div class="form-row  col-md-12">
+       <div class="form-group col-md-4 text-left">
+          <label for="inputFrom"  style="color:white;">From</label>
+             <span style="color: red !important; display: inline; float: none;">*</span> 
+               <select id="inputFrom" name="inputFrom" class="form-control" required>
+                <option selected>From...</option>
+                <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Malacca City">Malacca City</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Genting Highland">Genting Highland</option>
+                <option value="Penang">Penang (George Town)</option>
+                <option value="Ipoh">Ipoh</option>
+               </select>
+         </div>
+
+        <div class="form-group col-md-4 text-left">
+          <label for="inputTo" style="color:white;">To</label>
+            <span style="color: red !important; display: inline; float: none;">*</span> 
+              <select id="inputTo" name="inputTo" class="form-control" required>
+               <option selected>To...</option>
+               <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Malacca City">Malacca City</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Genting Highland">Genting Highland</option>
+                <option value="Penang">Penang (George Town)</option>
+                <option value="Ipoh">Ipoh</option>
+             </select>
+         </div>
+
     <div class="form-group col-md-4 text-left">
     <label for="inputDepartDate" style="color:white;">Depart Date</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
@@ -63,11 +75,11 @@
    
   </div>
           <p class="text-right">
-            <a href="searchbus.php" class="btn btn-primary my-2">Book Ticket</a>
+            <a href="searchbus.php" type="submit" name="book_ticket" class="btn btn-primary my-2">Book Ticket</a>
           </p>
         </div>
       </section>
-
+   </form>
       <!-- Marketing messaging and featurettes
       ================================================== -->
       <!-- Wrap the rest of the page in another container to center all the content. -->
