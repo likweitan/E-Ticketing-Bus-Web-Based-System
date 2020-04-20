@@ -38,7 +38,7 @@
           <p class="lead text-muted" style="color:#f8f9fa!important">with blueBus</p>
     
     <!-- Book  Ticket Start Here-->
-    <form action="search.inc.php" method="post">
+    <form action="search.inc.php" method="get">
     <div class="form-row  col-md-12">
        <div class="form-group col-md-4 text-left">
           <label for="inputFrom"  style="color:white;">From</label>
@@ -68,10 +68,13 @@
              </select>
          </div>
 
+    
     <div class="form-group col-md-4 text-left">
     <label for="inputDepartDate" style="color:white;">Depart Date</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="date" class="form-control" id="inputDepartDate" name="inputDepartDate" required>
+      <!-- Set default date as today date-->
+
+      <input type="date" class="form-control" id="inputDepartDate" name="inputDepartDate"  >
     </div>
    
   </div>

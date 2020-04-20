@@ -2,10 +2,10 @@
     require("db.php");
     require("loginheader.php");
 
-    if(isset($_POST['book_ticket'])){
-    $inputFrom = $_POST["inputFrom"];
-    $inputTo = $_POST["inputTo"];
-    $inputDepartDate = $_POST["inputDepartDate"];
+    if(isset($_GET['book_ticket'])){
+    $inputFrom = $_GET["inputFrom"];
+    $inputTo = $_GET["inputTo"];
+    $inputDepartDate = $_GET["inputDepartDate"];
     $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
 }
 ?>
@@ -38,8 +38,59 @@
   <?php
     include('assets/header.php');
   ?>
-
+    
     <main role="main" class="container">
+    <div data-aos="zoom-out">
+      <div class="container p-3 my-3 bg-purple rounded box-shadow">
+      <form action="search.inc.php" method="get">
+    <div class="form-row  col-md-12">
+       <div class="form-group col-md-4 text-left">
+          <label for="inputFrom"  style="color:white;">From</label>
+             <span style="color: red !important; display: inline; float: none;">*</span> 
+               <select id="inputFrom" name="inputFrom" placeholder="<?php echo$inputFrom;?>"class="form-control" required>
+                <option selected><?php echo$inputFrom;?></option>
+                <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Malacca City">Malacca City</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Genting Highland">Genting Highland</option>
+                <option value="Penang">Penang (George Town)</option>
+                <option value="Ipoh">Ipoh</option>
+               </select>
+         </div>
+
+        <div class="form-group col-md-4 text-left">
+          <label for="inputTo" style="color:white;">To</label>
+            <span style="color: red !important; display: inline; float: none;">*</span> 
+              <select id="inputTo" name="inputTo" placeholder="" class="form-control" required>
+               <option selected><?php echo$inputTo;?></option>
+               <option value="Johor Bahru">Johor Bahru</option>
+                <option value="Malacca City">Malacca City</option>
+                <option value="Kuala Lumpur">Kuala Lumpur</option>
+                <option value="Genting Highland">Genting Highland</option>
+                <option value="Penang">Penang (George Town)</option>
+                <option value="Ipoh">Ipoh</option>
+             </select>
+         </div>
+
+    
+    <div class="form-group col-md-4 text-left">
+    <label for="inputDepartDate" style="color:white;">Depart Date</label>
+      <span style="color: red !important; display: inline; float: none;">*</span> 
+      <!-- Set default date as today date-->
+
+      <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
+    </div>
+   
+  </div>
+          <p class="text-right">
+            <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
+          </p>
+        </div>
+        </form>
+      </div>
+        </div>
+    
+
         <div data-aos="fade-left" data-aos-duration="2000">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h5 class="border-bottom border-gray pb-2 mb-0">Here is your bus information </h5>
@@ -82,7 +133,12 @@
             echo "</td>";
             echo "<td>";
             echo $row['TicketPrice'];
-            echo "</td></tr>";       
+            echo "</td>";
+            echo "<td><a href='select_bus.php?busno=";
+            echo $row['BusNo'];
+            echo "'>Select</a></td>
+            </tr>
+            ";       
     
 }
 ?>
@@ -95,6 +151,10 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
+    <script>
+    var today = new Date().toISOString().split('T')[0];
+    document.getElementsByName("inputDepartDate")[0].setAttribute('min', today);
+    </script>
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
