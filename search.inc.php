@@ -41,12 +41,13 @@
     
     <main role="main" class="container">
 
-    <!-- Search Bus Ticket-->
+    <!-- Search Bus Ticket Start Here-->
       <div data-aos="zoom-out">
        <div class="container p-3 my-3 bg-purple rounded box-shadow">
          <form action="search.inc.php" method="get">
            <div class="form-row  col-md-12">
             <div class="form-group col-md-4 text-left">
+
              <!-- Select Bus From (Departure)-->
               <label for="inputFrom"  style="color:white;">From</label>
                 <span style="color: red !important; display: inline; float: none;">*</span> 
