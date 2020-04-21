@@ -29,8 +29,6 @@
   ?>
  
     <main role="main">
-    
-
     <section class="jumbotron text-center" style="background-image: url('images/malaysia.jpg');" >
         <div class="container"  data-aos="fade-up" data-aos-duration="3000">
           <h1 class="jumbotron-heading" style="color:white;">Discover the treasures of Malaysian culture</h1>
@@ -43,7 +41,7 @@
           <label for="inputFrom"  style="color:white;">From</label>
              <span style="color: red !important; display: inline; float: none;">*</span> 
                <select id="inputFrom" name="inputFrom" class="form-control" required>
-                <option selected>From...</option>
+                <option value="From...">From...</option>
                 <option value="Johor Bahru">Johor Bahru</option>
                 <option value="Malacca City">Malacca City</option>
                 <option value="Kuala Lumpur">Kuala Lumpur</option>
@@ -57,7 +55,7 @@
           <label for="inputTo" style="color:white;">To</label>
             <span style="color: red !important; display: inline; float: none;">*</span> 
               <select id="inputTo" name="inputTo" class="form-control" required>
-               <option selected>To...</option>
+               <option value="To...">To...</option>
                <option value="Johor Bahru">Johor Bahru</option>
                 <option value="Malacca City">Malacca City</option>
                 <option value="Kuala Lumpur">Kuala Lumpur</option>

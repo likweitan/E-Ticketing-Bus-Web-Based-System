@@ -18,7 +18,7 @@
     if($inputPassword==$inputConfirmPassword & mysqli_num_rows($email) == 0 & $inputGender!="Choose..." ){
       $insert =  mysqli_query($con,"INSERT INTO account (FirstName,LastName,Email,Password,Gender,BirthDate,Nationality, PhoneNumber)
         VALUES('$inputFirstName', '$inputLastName', '$inputEmail', '$inputPassword', '$inputGender','$inputDate','$country','$inputPhoneNumber')");
-        header("location: login.php");
+        header("location: login.php?adduser=success");
       }
          else if(mysqli_num_rows($email) > 0){
             header("location:signup.php?error=email_exist");
