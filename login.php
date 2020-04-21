@@ -38,6 +38,8 @@
                   <button type="button" class="close" data-dismiss="alert">&times;</button>';
           if($_GET["error"] == "wrong_password")
             echo "Your password is incorrect";
+          else if($_GET["adduser"] == "success")
+            echo "Your account has been created";
           else
             echo "Your account is not existed";
            echo '</div>
