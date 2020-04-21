@@ -40,119 +40,120 @@
   ?>
     
     <main role="main" class="container">
-    <div data-aos="zoom-out">
-      <div class="container p-3 my-3 bg-purple rounded box-shadow">
-      <form action="search.inc.php" method="get">
-    <div class="form-row  col-md-12">
-       <div class="form-group col-md-4 text-left">
-          <label for="inputFrom"  style="color:white;">From</label>
-             <span style="color: red !important; display: inline; float: none;">*</span> 
-               <select id="inputFrom" name="inputFrom" placeholder="<?php echo$inputFrom;?>"class="form-control" required>
-                <option selected><?php echo$inputFrom;?></option>
-                <option value="Johor Bahru">Johor Bahru</option>
-                <option value="Malacca City">Malacca City</option>
-                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                <option value="Genting Highland">Genting Highland</option>
-                <option value="Penang">Penang (George Town)</option>
-                <option value="Ipoh">Ipoh</option>
-               </select>
-         </div>
 
-        <div class="form-group col-md-4 text-left">
-          <label for="inputTo" style="color:white;">To</label>
-            <span style="color: red !important; display: inline; float: none;">*</span> 
-              <select id="inputTo" name="inputTo" placeholder="" class="form-control" required>
-               <option selected><?php echo$inputTo;?></option>
-               <option value="Johor Bahru">Johor Bahru</option>
-                <option value="Malacca City">Malacca City</option>
-                <option value="Kuala Lumpur">Kuala Lumpur</option>
-                <option value="Genting Highland">Genting Highland</option>
-                <option value="Penang">Penang (George Town)</option>
-                <option value="Ipoh">Ipoh</option>
-             </select>
-         </div>
+    <!-- Search Bus Ticket-->
+      <div data-aos="zoom-out">
+       <div class="container p-3 my-3 bg-purple rounded box-shadow">
+         <form action="search.inc.php" method="get">
+           <div class="form-row  col-md-12">
+            <div class="form-group col-md-4 text-left">
+             <!-- Select Bus From (Departure)-->
+              <label for="inputFrom"  style="color:white;">From</label>
+                <span style="color: red !important; display: inline; float: none;">*</span> 
+                   <select id="inputFrom" name="inputFrom" placeholder="<?php echo$inputFrom;?>"class="form-control" required>
+                      <option selected><?php echo$inputFrom;?></option>
+                      <option value="Johor Bahru">Johor Bahru</option>
+                      <option value="Malacca City">Malacca City</option>
+                      <option value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option value="Genting Highland">Genting Highland</option>
+                      <option value="Penang">Penang (George Town)</option>
+                      <option value="Ipoh">Ipoh</option>
+                   </select>
+            </div>
 
-    
-    <div class="form-group col-md-4 text-left">
-    <label for="inputDepartDate" style="color:white;">Depart Date</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <!-- Set default date as today date-->
+             <!-- Select Bus To (Arrival)-->
+            <div class="form-group col-md-4 text-left">
+              <label for="inputTo" style="color:white;">To</label>
+                <span style="color: red !important; display: inline; float: none;">*</span> 
+                   <select id="inputTo" name="inputTo" placeholder="" class="form-control" required>
+                      <option selected><?php echo$inputTo;?></option>
+                      <option value="Johor Bahru">Johor Bahru</option>
+                      <option value="Malacca City">Malacca City</option>
+                      <option value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option value="Genting Highland">Genting Highland</option>
+                      <option value="Penang">Penang (George Town)</option>
+                      <option value="Ipoh">Ipoh</option>
+                    </select>
+             </div>
 
-      <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
-    </div>
-   
-  </div>
-          <p class="text-right">
-            <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
-          </p>
-        </div>
+              <!-- Select Bus Departure Date -->
+            <div class="form-group col-md-4 text-left">
+               <label for="inputDepartDate" style="color:white;">Depart Date</label>
+                 <span style="color: red !important; display: inline; float: none;">*</span> 
+                    <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
+             </div>
+           </div>
+
+              <!-- Book Ticket -->
+               <p class="text-right">
+               <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
+               </p>
+          </div>
         </form>
+       </div>
       </div>
-        </div>
-    
+    <!--End of Book Ticket -->
 
-        <div data-aos="fade-left" data-aos-duration="2000">
-      <div class="my-3 p-3 bg-white rounded box-shadow">
-        <h5 class="border-bottom border-gray pb-2 mb-0">Here is your bus information </h5>
-        <table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Date</th>
-      <th scope="col">Time</th>
-      <th scope="col">Bus Company</th>
-      <th scope="col">Bus No</th>
-      <th scope="col">Origin</th>
-      <th scope="col">Destination</th>
-      <th scope="col">Duration</th>
-      <th scope="col">Ticket Price</th>
-    </tr>
-  </thead>
-  <tbody>
-  <?php  
-
-  while($row = mysqli_fetch_array($busInfo))
-  {
-    echo "
-        <tr>";
-            echo "<td>";
-            echo $inputDepartDate;
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleStartTime'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['BusCompany'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['BusNo'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleDepart'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleArrive'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['ScheduleDuration'];
-            echo "</td>";
-            echo "<td>";
-            echo $row['TicketPrice'];
-            echo "</td>";
-            echo "<td><a href='select_bus.php?busno=";
-            echo $row['BusNo'];
-            echo "'>Select</a></td>
-            </tr>
-            ";       
-    
-}
-?>
-  </tbody>
-</table>
-      </div>
-</div>
-
-    </main>
-
+    <!-- Bus Result Table -->
+      <div data-aos="fade-left" data-aos-duration="2000">
+        <div class="my-3 p-3 bg-white rounded box-shadow">
+           <h5 class="border-bottom border-gray pb-2 mb-0">Here is your bus information </h5>
+             <table class="table table-hover">
+              <thead>
+               <tr>
+                 <th scope="col">Date</th>
+                 <th scope="col">Time</th>
+                 <th scope="col">Bus Company</th>
+                 <th scope="col">Bus No</th>
+                 <th scope="col">Origin</th>
+                 <th scope="col">Destination</th>
+                 <th scope="col">Duration</th>
+                 <th scope="col">Ticket Price</th>
+                </tr>
+              </thead>
+            
+          <!--Display Search Bus Ticket Resuly -->
+           <tbody>
+            <?php  
+               while($row = mysqli_fetch_array($busInfo))
+               {
+               echo "<tr>";
+               echo "<td>";
+               echo $inputDepartDate;
+               echo "</td>";
+               echo "<td>";
+               echo $row['ScheduleStartTime'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['BusCompany'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['BusNo'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['ScheduleDepart'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['ScheduleArrive'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['ScheduleDuration'];
+               echo "</td>";
+               echo "<td>";
+               echo $row['TicketPrice'];
+               echo "</td>";
+               echo "<td><a href='select_bus.php?busno=";
+               echo $row['BusNo'];
+               echo "'>Select</a></td></tr>";        
+              }
+            ?>
+           </tbody>
+        </table>
+       </div>
+     </div>
+     <!-- End of Bus Result Table -->
+   </main>
+<!--End of the Main -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <script>
