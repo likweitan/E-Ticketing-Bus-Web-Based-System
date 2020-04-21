@@ -42,9 +42,9 @@
       <?php
         if(!empty($_GET["error"]))
         {
-          echo '<div class="alert alert-primary" role="alert">';
+          echo '<div class="alert alert-warning" role="alert">';
           if($_GET["error"] == "wrong_password")
-            echo "Wrong password";
+            echo "Your password is incorrect";
           else
             echo "Your account is not existed";
            echo '</div>';
