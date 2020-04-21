@@ -7,16 +7,47 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>blueBus</title>
+    <title>blueBus - Login</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
     <link href="css/floating-labels.css" rel="stylesheet">
+    <style>
+    #message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#inner-message {
+    margin: 0 auto;
+}
+    </style>
   </head>
 
   <body>
+  <!-- error message -->
+  <?php
+        if(!empty($_GET["error"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["error"] == "wrong_password")
+            echo "Your password is incorrect";
+          else
+            echo "Your account is not existed";
+           echo '</div>
+           </div>
+       </div>';
+        }
+  ?>
+        
+
+
     <form class="form-signin" action="login.inc.php" method="post">
       <div class="text-center mb-4">
         <img class="mb-4" src="images/logo_black.png" alt="" width="72" height="72">
@@ -39,17 +70,6 @@
           <input type="checkbox" value="remember-me"> Remember me
         </label>
       </div>
-      <?php
-        if(!empty($_GET["error"]))
-        {
-          echo '<div class="alert alert-warning" role="alert">';
-          if($_GET["error"] == "wrong_password")
-            echo "Your password is incorrect";
-          else
-            echo "Your account is not existed";
-           echo '</div>';
-        }
-      ?>
       
       <button class="mt-3 mb-3 btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 
