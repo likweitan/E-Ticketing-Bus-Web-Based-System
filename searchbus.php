@@ -79,6 +79,22 @@
              </div>
            </div>
 
+           <?php
+        if(!empty($_GET["error"]))
+        {
+          echo '<div class="alert alert-primary" role="alert">';
+          if($_GET["error"] == "invalid_from"){
+            echo "Please select where your journey start";
+          }
+          else if($_GET["error"] == "invalid_to"){
+            echo "Please select where your journey end";
+          }
+          else {
+            echo "Please select your journey date";
+          }
+           echo '</div>';
+        }
+      ?>
               <!-- Book Ticket -->
                <p class="text-right">
                <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>

@@ -6,8 +6,22 @@
     $inputFrom = $_GET["inputFrom"];
     $inputTo = $_GET["inputTo"];
     $inputDepartDate = $_GET["inputDepartDate"];
+    
+     //Input Validation
+    if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
     $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
-}
+    }
+    else if($inputFrom == "From..."){
+      header("location: searchbus.php?error=invalid_from");
+    }
+    else if($inputTo == "To..."){
+      header("location:searchbus.php?error=invalid_to");
+    }
+    else{
+        header("location:searchbus.php?error=invalid_date");
+      }
+    }
+  
 ?>
 
 
