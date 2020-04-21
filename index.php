@@ -71,7 +71,6 @@
     <div class="form-group col-md-4 text-left">
     <label for="inputDepartDate" style="color:white;">Depart Date</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
-      <!-- Set default date as today date-->
 
       <input type="date" class="form-control" id="inputDepartDate" name="inputDepartDate"  >
     </div>

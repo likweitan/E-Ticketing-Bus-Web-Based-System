@@ -14,74 +14,84 @@
 
     <!-- Custom styles for this template -->
     <link href="form-validation.css" rel="stylesheet">
-
+    
   </head>
  
   <body>
+     <div class="container col-md-6" >
+     <!-- White Space -->
+       <div class="col-md-6 mb-3">
+       </div>
 
+       <!-- Sign Up Form -->
+       <div class="text-center mb-6">
+          <img class="mb-4" src="images/logo_black.png" alt="" width="72" height="72">
+            <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
+             <p>Sign Up today to manage your booking!</p>
+         </div>
 
-  <div class="container col-md-6" >
-  <div class="col-md-6 mb-3">
-  </div>
-  <div class="text-center mb-6">
-        <img class="mb-4" src="images/logo_black.png" alt="" width="72" height="72">
-        <h1 class="h3 mb-3 font-weight-normal">blueBus</h1>
-        <p>Sign Up today to manage your booking!</p>
-  </div>
+            <form  action="signup.inc.php" method="post">
+             <!-- First Name & Last Name -->
+               <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputFirstName">First Name</label>
+                    <span style="color: red !important; display: inline; float: none;">*</span> 
+                    <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="First Name" required autofocus>
+                 </div>
 
-  <form  action="signup.inc.php" method="post">
+                  <div class="form-group col-md-6">
+                    <label for="inputLastName">Last Name</label>
+                    <span style="color: red !important; display: inline; float: none;">*</span> 
+                    <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Last Name" required>
+                  </div>
+               </div>
+
+               <!-- Email  -->
+              <div class="form-group">
+                  <label for="inputEmail">Email</label>
+                  <span style="color: red !important; display: inline; float: none;">*</span> 
+                  <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="email@example.com" required>
+               </div>
+
+               <!-- Password & Confirm Password -->
+               <div class="form-row">
+                   <div class="form-group col-md-6">
+                     <label for="inputPassword">Password</label>
+                     <span style="color: red !important; display: inline; float: none;">*</span> 
+                     <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
+                    </div>
+
+                   <div class="form-group col-md-6">
+                      <label for="inputConfirmPassword">Confirm Password</label><span style="color: red !important; display: inline; float: none;">*</span> 
+                      <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" required>
+                    </div>
+                 </div>
+
+               <div class="form-row">
+                  <div class="form-group col-md-6">
+                     <label for="inputGender">Gender</label>
+                     <span style="color: red !important; display: inline; float: none;">*</span> 
+                     <select id="inputGender" name="inputGender" class="form-control" required>
+                     <option value="Choose...">Choose...</option>
+                     <option value="Male">Male</option>
+                     <option value="Female">Female</option>
+                     </select>
+                   </div>
+
+               <div class="form-group col-md-6">
+                  <label for="inputDate">Date</label>
+                  <span style="color: red !important; display: inline; float: none;">*</span> 
+                  <input type="date" class="form-control" id="inputDate" name="inputDate" required>
+                </div>
+              </div>
+
+   <!-- Country & Phone Number-->
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputFirstName">First Name</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="text" class="form-control" id="inputFirstName" name="inputFirstName" placeholder="First Name" required autofocus>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputLastName">Last Name</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="text" class="form-control" id="inputLastName" name="inputLastName" placeholder="Last Name" required>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputEmail">Email</label>
-    <span style="color: red !important; display: inline; float: none;">*</span> 
-    <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="email@example.com" required>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputPassword">Password</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputConfirmPassword">Confirm Password</label><span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="password" class="form-control" id="inputConfirmPassword" name="inputConfirmPassword" placeholder="Confirm Password" required>
-    </div>
-  </div>
-  <div class="form-row">
-    
-    <div class="form-group col-md-6">
-      <label for="inputGender">Gender</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <select id="inputGender" name="inputGender" class="form-control" required>
-        <option selected>Choose...</option>
-        <option value="Male">Male</option>
-        <option value="Female">Female</option>
-      </select>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputDate">Date</label>
-      <span style="color: red !important; display: inline; float: none;">*</span> 
-      <input type="date" class="form-control" id="inputDate" name="inputDate" required>
-    </div>
-  </div>
-  <div class="form-row">
-    
-    <div class="form-group col-md-6">
-    <label for="country">Country</label>
-    <span style="color: red !important; display: inline; float: none;">*</span>      
-        
+       <label for="country">Country</label>
+       <span style="color: red !important; display: inline; float: none;">*</span>      
         <select id="country" name="country" class="form-control" required>
+            <option value="Malaysia">Malaysia</option>
             <option value="Afghanistan">Afghanistan</option>
             <option value="Åland Islands">Åland Islands</option>
             <option value="Albania">Albania</option>
@@ -214,7 +224,6 @@
             <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
             <option value="Madagascar">Madagascar</option>
             <option value="Malawi">Malawi</option>
-            <option value="Malaysia">Malaysia</option>
             <option value="Maldives">Maldives</option>
             <option value="Mali">Mali</option>
             <option value="Malta">Malta</option>
@@ -329,25 +338,48 @@
         </select>
     </div>
     
+
     <div class="form-group col-md-6">
-    
       <label for="inputPhoneNumber">Phone Number</label>
       <span style="color: red !important; display: inline; float: none;">*</span> 
       <input type="tel" class="form-control" id="inputPhoneNumber" name="inputPhoneNumber" placeholder="Phone Number" required>
     </div>
-    </div>
+  </div>
+
+     <!-- Declaration -->
     <p class="mt-2 mb-3 text-muted text-left">
     <span style="color: red !important; display: inline; float: none;">*</span> 
     By clicking Sign Up, I agree the Terms and Conditions.</p>
     <p class="mt-3 mb-3 text-muted text-left">Already have account? <a href="login.php">Sign In</a></p>
+    
+    <!-- Input Validation (Error Message) -->
+    <?php
+        if(!empty($_GET["error"]))
+        {
+          echo '<div class="alert alert-primary" role="alert">';
+          if($_GET["error"] == "email_exist"){
+            echo "Sorry... Email already taken.";
+          }
+          else if($_GET["error"] == "confirm_password_invalid"){
+            echo "Confirm password invalid! Please match your password.";
+          }
+          else if($_GET["error"] == "invalid_gender"){
+            echo "Please select your gender...";
+          }
+          else{
+            echo "Please make sure you alreade completed the form.";
+          }
+           echo '</div>';
+        }
+      ?>
+     <!-- Submit Button -->
    <center><button class="mt-3 mb-3 btn btn-lg btn-primary " name= "submit" type="submit">Sign Up</button>
     </center><p class="mt-2 mb-3 text-muted text-center">&copy; 2020 blueBus</p>
   </div>
 </form>
+ <!-- End of Sign Up Form -->
 </div>
-
-   
-  </body>
+</body>
 <!-- Bootstrap-->
 <script>
     var today = new Date().toISOString().split('T')[0];

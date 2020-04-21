@@ -14,16 +14,23 @@
     $inputPhoneNumber = mysqli_real_escape_string($con,$_POST["inputPhoneNumber"]);
     $email = mysqli_query($con,"SELECT * FROM account WHERE Email = '$inputEmail'");
 
-    if($inputPassword==$inputConfirmPassword && mysqli_num_rows($email) < 0){
-    $insert =  mysqli_query($con,"INSERT INTO account (FirstName,LastName,Email,Password,Gender,BirthDate,Nationality, PhoneNumber)
-      VALUES('$inputFirstName', '$inputLastName', '$inputEmail', '$inputPassword', '$inputGender','$inputDate','$country','$inputPhoneNumber')");
-      header("location: login.php");
-    }
-    else if(mysqli_num_rows($email) > 0){
-      header("location:signupfail.php");
-    }
+    //Input Validation
+    if($inputPassword==$inputConfirmPassword & mysqli_num_rows($email) == 0 & $inputGender!="Choose..." ){
+      $insert =  mysqli_query($con,"INSERT INTO account (FirstName,LastName,Email,Password,Gender,BirthDate,Nationality, PhoneNumber)
+        VALUES('$inputFirstName', '$inputLastName', '$inputEmail', '$inputPassword', '$inputGender','$inputDate','$country','$inputPhoneNumber')");
+        header("location: login.php");
+      }
+         else if(mysqli_num_rows($email) > 0){
+            header("location:signup.php?error=email_exist");
+          }
+         else if($inputGender=="Choose..."){
+            header("location: signup.php?error=invalid_gender");
+          }
+         else if($inputPassword!=$inputConfirmPassword ) {
+            header("location:signup.php?error=confirm_password_invalid");
+          }
     else{
-    header("location:signupfail1.php");
-  }
+         header("location:signup.php?error=unfill");
+    }
 }
 ?>
