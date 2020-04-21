@@ -89,14 +89,14 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
-        <div class="row">
+        <div class="row" data-aos="zoom-out-up" data-aos-duration="2000">
       <div class="alert alert-danger col-md-10 offset-md-1">
        <strong>Attention!</strong> Due to the impact of covid-19, please pay attention to personal hygiene and wear masks if necessary.
        <br>For more information, please refer to <a href="https://www.bing.com/covid/local/malaysia?form=WSHCOV">this website.</a>
     </div>
     </div>
         <!-- Three columns of text below the carousel -->
-        <div class="row">
+        <div class="row" data-aos="flip-up" data-aos-duration="2000">
           <div class="col-lg-4">
             <img class="rounded-circle" src="images/legoland.jpg" alt="Legoland image" width="140" height="140">
             <h2>Heading</h2>
@@ -122,7 +122,7 @@
 
         <hr class="featurette-divider">
 
-        <div class="row featurette">
+        <div class="row featurette" data-aos="fade-left" data-aos-duration="2000">
           <div class="col-md-7">
             <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -134,7 +134,7 @@
 
         <hr class="featurette-divider">
 
-        <div class="row featurette">
+        <div class="row featurette" data-aos="fade-right" data-aos-duration="2000">
           <div class="col-md-7 order-md-2">
             <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
@@ -146,7 +146,7 @@
 
         <hr class="featurette-divider">
 
-        <div class="row featurette">
+        <div class="row featurette" data-aos="fade-left" data-aos-duration="2000">
           <div class="col-md-7">
             <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
             <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
