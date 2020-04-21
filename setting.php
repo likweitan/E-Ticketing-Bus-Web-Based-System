@@ -203,9 +203,8 @@
             weekStart: 1,
             daysOfWeekHighlighted: "6,0",
             autoclose: true,
-            todayHighlight: true,
+            todayHighlight: false,
         });
-        $('#datepicker').datepicker("setDate", new Date());
     </script>
   </body>
 </html>

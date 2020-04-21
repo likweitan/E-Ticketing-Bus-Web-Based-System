@@ -28,7 +28,7 @@
         <form action="assets/update.inc.php" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">New email</label>
-            <input type="email" class="form-control" id="newEmail" name="newEmail">
+            <input type="email" class="form-control" id="newEmail" name="newEmail" value="<?=$myEmail?>">
           </div>
         
       </div>
@@ -55,7 +55,7 @@
         <form action="assets/update.inc.php" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">New phone number</label>
-            <input type="text" class="form-control" id="newPhone" name="newPhone">
+            <input type="text" class="form-control" id="newPhone" name="newPhone" value="<?=$myPhoneNo?>">
           </div>
         
       </div>
@@ -82,9 +82,9 @@
         <form action="assets/update.inc.php" method="post">
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">First name</label>
-            <input type="text" class="form-control" id="newFirstName" name="newFirstName">
+            <input type="text" class="form-control" id="newFirstName" name="newFirstName" value="<?=$myFirstName?>">
             <label for="recipient-name" class="col-form-label">Last name</label>
-            <input type="text" class="form-control" id="newLastName" name="newLastName">
+            <input type="text" class="form-control" id="newLastName" name="newLastName" value="<?=$myLastName?>">
           </div>
         
       </div>
@@ -137,7 +137,7 @@
       <div class="modal-body">
         <form action="assets/update.inc.php" method="post">
           <div class="form-group">
-          <input name="newBirthDate" class="form-control" data-date-format="yyyy-mm-dd" id="datepicker">
+          <input name="newBirthDate" type="date" class="form-control" data-date-format="yyyy-mm-dd" id="datepicker" value="<?=$myBirthDate?>">
           </div>
         
       </div>
