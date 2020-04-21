@@ -35,32 +35,18 @@
 
    <!-- Search Bus Ticket Start Here -->  
     <main role="main" class="container">
-      <div data-aos="zoom-out">
-        <div class="container p-3 my-3 bg-purple rounded box-shadow">
+     <!-- Search Bus Ticket Start Here-->
+     <div data-aos="zoom-out">
+       <div class="container p-3 my-3 bg-purple rounded box-shadow">
+         <form action="search.inc.php" method="get">
+           <div class="form-row  col-md-12">
+            <div class="form-group col-md-4 text-left">
 
-             <form action="search.inc.php" method="get">
-               <div class="form-row  col-md-12">
-                <!-- Select Bus From (Departure)-->
-                <div class="form-group col-md-4 text-left">
-                 <label for="inputFrom"  style="color:white;">From</label>
-                  <span style="color: red !important; display: inline; float: none;">*</span> 
-                    <select id="inputFrom" name="inputFrom" placeholder="<?php echo$inputFrom;?>"class="form-control" required>
-                       <option selected>From...</option>
-                       <option value="Johor Bahru">Johor Bahru</option>
-                       <option value="Malacca City">Malacca City</option>
-                       <option value="Kuala Lumpur">Kuala Lumpur</option>
-                       <option value="Genting Highland">Genting Highland</option>
-                       <option value="Penang">Penang (George Town)</option>
-                       <option value="Ipoh">Ipoh</option>
-                     </select>
-                 </div>
-  
-              <!-- Select Bus To (Arrival)-->
-               <div class="form-group col-md-4 text-left">
-                <label for="inputTo" style="color:white;">To</label>
-                  <span style="color: red !important; display: inline; float: none;">*</span> 
-                    <select id="inputTo" name="inputTo" placeholder="" class="form-control" required>
-                      <option selected>To...</option>
+             <!-- Select Bus From (Departure)-->
+              <label for="inputFrom"  style="color:white;">From</label>
+                <span style="color: red !important; display: inline; float: none;">*</span> 
+                   <select id="inputFrom" name="inputFrom" class="form-control" required>
+                      <option selected>From...</option>
                       <option value="Johor Bahru">Johor Bahru</option>
                       <option value="Malacca City">Malacca City</option>
                       <option value="Kuala Lumpur">Kuala Lumpur</option>
@@ -68,26 +54,40 @@
                       <option value="Penang">Penang (George Town)</option>
                       <option value="Ipoh">Ipoh</option>
                    </select>
-                </div>
+            </div>
+
+             <!-- Select Bus To (Arrival)-->
+            <div class="form-group col-md-4 text-left">
+              <label for="inputTo" style="color:white;">To</label>
+                <span style="color: red !important; display: inline; float: none;">*</span> 
+                   <select id="inputTo" name="inputTo" class="form-control" required>
+                      <option selected>To...</option>
+                      <option value="Johor Bahru">Johor Bahru</option>
+                      <option value="Malacca City">Malacca City</option>
+                      <option value="Kuala Lumpur">Kuala Lumpur</option>
+                      <option value="Genting Highland">Genting Highland</option>
+                      <option value="Penang">Penang (George Town)</option>
+                      <option value="Ipoh">Ipoh</option>
+                    </select>
+             </div>
 
               <!-- Select Bus Departure Date -->
-                 <div class="form-group col-md-4 text-left">
-                   <label for="inputDepartDate" style="color:white;">Depart Date</label>
-                    <span style="color: red !important; display: inline; float: none;">*</span> 
-                      <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
-                  </div>
-              
+            <div class="form-group col-md-4 text-left">
+               <label for="inputDepartDate" style="color:white;">Depart Date</label>
+                 <span style="color: red !important; display: inline; float: none;">*</span> 
+                    <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
+             </div>
+           </div>
 
-              <!-- Search Bus Ticket Button--> 
-                 <p class="text-right">
-                   <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
-                 </p>
-              </div>
-            </form>
-         </div>
+              <!-- Book Ticket -->
+               <p class="text-right">
+               <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
+               </p>
+          </div>
+        </form>
        </div>
-   </main>
- <!--End of Search Page-->
+      </div>
+    <!--End of Book Ticket -->
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
