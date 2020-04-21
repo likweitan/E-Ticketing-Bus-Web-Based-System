@@ -38,10 +38,20 @@
                   <button type="button" class="close" data-dismiss="alert">&times;</button>';
           if($_GET["error"] == "wrong_password")
             echo "Your password is incorrect";
-          else if($_GET["adduser"] == "success")
-            echo "Your account has been created";
           else
             echo "Your account is not existed";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["adduser"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["adduser"] == "success")
+            echo "Your account has been created";
            echo '</div>
            </div>
        </div>';
