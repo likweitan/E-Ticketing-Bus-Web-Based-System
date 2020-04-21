@@ -32,7 +32,28 @@
        <?php
         include('assets/header.php');
        ?>
-
+  <!-- Display error message to user -->  
+    <?php
+        if(!empty($_GET["error"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["error"] == "invalid_from"){
+            echo "Please select where your journey start";
+          }
+          else if($_GET["error"] == "invalid_to"){
+            echo "Please select where your journey end";
+          }
+          else {
+            echo "Please select your journey date";
+          }
+          echo '</div>
+          </div>
+      </div>';
+        }
+      ?>
    <!-- Search Bus Ticket Start Here -->  
     <main role="main" class="container">
      <!-- Search Bus Ticket Start Here-->
@@ -78,23 +99,6 @@
                     <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
              </div>
            </div>
-
-           <?php
-        if(!empty($_GET["error"]))
-        {
-          echo '<div class="alert alert-primary" role="alert">';
-          if($_GET["error"] == "invalid_from"){
-            echo "Please select where your journey start";
-          }
-          else if($_GET["error"] == "invalid_to"){
-            echo "Please select where your journey end";
-          }
-          else {
-            echo "Please select your journey date";
-          }
-           echo '</div>';
-        }
-      ?>
               <!-- Book Ticket -->
                <p class="text-right">
                <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
