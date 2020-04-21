@@ -58,4 +58,18 @@ else if(isset($_POST['newCountry']))
         header("Location: ../setting.php?country=fail");
     }
 }
+else if(isset($_POST['newBirthDate']))
+{
+    $sql = "UPDATE s900_database.account SET BirthDate = '".$_POST['newBirthDate']."' WHERE AccountNo =".$_SESSION['id'];
+    $query = mysqli_query($con,$sql);
+
+    if($query)
+    {
+        header("Location: ../setting.php?birthdate=success");
+    }
+    else
+    {
+        header("Location: ../setting.php?birthdate=fail");
+    }
+}
 ?>
