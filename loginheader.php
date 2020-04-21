@@ -7,7 +7,8 @@ session_start();
 if(isset($_SESSION['id']))
 {
     $sql = "SELECT *,
-            YEAR(AccountTimestamp) AS SinceYear
+            YEAR(AccountTimestamp) AS SinceYear,
+            DATE(AccountTimestamp) AS SinceDate
             FROM account
             WHERE AccountNo =".$_SESSION['id'];
     $query = mysqli_query($con,$sql);
@@ -19,10 +20,12 @@ if(isset($_SESSION['id']))
         $myLastName = $row['LastName'];
         $myEmail = $row['Email'];
         $myPhoneNo = $row['PhoneNumber'];
+        $myBirthDate = $row['BirthDate'];
         $myPassword = $row['Password'];
         $myGender = $row['Gender'];
         $myAccountRole = $row['AccountRole'];
         $myCountry = $row['Nationality'];
+        $myStartDate = $row['SinceDate'];
         $sinceYear = $row['SinceYear'];
     }
 }

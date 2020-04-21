@@ -106,7 +106,7 @@
               <strong class="text-gray-dark">Password</strong>
               <a href="#">Reset password</a>
             </div>
-            <span class="d-block">Last changed: 24/02/2020</span>
+            <span class="d-block">Last changed: <?=$myStartDate?></span>
           </div>
         </div>
       </div>
@@ -153,9 +153,9 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Date of Birth</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editBirthDate">Edit</a>
             </div>
-            <span class="d-block">Last changed: 24/02/2020</span>
+            <span class="d-block"><?=$myBirthDate?></span>
           </div>
         </div>
 
@@ -164,7 +164,7 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Country / Region</strong>
-              <a href="#">Edit</a>
+              <a href="#" data-toggle="modal" data-target="#editCountry">Edit</a>
             </div>
             <span class="d-block"><?=$myCountry?></span>
           </div>

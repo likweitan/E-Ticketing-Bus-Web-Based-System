@@ -44,4 +44,18 @@ else if(isset($_POST['newPhone']))
         header("Location: ../setting.php?phone=fail");
     }
 }
+else if(isset($_POST['newCountry']))
+{
+    $sql = "UPDATE s900_database.account SET Nationality = '".$_POST['newCountry']."' WHERE AccountNo =".$_SESSION['id'];
+    $query = mysqli_query($con,$sql);
+
+    if($query)
+    {
+        header("Location: ../setting.php?country=success");
+    }
+    else
+    {
+        header("Location: ../setting.php?country=fail");
+    }
+}
 ?>
