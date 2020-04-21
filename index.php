@@ -26,11 +26,7 @@
   ?>
  
     <main role="main">
-    <div class="alert alert-danger alert-dismissible">
-      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-       <strong>Attention!</strong> Due to the impact of covid-19, please pay attention to personal hygiene and wear masks if necessary.
-       For more information, please refer to <a href="https://www.bing.com/covid/local/indonesia?form=WSHCOV">this website.</a>
-    </div>
+    
 
     <section class="jumbotron text-center" style="background-image: url('images/malaysia.jpg');" >
         <div class="container" >
@@ -90,7 +86,12 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
-        
+        <div class="row">
+      <div class="alert alert-danger col-md-10 offset-md-1">
+       <strong>Attention!</strong> Due to the impact of covid-19, please pay attention to personal hygiene and wear masks if necessary.
+       <br>For more information, please refer to <a href="https://www.bing.com/covid/local/indonesia?form=WSHCOV">this website.</a>
+    </div>
+    </div>
         <!-- Three columns of text below the carousel -->
         <div class="row">
           <div class="col-lg-4">
