@@ -89,7 +89,7 @@
         <div class="row">
       <div class="alert alert-danger col-md-10 offset-md-1">
        <strong>Attention!</strong> Due to the impact of covid-19, please pay attention to personal hygiene and wear masks if necessary.
-       <br>For more information, please refer to <a href="https://www.bing.com/covid/local/indonesia?form=WSHCOV">this website.</a>
+       <br>For more information, please refer to <a href="https://www.bing.com/covid/local/malaysia?form=WSHCOV">this website.</a>
     </div>
     </div>
         <!-- Three columns of text below the carousel -->
