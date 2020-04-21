@@ -30,4 +30,18 @@ else if(isset($_POST['newFirstName']) && isset($_POST['newLastName']))
         header("Location: ../setting.php?name=fail");
     }
 }
+else if(isset($_POST['newPhone']))
+{
+    $sql = "UPDATE s900_database.account SET PhoneNumber = '".$_POST['newPhone']."' WHERE AccountNo =".$_SESSION['id'];
+    $query = mysqli_query($con,$sql);
+
+    if($query)
+    {
+        header("Location: ../setting.php?phone=success");
+    }
+    else
+    {
+        header("Location: ../setting.php?phone=fail");
+    }
+}
 ?>

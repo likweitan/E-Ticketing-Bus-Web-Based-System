@@ -18,6 +18,7 @@ if(isset($_SESSION['id']))
         $myFirstName = $row['FirstName'];
         $myLastName = $row['LastName'];
         $myEmail = $row['Email'];
+        $myPhoneNo = $row['PhoneNumber'];
         $myPassword = $row['Password'];
         $myGender = $row['Gender'];
         $myAccountRole = $row['AccountRole'];

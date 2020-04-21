@@ -96,7 +96,7 @@
               <strong class="text-gray-dark">Contact number</strong>
               <a href="#" data-toggle="modal" data-target="#editPhone">Edit</a>
             </div>
-            <span class="d-block">012-29399329932</span>
+            <span class="d-block"><?=$myPhoneNo?></span>
           </div>
         </div>
         <div class="media text-muted pt-3">
