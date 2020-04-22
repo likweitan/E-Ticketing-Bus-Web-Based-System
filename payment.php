@@ -1,7 +1,6 @@
 <?php
     require("db.php");
     require("loginheader.php");
-  
         $inputFrom = $_GET['inputFrom'];
         $inputTo = $_GET["inputTo"];
         $inputDepartDate = $_GET["inputDepartDate"];
@@ -11,9 +10,6 @@
         $TicketPrice = $_GET["TicketPrice"];
         $ScheduleDuration = $_GET["ScheduleDuration"];
         $inputTime = $_GET["inputTime"];
-
-        
-    
 ?>
 
 
@@ -106,11 +102,11 @@
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (MYR)</span>
-              <strong>$20</strong>
+              <strong><?php echo"$TicketPrice"; ?></strong>
             </li>
           </ul>
 
-          <form class="card p-2">
+          <form class="card p-2" action = <?php "payment.inc.php" ?> method="POST">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Promo code">
               <div class="input-group-append">
@@ -146,18 +142,18 @@
 
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
-                <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" for="credit">Credit card</label>
+                <input id="credit" name="PaymentType" type="radio" class="custom-control-input" checked required>
+                <label class="custom-control-label" value="CreditCard" for="credit">Credit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="debit">Debit card</label>
+                <input id="debit" name="PaymentType" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label" value= "Debit Card" for="debit">Debit card</label>
               </div>
             </div>
             <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="cc-name">Name on card</label>
-                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <input type="text" class="form-control" name="CardName" id="cc-name" placeholder="" required>
                 <small class="text-muted">Full name as displayed on card</small>
                 <div class="invalid-feedback">
                   Name on card is required
@@ -165,7 +161,7 @@
               </div>
               <div class="col-md-6 mb-3">
                 <label for="cc-number">Credit card number</label>
-                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <input type="text" class="form-control" maxlength="16" pattern="[1-9][0-9][0-9][0-9]{13}" name="CardNumber" id="cc-number" placeholder="" required>
                 <div class="invalid-feedback">
                   Credit card number is required
                 </div>
@@ -174,21 +170,21 @@
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <input type="text" class="form-control" name="CardExpiration" id="cc-expiration" placeholder="" required>
                 <div class="invalid-feedback">
                   Expiration date required
                 </div>
               </div>
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">CVV</label>
-                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <input type="text" maxlength="3" pattern="\d{3}" class="form-control" name="CVV" id="cc-cvv" placeholder="" required>
                 <div class="invalid-feedback">
                   Security code required
                 </div>
               </div>
             </div>
             <hr class="mb-4">
-            <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
+            <button class="btn btn-primary btn-lg btn-block" name="checkout" type="submit">Continue to checkout</button>
           </form>
         </div>
       </div>
