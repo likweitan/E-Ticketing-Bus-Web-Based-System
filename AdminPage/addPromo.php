@@ -154,8 +154,8 @@
                         <td>
                           <a href="addPromo.php? edit=<?php echo $row['PromoCode']; ?>"
                              class="btn btn-info">Edit</a>
-                          <a href="addingPromo.php? delete=<?php echo $row['PromoCode']; ?>"
-                             class="btn btn-danger">Delete</a>
+                          <!--<a href="addingPromo.php? delete=<?php echo $row['PromoCode']; ?>"
+                             class="btn btn-danger">Delete</a>-->
                         </td>
                     </tr>
                 <?php endwhile; ?>
