@@ -2,7 +2,7 @@
     require("loginheader.php");
 
     function getAll() {
-        echo "&busno=".$_GET['busno']."&inputDepartDate=".$_GET['inputDepartDate']."&inputTo=".$_GET['inputTo']."&inputFrom=".$_GET['inputFrom']."&inputTime=".$_GET['inputTime'];
+        echo "&busno=".$_GET['busno']."&inputDepartDate=".$_GET['inputDepartDate']."&inputTo=".$_GET['inputTo']."&inputFrom=".$_GET['inputFrom']."&inputTime=".$_GET['inputTime']."&ScheduleDuration=".$_GET['ScheduleDuration']."&TicketPrice=".$_GET['TicketPrice']."&BusCompany=".$_GET['BusCompany'];
     }
 ?>
 
@@ -55,8 +55,9 @@
         <br>
         <div class="container">
         <div class="row">
+
     <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary"><a href=“payment.php?seatno=3<?=getAll()?>”>03</a></button>
+    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3<?=getAll()?>">03</a></button>
     </div>
     <div class="col-sm">
     <button type="button" class="btn btn-outline-primary">06</button>
@@ -153,7 +154,6 @@
   </div>
 </div>
       </div>
-      
       </div>
 
 

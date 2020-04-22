@@ -1,6 +1,19 @@
 <?php
     require("db.php");
     require("loginheader.php");
+  
+        $inputFrom = $_GET['inputFrom'];
+        $inputTo = $_GET["inputTo"];
+        $inputDepartDate = $_GET["inputDepartDate"];
+        $BusCompany = $_GET["BusCompany"];
+        $seatno = $_GET["seatno"];
+        $busno = $_GET["busno"];
+        $TicketPrice = $_GET["TicketPrice"];
+        $ScheduleDuration = $_GET["ScheduleDuration"];
+        $inputTime = $_GET["inputTime"];
+
+        
+    
 ?>
 
 
@@ -42,37 +55,47 @@
             <span class="text-muted">Your Booking Details</span>
           </h4>
           <ul class="list-group mb-3">
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
-              <div>
-                <h6 class="my-0">Origin</h6>
-              </div>
-              <span class="text-muted"></span>
-              <div>
-                <h6 class="my-0">Destination</h6>
-              </div>
-              <span class="text-muted"></span>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" style="border:0px">
               <div>
                 <h6 class="my-0">Bus Company</h6>
               </div>
-              <span class="text-muted"></span>
+              <span class="text-muted"><?php echo"$BusCompany"; ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" style="border:0px">
               <div>
                 <h6 class="my-0">Bus No</h6>
               </div>
-              <span class="text-muted"></span>
+              <span class="text-muted"><?php echo"$busno"; ?></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed " style="border:0px">
+              <div>
+                <h6 class="my-0">Origin</h6>
+              </div>
+              <span class="text-muted"><?php echo"$inputFrom"; ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" style="border:0px">
               <div>
                 <h6 class="my-0">Destination</h6>
-                <small class="text-muted">Brief description</small>
               </div>
-              <span class="text-muted">$8</span>
+              <span class="text-muted"><?php echo"$inputTo"; ?></span>
             </li>
-            <li class="list-group-item d-flex justify-content-between lh-condensed">
+            <li class="list-group-item d-flex justify-content-between lh-condensed" style="border:0px">
               <div>
-                <h6 class="my-0">Third item</h6>
-                <small class="text-muted">Brief description</small>
+                <h6 class="my-0">Duration</h6>
               </div>
-              <span class="text-muted">$5</span>
+              <span class="text-muted"><?php echo"$ScheduleDuration"; ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed " style="border:0px">
+              <div>
+                <h6 class="my-0">Seat No</h6>
+              </div>
+              <span class="text-muted"><?php echo"$seatno"; ?></span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between lh-condensed" >
+              <div>
+                <h6 class="my-0">Ticket Price</h6>
+              </div>
+              <span class="text-muted"><?php echo"$TicketPrice"; ?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
@@ -82,7 +105,7 @@
               <span class="text-success">-$5</span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
-              <span>Total (USD)</span>
+              <span>Total (MYR)</span>
               <strong>$20</strong>
             </li>
           </ul>
@@ -97,9 +120,28 @@
           </form>
         </div>
         <div class="col-md-8 order-md-1">
+        <div class="row">
+              <div class="col-md-6 mb-3">
+              <div class="media text-muted pt-3">
+              <img src="images/calendar.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
+                <label for="cc-name">Date</label>
+                </div>
+                <strong><?php echo"$inputDepartDate";?></strong>
+              </div>
+              <div class="col-md-6 mb-3">
+              <div class="media text-muted pt-3">
+              <img src="images/clock.svg" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
+                <label for="cc-number">Time</label>
+                </div>
+                <strong><?php echo"$inputTime"; ?></strong>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
           <form class="needs-validation" novalidate>
             <hr class="mb-4">
-
+            
             <h4 class="mb-3">Payment</h4>
 
             <div class="d-block my-3">
@@ -110,10 +152,6 @@
               <div class="custom-control custom-radio">
                 <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
                 <label class="custom-control-label" for="debit">Debit card</label>
-              </div>
-              <div class="custom-control custom-radio">
-                <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" for="paypal">Paypal</label>
               </div>
             </div>
             <div class="row">
