@@ -86,7 +86,7 @@
       <!-- Wrap the rest of the page in another container to center all the content. -->
 
       <div class="container marketing">
-        <div class="row" data-aos="zoom-out-up" data-aos-duration="2000">
+        <div class="row" data-aos="fade" data-aos-duration="2000">
       <div class="alert alert-danger col-md-10 offset-md-1">
        <strong>Attention!</strong> Due to the impact of covid-19, please pay attention to personal hygiene and wear masks if necessary.
        <br>For more information, please refer to <a href="https://www.bing.com/covid/local/malaysia?form=WSHCOV">this website.</a>
@@ -94,22 +94,22 @@
     </div>
         <!-- Three columns of text below the carousel -->
         <div class="row">
-          <div class="col-lg-4" data-aos="fade-left" data-aos-duration="3000">
+          <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/legoland.jpg" alt="Legoland image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+            <h2>MYNEW</h2>
+            <p>Upto 10% discount + 10 RM cashback</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4" data-aos="fade-down" data-aos-duration="3000">
+          <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/theme_park.jpg" alt="Theme Park image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <h2>MYOFFER</h2>
+            <p>Get upto 15% cashback</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
-          <div class="col-lg-4" data-aos="fade-right" data-aos-duration="3000">
+          <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/lostworld.jpeg" alt="Lost World image" width="140" height="140">
-            <h2>Heading</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <h2>RBKT</h2>
+            <p>upto 10% Discount</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
