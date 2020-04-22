@@ -1,5 +1,4 @@
 <?php
-    require("db.php");
     require("loginheader.php");
 
     if(isset($_GET['book_ticket'])){
