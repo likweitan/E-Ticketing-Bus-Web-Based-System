@@ -15,7 +15,9 @@
         $ScheduleDuration = mysqli_real_escape_string($con, $_POST["ScheduleDuration"]);
         $seatno = mysqli_real_escape_string($con, $_POST["seatno"]);
         $TicketPrice = mysqli_real_escape_string($con, $_POST["TicketPrice"]);
-        $insert =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration)
+        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration)
         VALUES('$PaymentType', '$CardName', '$CardNumber', '$CardExpiration') WHERE AccountNo=".$_SESSION['id']);
-     }
+        $insertBooking =  mysqli_query($con,"INSERT INTO booking (ScheduleDuration,seatno)
+        VALUES('$ScheduleDuration', '$seatno') WHERE AccountNo=".$_SESSION['id']);
+    }
 ?>
