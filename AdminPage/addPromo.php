@@ -6,14 +6,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Dashboard Template for Bootstrap</title>
+    <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <!--<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css"/>-->
+    <title>Manage Promotion</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="css/dashboard.css" rel="stylesheet">
+    <link href="../css/dashboard.css" rel="stylesheet">
   </head>
 
   <body>
@@ -34,7 +35,7 @@
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
-                  Dashboard <span class="sr-only"></span>
+                  Dashboard 
                 </a>
               </li>
               <li class="nav-item">
@@ -47,6 +48,7 @@
                 <a class="nav-link" href="#">
                   <span data-feather="shopping-cart">(current)</span>
                   Promotion
+                  <span class="sr-only"></span>
                 </a>
               </li>
               <li class="nav-item">
@@ -77,11 +79,99 @@
          <!--this is the main contain of container-->
          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Promotion Management</h1>
-            
+           
           </div>
+
+          <!--Start the CRUD-->
+          <?php require_once 'addingPromo.php'; ?>
+          <?php
+            if(isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+            <?php
+              echo $_SESSION['message'];
+              unset ($_SESSION['message']);
+            ?>
+          </div>
+          <?php endif ?>      
+         
+          <div class = "container">
+          <div class="row justify-content-center">
+          <form action = "addingPromo.php" method="POST">
+              
+              <div class="form-group">
+                  <label>Promotion Code</label>
+                  <input type="text" name="pCode" class="form-control" value ="<?php echo $prCode; ?>" placeholder="Create Promotion Code">
+              </div>
+              <div class="form-group">
+                  <label>Promotion Code Description</label>
+                  <input type="text" name="pcDes" class="form-control" value ="<?php echo $prcDes; ?>" placeholder="Enter Promotion Code Description">
+              </div>
+              <div class="form-group">
+                  <label>Promotion End Date</label>
+                  <input type="text" name="pcEnd" class="form-control" value ="<?php echo $prcEnd; ?>" placeholder="Insert Promotion End Date">
+              </div>
+              <div class="form-group">
+                  <label>Promotion Start Date</label>
+                  <input type="text" name="pcStart" class="form-control" value ="<?php echo $prcStart; ?>" placeholder="Insert Promotion Start Date">
+              </div>
+              <div class="form-group">
+                  <?php
+                    if($update == true):
+                  ?>
+                    <button type="submit" name="updateProm" class="btn btn-info" >Update</button>
+                    <?php else: ?>
+                    <button type="submit" name="addProm" class="btn btn-primary" >Add</button>
+                  <?php endif; ?>
+              </div>
+          </form>
+          </div>   
+          </div>
+          <div class = "container">
+          <?php //Display Promotion code From database
+              include("../db.php");
+              $result = $con->query("SELECT * FROM promo_code") or die($con->error());  
+          ?>
+          <div class="row justify-content-center">
+              <table class="table">
+                <thead>
+                  <tr>
+                      <th>Promotion Code </th>
+                      <th>Promotion Description</th>
+                      <th>Promotion End Date</th>
+                      <th>Promotion Start Date</th>
+                      <th colspan="2">Action</th>
+                  </tr>
+                </thead>
+                <?php
+                    while ($row = $result->fetch_assoc()): ?>
+                
+                    <tr>
+                        <td><?php echo $row['PromoCode'] ?></td>
+                        <td><?php echo $row['PromoCodeDescription'] ?></td>
+                        <td><?php echo $row['PromoCodeEndTimestamp'] ?></td>
+                        <td><?php echo $row['PromoCodeStartTimestamp'] ?></td>
+                        <td>
+                          <a href="addPromo.php? edit=<?php echo $row['PromoCode']; ?>"
+                             class="btn btn-info">Edit</a>
+                          <a href="addingPromo.php? delete=<?php echo $row['PromoCode']; ?>"
+                             class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <?php endwhile; ?>
+              </table>
+          </div>
+          </div>
+
+          <!--End the CRUD--> 
+          
+
+          
+
         </main>
-      </div>
+      </div>  
     </div>
+         
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -96,36 +186,6 @@
       feather.replace()
     </script>
 
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 0],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
     </script>
   </body>
 </html>
