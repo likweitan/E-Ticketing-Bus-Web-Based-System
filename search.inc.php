@@ -157,7 +157,7 @@
                echo "<td>";
                echo $row['TicketPrice'];
                echo "</td>";
-               echo "<td><a href='select_bus.php?busno=";
+               echo "<td><a href='select_seat.php?busno=";
                echo $row['BusNo'];
                echo "'>Select</a></td></tr>";        
               }
