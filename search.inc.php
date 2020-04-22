@@ -103,7 +103,7 @@
 
               <!-- Book Ticket -->
                <p class="text-right">
-               <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Book Ticket</button>
+               <button class="btn btn-primary my-2" id="book_ticket" name="book_ticket">Search</button>
                </p>
           </div>
         </form>
