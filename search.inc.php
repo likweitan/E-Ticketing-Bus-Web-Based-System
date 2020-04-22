@@ -7,8 +7,11 @@
     $inputDepartDate = $_GET["inputDepartDate"];
     
      //Input Validation
-    if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
-    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo' AND ScheduleStartTime > CURRENT_TIME()");
+    if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != date("Y-m-d")){
+    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
+    }
+    else if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
+      $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo' AND ScheduleStartTime > CURRENT_TIME()");
     }
     else if($inputFrom == "From..."){
       header("location: searchbus.php?error=invalid_from");
