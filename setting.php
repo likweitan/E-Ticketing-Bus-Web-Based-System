@@ -24,15 +24,113 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker.min.css" rel="stylesheet"/>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></head>
 
+    <style>
+    #message {
+        position: fixed;
+        top: 90%;
+        left: 70%;
+        width: 30%;
+        z-index: 20;
+    }
+    #inner-message {
+        margin: 0 auto;
+    }
+    </style>
   </head>
 
   <body class="bg-light">
+  
 
   <!-- HEADER-->
   <?php
     include('assets/header.php');
   ?>
-
+<?php
+        if(!empty($_GET["phone"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["phone"] == "success")
+            echo "Your phone number has been updated";
+          else
+            echo "Your phone number has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["email"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["email"] == "success")
+            echo "Your email has been updated";
+          else
+            echo "Your email has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["name"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["name"] == "success")
+            echo "Your name has been updated";
+          else
+            echo "Your name has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["gender"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["gender"] == "success")
+            echo "Your gender has been updated";
+          else
+            echo "Your gender has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["birthdate"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["birthdate"] == "success")
+            echo "Your birthday has been updated";
+          else
+            echo "Your birthday has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+        else if(!empty($_GET["country"]))
+        {
+          echo '<div id="message">
+          <div style="padding: 5px;">
+          <div id="inner-message" class="alert alert-warning" role="alert">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>';
+          if($_GET["country"] == "success")
+            echo "Your country has been updated";
+          else
+            echo "Your country has not been updated";
+           echo '</div>
+           </div>
+       </div>';
+        }
+  ?>
     <main role="main" class="container">
     
       <div data-aos="zoom-out">
@@ -70,18 +168,6 @@
 
     <div data-aos="fade-right">
       <div class="my-3 p-3 bg-white rounded box-shadow">
-      <?php
-        if(isset($_GET['email'])){
-            if($_GET['email'] == 'success')
-              echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-              Your email is updated successfully!
-            </div>';
-            else if($_GET['email'] == 'fail')
-            echo '<div class="alert alert-danger" role="alert">
-            Oops! There is something wrong happenned.
-          </div>';
-        }
-            ?>
         <h6 class="border-bottom border-gray pb-2 mb-0">Account</h6>
         <div class="media text-muted pt-3">
           <img src="https://raw.githubusercontent.com/google/material-design-icons/master/communication/2x_web/ic_email_black_48dp.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
