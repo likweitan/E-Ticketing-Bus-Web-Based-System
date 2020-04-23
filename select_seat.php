@@ -68,102 +68,35 @@
         <br>
         <div class="container">
         <div class="row">
-
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>">03</a></button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">06</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">09</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">12</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">15</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">18</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">21</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">24</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">27</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">30</button>
-    </div>
+    <?php
+        for ($x = 3; $x <= 30; $x+=3)
+        {
+            echo '<div class="col-sm">';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo "</div>";
+        } 
+    ?>
   </div>
   <div class="row">
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">02</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">05</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">08</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">11</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">14</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">17</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">20</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">23</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">26</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">29</button>
-    </div>
+  <?php
+        for ($x = 2; $x <= 30; $x+=3)
+        {
+            echo '<div class="col-sm">';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo "</div>";
+        } 
+    ?>
   </div>
   <br>
   <div class="row">
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">01</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">04</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">07</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">10</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">13</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">16</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">19</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">22</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">25</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">28</button>
-    </div>
+  <?php
+        for ($x = 1; $x <= 30; $x+=3)
+        {
+            echo '<div class="col-sm">';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo "</div>";
+        } 
+    ?>
   </div>
 </div>
       </div>
