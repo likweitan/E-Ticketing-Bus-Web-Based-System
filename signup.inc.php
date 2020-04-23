@@ -7,7 +7,7 @@
     $inputFirstName = mysqli_real_escape_string($con, $_POST["inputFirstName"]);
     $inputLastName =  mysqli_real_escape_string($con,$_POST["inputLastName"]);
     $inputEmail =  mysqli_real_escape_string($con,$_POST["inputEmail"]);
-    $inputPassword =  mysqli_real_escape_string($con, $_POST["inputPassword"]);
+    $inputPassword =  mysqli_real_escape_string($con, md5($_POST["inputPassword"]));
     $inputGender = mysqli_real_escape_string($con, $_POST["inputGender"]);
     $inputDate =  mysqli_real_escape_string($con,$_POST["inputDate"]);
     $country =  mysqli_real_escape_string($con,$_POST["country"]);
