@@ -86,8 +86,11 @@
     <br>
     <div class="col-md-12 text-center">
     <button type="button" class="btn btn-primary" onclick="printJS({ printable: 'invoice-box', type: 'html', css: 'css/invoice.css' })">Print</button>
-<button type="button" class="btn btn-danger">Cancel Booking</button>
-        </div>
+    <?php
+      if($bookingStatus == "Confirmed")
+            echo '<a href="assets/cancelbooking.inc.php?bookingno='.$_GET['bookingno'].'"><button type="button" class="btn btn-danger">Cancel Booking</button></a>';
+    ?>
+       </div>
         </div>
     </main><!-- /.container -->
 

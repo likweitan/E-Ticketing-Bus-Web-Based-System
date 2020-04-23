@@ -5,11 +5,13 @@
     {
         $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
         RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
-        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP()";
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP() AND BookingStatus = 'Confirmed'
+        ORDER BY BusDateTime ASC";
         $query_upcoming = mysqli_query($con,$sql);
         $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
         RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
-        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime < CURRENT_TIMESTAMP()";
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime < CURRENT_TIMESTAMP() AND BookingStatus = 'Completed' OR BookingStatus = 'Cancelled'
+        ORDER BY BusDateTime DESC";
         $query_past = mysqli_query($con,$sql);
     }
 ?>
@@ -89,7 +91,9 @@
             echo "</td>";
             echo "<td><a href='viewbooking.php?bookingno=";
             echo $row['BookingNo'];
-            echo "'>Confirmed</a></td>
+            echo "'>";
+            echo $row['BookingStatus'];
+            echo "</a></td>
         </tr>
     ";
 }
@@ -136,7 +140,9 @@
             echo "</td>";
             echo "<td><a href='viewbooking.php?bookingno=";
             echo $row['BookingNo'];
-            echo "'>Completed</a></td>
+            echo "'>";
+            echo $row['BookingStatus'];
+            echo "</a></td>
         </tr>
     ";
 }

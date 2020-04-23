@@ -21,6 +21,7 @@
             $depart = $row['ScheduleDepart'];
             $arrive = $row['ScheduleArrive'];
             $seatNo = $row['BusSeat'];
+            $bookingStatus = $row['BookingStatus'];
             $totalamount = number_format((float)$quantity*$ticketPrice, 2, '.', '');
         }
     }
@@ -29,7 +30,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Receipt</title>
+    <title></title>
     <link href="css/invoice.css" rel="stylesheet">
 </head>
 
@@ -44,10 +45,21 @@
                                 <img src="images/logo_black.png" style="width:20%; max-width:300px;">
                             </td>
                             
-                            <td>
+                            <td><?php
+      if($bookingStatus == "Completed")
+            echo '
+            <h3 style="color: #588da8">Completed</h3>
+        ';
+        else if($bookingStatus == "Cancelled")
+        echo '
+        <h3 style="color: #d8345f">Cancelled</h3>
+    ';
+    ?>
                                 <p><small>Need Help? Toll Number: +60-339882525<br>Email: support@bluebus.my</small></p>
                             </td>
+                            
                         </tr>
+                        
                     </table>
                 </td>
             </tr>
@@ -134,9 +146,20 @@
                 </td>
             </tr>
         </table>
-        <p style="text-align:center;"><img src="https://api.qrserver.com/v1/create-qr-code/?data=<?=$bookingNo?>&amp;size=100x100" alt="<?=$bookingNo?>" title="" /></p>
-        <p><strong>Note:</strong> <small>Customers are advised to present a print out of this ticket along with an identity proof to redeem the boarding pass at check-in counter. Failing to
-do so, the boarding might be denied.</small></p>
+        <?php
+            if($bookingStatus != "Confirmed")
+            {
+                echo '<br>';
+                echo '<p style="text-align:center;">Thank you for choosing <strong>blueBus</strong>!</p>';
+            }
+            else
+            {
+                echo '<p style="text-align:center;"><img src="https://api.qrserver.com/v1/create-qr-code/?data='.$bookingNo.'&amp;size=100x100" alt="'.$bookingNo.'" title="" /></p>';
+                echo '<p><strong>Note:</strong> <small>Customers are advised to present a print out of this ticket along with an identity proof to redeem the boarding pass at check-in counter. Failing to
+                do so, the boarding might be denied.</small></p>';
+            }
+        ?>
+        
     </div>
 </body>
 </html>
