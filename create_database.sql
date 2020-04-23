@@ -42,6 +42,7 @@ CREATE TABLE promo_code
     PromoCodeDescription varchar(50) NOT NULL,
     PromoPercentage int NOT NULL,
     PromoCodeEndTimestamp date NOT NULL,
+    FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
     PromoCodeStartTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 
