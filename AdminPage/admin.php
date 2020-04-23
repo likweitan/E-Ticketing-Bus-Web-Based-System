@@ -1,3 +1,70 @@
+<?php
+  require("../loginheader.php");
+
+  $account = '';
+	$date = '';
+	$Jan = 0;
+	$Feb = 0;
+	$Mar = 0;
+	$Apr = 0;
+	$May = 0;
+	$Jun = 0;
+	$Jul = 0;
+	$Aug = 0;
+	$Sept = 0;
+	$Oct = 0;
+	$Nov = 0;
+	$Dec = 0;
+
+  $sql = "SELECT MONTH(BookingTimestamp) AS Month, SUM(TicketPrice) AS Earn FROM booking 
+  RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo 
+  GROUP BY Month";
+        $query = mysqli_query($con,$sql);
+        
+        while($row = mysqli_fetch_array($query))
+        {
+        $Account = $row['Earn'];
+$Month = $row['Month'];
+        switch ($Month) {
+case "1":
+$Jan = $Account;
+break;	
+case "2":
+$Feb = $Account;
+break;
+case "3":
+$Mar = $Account;
+break;
+case "4":
+$Apr = $Account;
+break;
+case "5":
+$May = $Account;
+break;
+case "6":
+$Jun = $Account;
+break;
+case "7":
+$Jul = $Account;
+break;
+case "8":
+$Aug = $Account;
+break;
+case "9":
+$Sept = $Account;
+break;
+case "10":
+$Oct = $Account;
+break;
+case "11":
+$Nov = $Account;
+break;
+case "12":
+$Dec = $Account;
+break;
+}
+        }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,7 +74,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>blueBus - Admin</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -75,15 +142,11 @@
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Dashboard</h1>
+            <h1 class="h2">Total Earnings</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
-              <div class="btn-group mr-2">
-                <button class="btn btn-sm btn-outline-secondary">Share</button>
-                <button class="btn btn-sm btn-outline-secondary">Export</button>
-              </div>
-              <button class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <button class="btn btn-sm btn-outline-secondary">
                 <span data-feather="calendar"></span>
-                This week
+                This year
               </button>
             </div>
           </div>
@@ -242,9 +305,9 @@
       var myChart = new Chart(ctx, {
         type: 'line',
         data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"],
           datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 0],
+            data: [<?=$Jan?>,<?=$Feb?>,<?=$Mar?>,<?=$Apr?>,<?=$May?>,<?=$Jun?>,<?=$Jul?>,<?=$Aug?>,<?=$Sept?>,<?= $Oct?>,<?=$Nov?>,<?=$Dec?>],
             lineTension: 0,
             backgroundColor: 'transparent',
             borderColor: '#007bff',
