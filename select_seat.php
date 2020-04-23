@@ -1,8 +1,21 @@
 <?php
     require("loginheader.php");
 
-    function getAll() {
-        echo "&busno=".$_GET['busno']."&inputDepartDate=".$_GET['inputDepartDate']."&inputTo=".$_GET['inputTo']."&inputFrom=".$_GET['inputFrom']."&inputTime=".$_GET['inputTime']."&ScheduleDuration=".$_GET['ScheduleDuration']."&TicketPrice=".$_GET['TicketPrice']."&BusCompany=".$_GET['BusCompany'];
+    $sql = "SELECT *
+            FROM bus_schedule
+            WHERE ScheduleNo =".$_GET['scheduleno'];
+    $query = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($query);
+
+    if($row)
+    {
+        $scheduleno = $row['ScheduleNo'];
+        $busno = $row['BusNo'];
+        $scheduledepart = $row['ScheduleDepart'];
+        $schedulearrive = $row['ScheduleArrive'];
+        $schedulestart = $row['ScheduleStartTime'];
+        $scheduleduration = $row['ScheduleDuration'];
+        $ticketprice = $row['TicketPrice'];
     }
 ?>
 
@@ -42,9 +55,9 @@
       <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded box-shadow">
         <img class="mr-3" src="https://www.mc-heads.net/avatar/1/100/nohelm.png" alt="" width="48" height="48">
         <div class="lh-100">
-          <h6 class="mb-0 text-white"><?=$_GET['busno']?></h6>
-          <h6 class="mb-0 text-white"><?=$_GET['inputDepartDate']." ".$_GET['inputTime']?></h6>
-          <h6 class="mb-0 text-white"><?=$_GET['inputFrom']." TO ".$_GET['inputTo']?></h6>
+          <h6 class="mb-0 text-white"><?=$busno?></h6>
+          <h6 class="mb-0 text-white"><?=$_GET['inputdate']." ".$schedulestart?></h6>
+          <h6 class="mb-0 text-white"><?=$scheduledepart." TO ".$schedulearrive?></h6>
         </div>
           </div>
       </div>
@@ -57,7 +70,7 @@
         <div class="row">
 
     <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3<?=getAll()?>">03</a></button>
+    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>">03</a></button>
     </div>
     <div class="col-sm">
     <button type="button" class="btn btn-outline-primary">06</button>

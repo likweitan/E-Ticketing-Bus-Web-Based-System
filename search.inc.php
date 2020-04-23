@@ -159,12 +159,9 @@
                echo "<td>";
                echo $row['TicketPrice'];
                echo "</td>";
-               echo "<td><a href='select_seat.php?busno=";
-               echo $row['BusNo'];
-               echo "&inputDepartDate=".$_GET['inputDepartDate'].
-               "&inputTo=".$_GET['inputTo']."&inputFrom=".$_GET['inputFrom'].
-               "&inputTime=".$row['ScheduleStartTime']."&BusCompany=".$row['BusCompany'].
-               "&ScheduleDuration=".$row['ScheduleDuration']."&TicketPrice=".$row['TicketPrice'];
+               echo "<td><a href='select_seat.php?scheduleno=";
+               echo $row['ScheduleNo'];
+               echo "&inputdate=".$inputDepartDate;
                echo "'>Select</a></td></tr>";        
               }
             ?>

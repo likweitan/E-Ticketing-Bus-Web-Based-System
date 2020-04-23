@@ -1,15 +1,27 @@
 <?php
-    require("db.php");
     require("loginheader.php");
-        $inputFrom = $_GET['inputFrom'];
-        $inputTo = $_GET["inputTo"];
-        $inputDepartDate = $_GET["inputDepartDate"];
-        $BusCompany = $_GET["BusCompany"];
+
         $seatno = $_GET["seatno"];
-        $busno = $_GET["busno"];
-        $TicketPrice = $_GET["TicketPrice"];
-        $ScheduleDuration = $_GET["ScheduleDuration"];
-        $inputTime = $_GET["inputTime"];
+        $inputDepartDate = $_GET['inputdate'];
+
+        $sql = "SELECT *
+        FROM bus_schedule
+        LEFT JOIN bus ON bus_schedule.BusNo = bus.BusNo 
+        WHERE ScheduleNo =".$_GET['scheduleno'];
+    $query = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($query);
+
+    if($row)
+    {
+        $BusCompany = $row['BusCompany'];
+        $scheduleno = $row['ScheduleNo'];
+        $busno = $row['BusNo'];
+        $inputFrom = $row['ScheduleDepart'];
+        $inputTo = $row['ScheduleArrive'];
+        $inputTime = $row['ScheduleStartTime'];
+        $ScheduleDuration = $row['ScheduleDuration'];
+        $TicketPrice = $row['TicketPrice'];
+    }
 ?>
 
 
