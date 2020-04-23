@@ -85,7 +85,7 @@
                echo "<td>";
                echo $row['PromoCodeEndTimestamp'];
                echo "</td>";
-               echo "<td><a href='searchbus.php";
+               echo "<td><a href='searchbus.php?promocode=".$row['PromoCode'];
                echo "'>Use</a></td></tr>";        
               }
             ?>

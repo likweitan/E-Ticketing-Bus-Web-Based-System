@@ -1,6 +1,7 @@
 <?php
     require("db.php");
     require("loginheader.php");
+    
 ?>
 
 
@@ -96,7 +97,7 @@
             <div class="form-group col-md-4 text-left">
                <label for="inputDepartDate" style="color:white;">Depart Date</label>
                  <span style="color: red !important; display: inline; float: none;">*</span> 
-                    <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php echo$inputDepartDate;?>" name="inputDepartDate"  >
+                    <input type="date" class="form-control" id="inputDepartDate" placeholder="" name="inputDepartDate"  >
              </div>
            </div>
               <!-- Book Ticket -->

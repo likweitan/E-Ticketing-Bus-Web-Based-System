@@ -1,6 +1,5 @@
 <?php
     require("loginheader.php");
-
     $sql = "SELECT *
             FROM bus_schedule
             WHERE ScheduleNo =".$_GET['scheduleno'];
@@ -70,7 +69,7 @@
         <div class="row">
 
     <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>">03</a></button>
+    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$row['TicketPrice']?>">03</a></button>
     </div>
     <div class="col-sm">
     <button type="button" class="btn btn-outline-primary">06</button>
