@@ -22,6 +22,10 @@
         $ScheduleDuration = $row['ScheduleDuration'];
         $TicketPrice = $row['TicketPrice'];
     }
+
+    if(isset($_POST['Reedem'])){
+      
+      }
 ?>
 
 
@@ -108,9 +112,8 @@
             <li class="list-group-item d-flex justify-content-between bg-light">
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
-                <small>EXAMPLECODE</small>
               </div>
-              <span class="text-success">-$5</span>
+              <span class="text-success"></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (MYR)</span>
@@ -118,15 +121,16 @@
             </li>
           </ul>
 
-          <form class="card p-2" action = <?php "payment.inc.php" ?> method="POST">
+          <form class="card p-2" action = <?php echo $_SERVER['PHP_SELF']; ?> method="POST">
             <div class="input-group">
               <input type="text" class="form-control" placeholder="Promo code">
               <div class="input-group-append">
-                <button type="submit" class="btn btn-secondary">Redeem</button>
+                <button type="submit" name="Reedem" class="btn btn-secondary">Redeem</button>
               </div>
             </div>
+            </form>
           </form>
-        </div>
+        </div action = <?php "payment.inc.php" ?> method="POST">
         <div class="col-md-8 order-md-1">
         <div class="row">
               <div class="col-md-6 mb-3">

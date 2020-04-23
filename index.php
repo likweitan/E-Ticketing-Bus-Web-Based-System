@@ -96,33 +96,34 @@
         <div class="row">
           <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/legoland.jpg" alt="Legoland image" width="140" height="140">
-            <h2>MYNEW</h2>
-            <p>Upto 10% discount + 10 RM cashback</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <h2>NEW2JB</h2>
+            <p>New to JB!</p>
+            <p>LEGOLAND Malaysia Resort Johor Bahru - Asia's first LEGOLAND theme park & Malaysia's 1st international theme park.</p>
+           
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/theme_park.jpg" alt="Theme Park image" width="140" height="140">
-            <h2>MYOFFER</h2>
-            <p>Get upto 15% cashback</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <h2>NEW2KL</h2>
+            <p>Genting Highlands </p>
+            <p> One of the reputed names in the hospitality and theme park industry in the world, which provides the top quality found in the rides and activities here.</p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4" data-aos="fade" data-aos-duration="3000">
             <img class="rounded-circle" src="images/lostworld.jpeg" alt="Lost World image" width="140" height="140">
-            <h2>RBKT</h2>
-            <p>upto 10% Discount</p>
-            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+            <h2>OFFERKI</h2>
+            <p>Lost World Tambun, Perak</p>
+            <p> A region with a rich tin mining history during the English Colonial Period, the limestone cliffs surrounding the resort will take your breath away.</p>
           </div><!-- /.col-lg-4 -->
+          
         </div><!-- /.row -->
-
-
+        <p class="text-right"><a class="btn btn-secondary" href="promotion.php" role="button">View details &raquo;</a></p>
         <!-- START THE FEATURETTES -->
 
         <hr class="featurette-divider">
 
         <div class="row featurette" data-aos="fade-left" data-aos-duration="2000">
           <div class="col-md-7">
-            <h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">First, a beautiful place. <span class="text-muted">Melacca! It'll blow your mind.</span></h2>
+            <p class="lead">Christ Church Malacca is an 18th-century Anglican church in the city of Malacca City, Malaysia. It is the oldest functioning Protestant church in Malaysia. </p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="images/melaka.jpg" alt="Melaka image">
@@ -133,8 +134,8 @@
 
         <div class="row featurette" data-aos="fade-right" data-aos-duration="2000">
           <div class="col-md-7 order-md-2">
-            <h2 class="featurette-heading">Oh yeah, it's that good. <span class="text-muted">See for yourself.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">Oh yeah, it's that good place. <span class="text-muted">Visit Penang Geogery Town?!</span></h2>
+            <p class="lead">George Town is the colorful, multicultural capital of the Malaysian island of Penang. Once an important Straits of Malacca trading hub, the city is known for its British colonial buildings, Chinese shophouses and mosques.</p>
           </div>
           <div class="col-md-5 order-md-1">
             <img class="featurette-image img-fluid mx-auto" src="images/penang.jpg" alt="Penang image">
@@ -145,8 +146,8 @@
 
         <div class="row featurette" data-aos="fade-left" data-aos-duration="2000">
           <div class="col-md-7">
-            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Checkmate.</span></h2>
-            <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+            <h2 class="featurette-heading">And lastly, this one. <span class="text-muted">Concubine Lane Ipoh. </span></h2>
+            <p class="lead">Concubine Lane is the most vibrant on weekends, holidays, where many pop-up stalls gather. You'll find cacti on sale, colourful ice balls, flower-shaped cotton candy and more!</p>
           </div>
           <div class="col-md-5">
             <img class="featurette-image img-fluid mx-auto" src="images/ipoh.png" alt="Ipoh placeholder image">
@@ -154,7 +155,6 @@
         </div>
 
         <hr class="featurette-divider">
-
         <!-- /END THE FEATURETTES -->
 
       </div><!-- /.container -->

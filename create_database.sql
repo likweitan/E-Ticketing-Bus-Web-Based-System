@@ -40,6 +40,7 @@ CREATE TABLE promo_code
 (
     PromoCode varchar(50) NOT NULL PRIMARY KEY,
     PromoCodeDescription varchar(50) NOT NULL,
+    PromoPercentage int NOT NULL,
     PromoCodeEndTimestamp date NOT NULL,
     PromoCodeStartTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
