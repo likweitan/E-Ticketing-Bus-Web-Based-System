@@ -72,7 +72,7 @@
         for ($x = 3; $x <= 30; $x+=3)
         {
             echo '<div class="col-sm">';
-            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
             echo "</div>";
         } 
     ?>
@@ -82,7 +82,7 @@
         for ($x = 2; $x <= 30; $x+=3)
         {
             echo '<div class="col-sm">';
-            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
             echo "</div>";
         } 
     ?>
@@ -93,7 +93,7 @@
         for ($x = 1; $x <= 30; $x+=3)
         {
             echo '<div class="col-sm">';
-            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
             echo "</div>";
         } 
     ?>
