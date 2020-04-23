@@ -195,7 +195,7 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Password</strong>
-              <a href="#">Reset password</a>
+              <a href="#" data-toggle="modal" data-target="#editPassword">Reset password</a>
             </div>
             <span class="d-block">Last changed: <?=$myStartDate?></span>
           </div>
