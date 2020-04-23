@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Manage Booking</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -63,17 +63,195 @@
               </li>
               
             </ul>
-
-            
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
             <h1 class="h2">Bus Management</h1>
-            
           </div>
-          
+          <!--Start the CRUD-->
+          <?php require_once 'functionBus.php'; ?>
+          <?php
+            if(isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+          <?php
+              echo $_SESSION['message'];
+              unset ($_SESSION['message']);
+          ?>
+          </div>
+          <?php endif ?>      
+         
+          <div class = "container">
+            <div class="row">
+              <div class ="col-sm-5"> 
+                <div class="row justify-content">
+                  <form action = "functionBus.php" method="POST">
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Bus No</label>
+                            <input type="text" name="busNo" class="form-control"  placeholder="Bus No" >
+                            
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Bus Company</label>
+                            <input type="text" name="busCompany" class="form-control"  placeholder="Bus Company" >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Bus Capacity</label>
+                            <input type="text" name="busCapacity" class="form-control" placeholder="Bus Capacity">
+                        </div>
+                        <div class="form-group col-sm-6">
+                                <button type="submit" name="addBus" class="btn btn-primary" >Add</button>
+                        </div>
+                      </div>
+                  </form> 
+                </div>
+              </div>
+              <div class = "col-sm-7">
+                <?php //Display Promotion code From database
+                    include("../db.php");
+                    $result = $con->query("SELECT * FROM bus") or die($con->error());  
+                ?>
+                <div class="row justify-content-center">
+                    <table id="showtable" class="table">
+                      <thead>
+                        <tr>
+                            <th>Bus No </th>
+                            <th>Bus Company</th>
+                            <th>Bus Capacity</th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                      </thead>
+                      <?php
+                          while ($row = $result->fetch_assoc()): ?>
+                          <tr>
+                              <td><?php echo $row['BusNo'] ?></td>
+                              <td><?php echo $row['BusCompany'] ?></td>
+                              <td><?php echo $row['BusCapacity'] ?></td>
+                              <td>
+                              
+                                
+                                <a href="functionBus.php? deleteRecord=<?php echo $row['BusNo']; ?>"
+                                  class="btn btn-danger">Delete</a>
+                              </td>
+                          </tr>
+                      <?php endwhile; ?>
+                    </table> 
+                </div>
+              </div>
+            </div>
+          </div>           
+          <!--End the CRUD-->
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Bus Schedule Management</h1>
+          </div>
+          <!--Start the CRUD-->
+          <?php require_once 'functionBus.php'; ?>
+          <?php
+            if(isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+          <?php
+              echo $_SESSION['message'];
+              unset ($_SESSION['message']);
+          ?>
+          </div>
+          <?php endif ?>      
+         
+          <div class = "container">
+            <div class="row">
+              <div class ="col-sm-5"> 
+                <div class="row justify-content">
+                  <form action = "functionBus.php" method="POST">
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Schedule No</label>
+                            <input type="text" name="scNo" class="form-control" value ="<?php echo $scno; ?>"  placeholder="Schedule No" >
+                            
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Bus No</label>
+                            <input type="text" name="sbNo" class="form-control" value ="<?php echo $scbusno; ?>" placeholder="Bus No" >
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Schedule Depart</label>
+                            <input type="text" name="scd" class="form-control" value ="<?php echo $scdepart; ?>" placeholder="Schedule Depart">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Schedule Arrive</label>
+                            <input type="text" name="sca" class="form-control" value ="<?php echo $scarrive; ?>" placeholder="Schedule Arrive">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Schedule Start Time</label>
+                            <input type="text" name="sst" class="form-control" value ="<?php echo $sstime; ?>" placeholder="Schedule Start Time">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Schedule Duration</label>
+                            <input type="text" name="sd" class="form-control" value ="<?php echo $scduration; ?>" placeholder="Schedule Duration">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Ticket Price</label>
+                            <input type="text" name="tp" class="form-control" value ="<?php echo $tkPrice; ?>" placeholder="Ticket Price">
+                        </div>
+                        <div class="form-group col-sm-6">
+                          <?php
+                              if($update == true):
+                            ?>
+                                <button type="submit" name="updateSchedule" class="btn btn-info" >Update</button>
+                                <button type="submit" name="cancelUpdate" class="btn btn-secondary" >Cancel</button>
+                              <?php else: ?>
+                                <button type="submit" name="addSchedule" class="btn btn-primary" >Add</button>
+                            <?php endif; ?>
+                                
+                        </div>
+                      </div>
+                  </form> 
+                </div>
+              </div>
+              <div class = "col-sm-7">
+                <?php //Display Promotion code From database
+                    include("../db.php");
+                    $result = $con->query("SELECT * FROM bus_schedule") or die($con->error());  
+                ?>
+                <div class="row justify-content-center">
+                    <table id="showtable" class="table">
+                      <thead>
+                        <tr>
+                            <th>Schedule No</th>
+                            <th>Bus No </th>
+                            <th colspan="2">Action</th>
+                        </tr>
+                      </thead>
+                      <?php
+                          while ($row = $result->fetch_assoc()): ?>
+                          <tr>
+                              <td><?php echo $row['ScheduleNo'] ?></td>
+                              <td><?php echo $row['BusNo'] ?></td>
+                              
+                              <td>
+                              
+                                
+                                <a href="manageBus.php? edit=<?php echo $row['ScheduleNo']; ?>"
+                                  class="btn btn-info">Edit</a>
+                              </td>
+                          </tr>
+                      <?php endwhile; ?>
+                    </table> 
+                </div>
+              </div>
+            </div>
+          </div>           
+          <!--End the CRUD-->
         </main>
       </div>
     </div>
@@ -89,38 +267,6 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
-    </script>
-
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 0],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
     </script>
   </body>
 </html>

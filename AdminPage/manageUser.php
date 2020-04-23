@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
 
-    <title>Dashboard Template for Bootstrap</title>
+    <title>Manage Booking</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -63,16 +63,141 @@
               </li>
               
             </ul>
-
-            
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Customer Management</h1>
-            
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">User Management</h1>
           </div>
+          <!--Start the CRUD-->
+          <?php require_once 'functionUser.php'; ?>
+          <?php
+            if(isset($_SESSION['message'])): ?>
+            <div class="alert alert-<?=$_SESSION['msg_type']?>">
+
+          <?php
+              echo $_SESSION['message'];
+              unset ($_SESSION['message']);
+          ?>
+          </div>
+          <?php endif ?>      
+         
+          <div class = "container">
+            <div class="row">
+              <div class ="col-sm-6"> 
+                <div class="row justify-content">
+                  <form action = "functionUser.php" method="POST">
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Account No</label>
+                            <input type="text" name="an" class="form-control" value ="<?php echo $accNo; ?>" placeholder="Account No" readonly>
+                            
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Account Role</label>
+                            <input type="text" name="ar" class="form-control" value ="<?php echo $accRole; ?>" placeholder="Account Role" readonly>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>First Name</label>
+                            <input type="text" name="fn" class="form-control" value ="<?php echo $fName; ?>" placeholder="First Name" readonly>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Last Name</label>
+                            <input type="text" name="ln" class="form-control" value ="<?php echo $lName; ?>" placeholder="Last Name" readonly>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Email</label>
+                            <input type="text" name="em" class="form-control" value ="<?php echo $ema; ?>" placeholder="Email">
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Password</label>
+                            <input type="text" name="pw" class="form-control" value ="<?php echo $passw; ?>" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Gender</label>
+                            <input type="text" name="gd" class="form-control" value ="<?php echo $gen; ?>" placeholder="Gender" readonly>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Date of Birth</label>
+                            <input type="text" name="dob" class="form-control" value ="<?php echo $dobrith; ?>" placeholder="Date of Birth" readonly>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Nationality</label>
+                            <input type="text" name="na" class="form-control" value ="<?php echo $nati; ?>" placeholder="Nationality" readonly>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <label>Phone Number</label>
+                            <input type="text" name="pn" class="form-control" value ="<?php echo $pnum; ?>" placeholder="Phone Number">
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="form-group col-sm-6">
+                            <label>Login Time</label>
+                            <input type="text" name="ats" class="form-control" value ="<?php echo $atstamp; ?>" placeholder="Login Time " readonly>
+                        </div>
+                        <div class="form-group">
+                            <?php
+                              if($update == true):
+                            ?>
+                                <button type="submit" name="uUser" class="btn btn-info" >Update</button>
+                                <button type="submit" name="cUpate" class="btn btn-secondary" >Cancel</button>
+                              <?php else: ?>
+                              
+                            <?php endif; ?>
+                        </div>
+                      </div>
+                  </form> 
+                </div>
+              </div>
+              <div class = "col-sm-6">
+                <?php //Display Promotion code From database
+                    include("../db.php");
+                    $result = $con->query("SELECT * FROM account WHERE AccountRole !='admin'") or die($con->error());  
+                ?>
+                <div class="row justify-content-center">
+                    <table id="showtable" class="table">
+                      <thead>
+                        <tr>
+                            <th>Account No</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email Address</th>
+                            <th>Phone Number</th>
+                            <th>Login Time</th>
+                            <th>Action</th>
+                        </tr>
+                      </thead>
+                      <?php
+                          while ($row = $result->fetch_assoc()): ?>
+                          <tr>
+                              <td><?php echo $row['AccountNo'] ?></td>
+                              <td><?php echo $row['FirstName'] ?></td>
+                              <td><?php echo $row['LastName'] ?></td>
+                              <td><?php echo $row['Email'] ?></td>
+                              <td><?php echo $row['PhoneNumber'] ?></td>
+                              <td><?php echo $row['AccountTimestamp'] ?></td>
+                              <td>
+                              
+                                <a href="manageUser.php? edit=<?php echo $row['AccountNo']; ?>"
+                                  class="btn btn-info">Edit</a>
+                              </td>
+                          </tr>
+                      <?php endwhile; ?>
+                    </table> 
+                </div>
+              </div>
+            </div>
+          </div>           
+          <!--End the CRUD-->
         </main>
       </div>
     </div>
@@ -88,38 +213,6 @@
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
     <script>
       feather.replace()
-    </script>
-
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart");
-      var myChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-          labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          datasets: [{
-            data: [15339, 21345, 18483, 24003, 23489, 24092, 0],
-            lineTension: 0,
-            backgroundColor: 'transparent',
-            borderColor: '#007bff',
-            borderWidth: 4,
-            pointBackgroundColor: '#007bff'
-          }]
-        },
-        options: {
-          scales: {
-            yAxes: [{
-              ticks: {
-                beginAtZero: false
-              }
-            }]
-          },
-          legend: {
-            display: false,
-          }
-        }
-      });
     </script>
   </body>
 </html>
