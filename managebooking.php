@@ -14,6 +14,10 @@
         ORDER BY BusDateTime DESC";
         $query_past = mysqli_query($con,$sql);
     }
+    else
+    {
+      header('Location: login.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">

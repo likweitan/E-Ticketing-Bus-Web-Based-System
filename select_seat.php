@@ -1,6 +1,11 @@
 <?php
     require("loginheader.php");
 
+    if(!isset($_SESSION['id']))
+    {
+        header('Location: login.php');
+    }
+
     $sql = "SELECT *
             FROM bus_schedule
             WHERE ScheduleNo =".$_GET['scheduleno'];
