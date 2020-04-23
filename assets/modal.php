@@ -127,8 +127,8 @@
       <div class="modal-body">
         <form action="assets/update.inc.php" method="post">
           <div class="form-group">
-          <label class="radio-inline"><input type="radio" name="optradio" checked>Male</label>
-            <label class="radio-inline"><input type="radio" name="optradio">Female</label>
+          <label class="radio-inline"><input type="radio" name="newGender" value="Male">Male</label>
+            <label class="radio-inline"><input type="radio" name="newGender"value="Female">Female</label>
           </div>
         
       </div>

@@ -72,4 +72,18 @@ else if(isset($_POST['newBirthDate']))
         header("Location: ../setting.php?birthdate=fail");
     }
 }
+else if(isset($_POST['newGender']))
+{
+    $sql = "UPDATE s900_database.account SET Gender = '".$_POST['newGender']."' WHERE AccountNo =".$_SESSION['id'];
+    $query = mysqli_query($con,$sql);
+
+    if($query)
+    {
+        header("Location: ../setting.php?gender=success");
+    }
+    else
+    {
+        header("Location: ../setting.php?gender=fail");
+    }
+}
 ?>
