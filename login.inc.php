@@ -4,7 +4,7 @@
     session_start();
 
     $inputEmail = $_POST["inputEmail"];
-    $inputPassword = $_POST["inputPassword"];
+    $inputPassword = md5($_POST["inputPassword"]);
 
     $stmt = $con->prepare("SELECT AccountNo,Email,Password FROM account WHERE Email = ?");
     $stmt -> bind_param("s", $inputEmail);

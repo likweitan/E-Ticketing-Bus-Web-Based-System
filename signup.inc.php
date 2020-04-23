@@ -3,7 +3,7 @@
 
     session_start();
     if(isset($_POST['submit'])){
-    $inputConfirmPassword = $_POST["inputConfirmPassword"];
+    $inputConfirmPassword = md5($_POST["inputConfirmPassword"]);
     $inputFirstName = mysqli_real_escape_string($con, $_POST["inputFirstName"]);
     $inputLastName =  mysqli_real_escape_string($con,$_POST["inputLastName"]);
     $inputEmail =  mysqli_real_escape_string($con,$_POST["inputEmail"]);
