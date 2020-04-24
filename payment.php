@@ -151,6 +151,7 @@
         </div>
         <div class="col-md-8 order-md-1">
         <div class="row">
+        
               <div class="col-md-6 mb-3">
               <div class="media text-muted pt-3">
               <img src="images/calendar.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">
@@ -169,7 +170,7 @@
                 </div>
               </div>
             </div>
-          <form class="needs-validation" novalidate action = <?php "payment.inc.php" ?> method="POST">
+          <form class="needs-validation" novalidate action = "payment.inc.php" method="POST">
             <hr class="mb-4">
             
             <h4 class="mb-3">Payment</h4>
