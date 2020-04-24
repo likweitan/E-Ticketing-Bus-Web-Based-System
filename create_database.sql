@@ -69,7 +69,7 @@ CREATE TABLE booking
 (
     BookingNo varchar(50) NOT NULL PRIMARY KEY,
     AccountNo int NOT NULL,
-    PromoCode varchar(50) NOT NULL,
+    PromoCode varchar(50) NULL,
     ScheduleNo varchar(50) NOT NULL,
     Quantity int NOT NULL  DEFAULT 1,
     BusSeat int NOT NULL,
