@@ -284,18 +284,6 @@
 
       <div data-aos="fade-left">
       <div class="my-3 p-3 bg-white rounded box-shadow">
-        <?php
-          if(isset($_GET['name'])){
-            if($_GET['name'] == 'success')
-              echo '<div class="alert alert-success" role="alert">
-              Your name is updated successfully!
-            </div>';
-            else if($_GET['name'] == 'fail')
-            echo '<div class="alert alert-danger" role="alert">
-            Oops! There is something wrong happenned.
-          </div>';
-        }
-        ?>
         <h6 class="border-bottom border-gray pb-2 mb-0">Profile</h6>
         <div class="media text-muted pt-3">
           <img src="https://raw.githubusercontent.com/google/material-design-icons/master/social/2x_web/ic_person_black_48dp.png" alt="" class="mr-2 rounded" style="width:10%; max-width:25px;">

@@ -3,14 +3,14 @@
 
     if(isset($_SESSION['id']))
     {
-        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
-        RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
+        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM booking
+        RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo 
         WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP() AND BookingStatus = 'Confirmed'
         ORDER BY BusDateTime ASC";
         $query_upcoming = mysqli_query($con,$sql);
-        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM s900_database.booking
-        RIGHT JOIN s900_database.bus_schedule ON s900_database.booking.ScheduleNo = s900_database.bus_schedule.ScheduleNo 
-        WHERE (BookingStatus = 'Completed' OR BookingStatus = 'Cancelled') AND booking.AccountNo =".$_SESSION['id']." AND BusDateTime < CURRENT_TIMESTAMP()
+        $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM booking
+        RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo 
+        WHERE BookingStatus IN ('Completed','Cancelled') AND booking.AccountNo =".$_SESSION['id']."
         ORDER BY BusDateTime DESC";
         $query_past = mysqli_query($con,$sql);
     }
