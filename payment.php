@@ -1,6 +1,8 @@
 <?php
     require("loginheader.php");
-
+    if($_GET['seatno']=="" || $_GET['inputdate']=="" || $_GET['TicketPrice']=="" || $_GET['scheduleno']==""){
+      header("location:searchbus.php");
+    }
         
         $sql = "SELECT *
         FROM bus_schedule
