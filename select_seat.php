@@ -80,7 +80,7 @@
         for ($x = 3; $x <= 30; $x+=3)
         {
             echo '<div class="col-sm">';
-            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&TicketPrice='.$_GET['TicketPrice'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&TicketPrice='.$_GET['TicketPrice'].'&PromoCode='."".'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
             echo "</div>";
         } 
     ?>

@@ -1,5 +1,6 @@
 <?php
  require("db.php");
+
  $seatno = $_GET["seatno"];
  $inputDepartDate = $_GET['inputdate'];
  $scheduleno1 = $_GET['scheduleno'];
@@ -17,9 +18,9 @@
         }
        }
 
-        if($PromoCode==$valid &  $scheduleno1==$ScheduleNo){
+        if($PromoCode==$valid && $scheduleno1 == $ScheduleNo ){
             $TotalPrice = $TicketPrice - ($TicketPrice * $valid/100);
-            header("location: payment.php?seatno=".$seatno."&inputdate=".$inputDepartDate."&scheduleno=".$scheduleno1."&PromoCode=".$PromoCode);
+            header("location: payment.php?seatno=".$seatno."&inputdate=".$inputDepartDate."&scheduleno=".$scheduleno1."&PromoCode=".$PromoCode."&TicketPrice=".$TotalPrice);
             }
             else
             echo"invalid Code";
