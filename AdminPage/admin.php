@@ -1,5 +1,9 @@
 <?php
   require("../loginheader.php");
+  if($myAccountRole != "Admin")
+  {
+    header('Location:../index.php');
+  }
 
   $account = '';
 	$date = '';
