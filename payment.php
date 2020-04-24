@@ -3,6 +3,9 @@
     if($_GET['seatno']=="" || $_GET['inputdate']=="" || $_GET['TicketPrice']=="" || $_GET['scheduleno']==""){
       header("location:searchbus.php");
     }
+    if($_GET['PromoCode']=="" ){
+      $promopercent = 0;
+    }
         
         $sql = "SELECT *
         FROM bus_schedule
