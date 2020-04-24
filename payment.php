@@ -207,8 +207,15 @@
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" name="CardExpiration" id="cc-expiration" placeholder="MM/YYYY" required>
+                <label for="cc-expiration">Expiration Month</label>
+                <input type="text" class="form-control"  maxlength="2" pattern="[0-1][0-2]{1}" name="ExpireMonth" id="cc-expiration" placeholder="MM" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Year</label>
+                <input type="text" class="form-control"  maxlength="4" pattern="[2-3][0][2-5][0-9]{1}" name="ExpireYear" id="cc-expiration" placeholder="YYYY" required>
                 <div class="invalid-feedback">
                   Expiration date required
                 </div>

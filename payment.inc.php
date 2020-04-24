@@ -5,7 +5,7 @@
         $PaymentType = $_POST['PaymentType'];
         $CardName = $_POST['CardName'];
         $CardNumber = $_POST['CardNumber'];
-        $CardExpiration = $_POST['CardExpiration'];
+        $CardExpiration = $_POST['ExpireMonth'].$_POST['ExpireYear'];
         $cvv = $_POST['CVV'];
 
         $bookingno = rand();
