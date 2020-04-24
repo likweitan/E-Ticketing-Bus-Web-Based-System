@@ -3,7 +3,7 @@
 
         $seatno = $_GET["seatno"];
         $inputDepartDate = $_GET['inputdate'];
-
+        $TotalPrice = $_GET['TicketPrice'];
         $sql = "SELECT *
         FROM bus_schedule
         LEFT JOIN bus ON bus_schedule.BusNo = bus.BusNo 
@@ -23,9 +23,7 @@
         $TicketPrice = $row['TicketPrice'];
     }
 
-    if(isset($_POST['Reedem'])){
-      
-      }
+    
 ?>
 
 
@@ -117,13 +115,13 @@
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (MYR)</span>
-              <strong><?php echo"$TicketPrice"; ?></strong>
+              <strong><?php echo"$TotalPrice"; ?></strong>
             </li>
           </ul>
 
-          <form class="card p-2" action = <?php echo $_SERVER['PHP_SELF']; ?> method="POST">
+          <form class="card p-2" action = "promo_valid.php?seatno=<?=$_GET['seatno']?>&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$_GET['TicketPrice']?>" method="POST">
             <div class="input-group">
-              <input type="text" class="form-control" placeholder="Promo code">
+              <input type="text" class="form-control" name="PromoCode" placeholder="Promo code">
               <div class="input-group-append">
                 <button type="submit" name="Reedem" class="btn btn-secondary">Redeem</button>
               </div>
@@ -217,6 +215,7 @@
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
+
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>

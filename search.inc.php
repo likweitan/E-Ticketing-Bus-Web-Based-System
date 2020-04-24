@@ -1,17 +1,13 @@
 <?php
     require("loginheader.php");
-
-    if(isset($_GET['book_ticket'])){
     $inputFrom = $_GET["inputFrom"];
     $inputTo = $_GET["inputTo"];
     $inputDepartDate = $_GET["inputDepartDate"];
-    
+
+    if(isset($_GET['book_ticket'])){
      //Input Validation
-    if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != date("Y-m-d")){
-    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
-    }
-    else if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
-      $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule,bus WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo' AND ScheduleStartTime > CURRENT_TIME()");
+    if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
+    $busInfo = mysqli_query($con,"SELECT * FROM bus_schedule INNER JOIN bus ON bus_schedule.BusNo = bus.BusNo WHERE ScheduleDepart = '$inputFrom' AND ScheduleArrive = '$inputTo'");
     }
     else if($inputFrom == "From..."){
       header("location: searchbus.php?error=invalid_from");
@@ -221,7 +217,7 @@
                echo "</td>";
                echo "<td><a href='select_seat.php?scheduleno=";
                echo $row['ScheduleNo'];
-               echo "&inputdate=".$inputDepartDate;
+               echo "&inputdate=".$inputDepartDate."&TicketPrice=".$row['TicketPrice'];
                echo "'>Select</a></td></tr>";        
               }
             ?>
