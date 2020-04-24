@@ -119,7 +119,7 @@
             </li>
           </ul>
 
-          <form class="card p-2" action = "promo_valid.php?seatno=<?$_GET['seatno']?>&inputdate=<?$_GET['inputdate']?>&scheduleno=<?$_GET['scheduleno']?>&TicketPrice=<?$_GET['TicketPrice']?>" method="POST">
+          <form class="card p-2" action = "promo_valid.php?seatno=<?=$_GET['seatno']?>&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$_GET['TicketPrice']?>" method="POST">
             <div class="input-group">
               <input type="text" class="form-control" name="PromoCode" placeholder="Promo code">
               <div class="input-group-append">
