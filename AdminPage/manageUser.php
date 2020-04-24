@@ -1,3 +1,10 @@
+<?php
+  require("../loginheader.php");
+  if($myAccountRole != "Admin")
+  {
+    header('Location:../index.php');
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -31,38 +38,37 @@
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bookmark"></span>
-                  Ticket
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart">(current)</span>
-                  Promotion
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customer
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="truck"></span>
-                  Bus
-                </a>
-              </li>
-              
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" href="admin.php">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBooking.php">
+                    <span data-feather="bookmark"></span>
+                    Ticket
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="managePromo.php">
+                    <span data-feather="shopping-cart">(current)</span>
+                    Promotion
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageUser.php">
+                    <span data-feather="users"></span>
+                    Customer
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBus.php">
+                    <span data-feather="truck"></span>
+                    Bus
+                  </a>
+                </li> 
+              </ul>
           </div>
         </nav>
 
@@ -112,7 +118,7 @@
                       <div class="row">
                         <div class="form-group col-sm-6">
                             <label>Email</label>
-                            <input type="text" name="em" class="form-control" value ="<?php echo $ema; ?>" placeholder="Email">
+                            <input type="email" name="em" class="form-control" value ="<?php echo $ema; ?>" placeholder="Email">
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Password</label>
@@ -126,7 +132,7 @@
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Date of Birth</label>
-                            <input type="text" name="dob" class="form-control" value ="<?php echo $dobrith; ?>" placeholder="Date of Birth" readonly>
+                            <input type="date" name="dob" class="form-control" value ="<?php echo $dobrith; ?>" placeholder="Date of Birth" readonly>
                         </div>
                       </div>
                       <div class="row">
