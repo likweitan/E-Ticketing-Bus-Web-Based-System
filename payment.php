@@ -211,7 +211,7 @@
             <div class="row">
               <div class="col-md-3 mb-3">
                 <label for="cc-expiration">Expiration Month</label>
-                <input type="text" class="form-control"  maxlength="2" pattern="[0-1][0-2]{1}" name="ExpireMonth" id="cc-expiration" placeholder="MM" required>
+                <input type="text" class="form-control"  maxlength="2" pattern="[0-1][0-9]{1}" name="ExpireMonth" id="cc-expiration" placeholder="MM" required>
                 <div class="invalid-feedback">
                   Expiration date required
                 </div>
