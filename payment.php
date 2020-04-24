@@ -1,6 +1,8 @@
 <?php
     require("loginheader.php");
-
+    if($_GET['seatno']=="" || $_GET['inputdate']=="" || $_GET['TicketPrice']=="" || $_GET['scheduleno']==""){
+      header("location:searchbus.php");
+    }
         
         $sql = "SELECT *
         FROM bus_schedule
@@ -64,6 +66,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/offcanvas.css" rel="stylesheet">
+    <link href="css/form-validation.css" rel="stylesheet">
 
     <!-- Aos.js -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -170,19 +173,19 @@
                 </div>
               </div>
             </div>
-          <form class="needs-validation" novalidate action = "payment.inc.php?promocode=<?=$promocode?>&seatno=<?=$_GET['seatno']?>&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$_GET['TicketPrice']?>" method="POST">
+          <form  action = "payment.inc.php?promocode=<?=$promocode?>&seatno=<?=$_GET['seatno']?>&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$_GET['TicketPrice']?>" method="POST">
             <hr class="mb-4">
             
             <h4 class="mb-3">Payment</h4>
 
             <div class="d-block my-3">
               <div class="custom-control custom-radio">
-                <input id="credit" name="PaymentType" type="radio" class="custom-control-input" checked required>
-                <label class="custom-control-label" value="CreditCard" for="credit">Credit card</label>
+                <input id="credit"  type="radio" name="PaymentType" value="Credit Card" class="custom-control-input" checked required>
+                <label class="custom-control-label"  for="credit">Credit card</label>
               </div>
               <div class="custom-control custom-radio">
-                <input id="debit" name="PaymentType" type="radio" class="custom-control-input" required>
-                <label class="custom-control-label" value= "Debit Card" for="debit">Debit card</label>
+                <input id="debit"  name="PaymentType" value= "Debit Card" type="radio" class="custom-control-input" required>
+                <label class="custom-control-label"  for="debit">Debit card</label>
               </div>
             </div>
             <div class="row">
@@ -204,8 +207,15 @@
             </div>
             <div class="row">
               <div class="col-md-3 mb-3">
-                <label for="cc-expiration">Expiration</label>
-                <input type="text" class="form-control" name="CardExpiration" id="cc-expiration" placeholder="" required>
+                <label for="cc-expiration">Expiration Month</label>
+                <input type="text" class="form-control"  maxlength="2" pattern="[0-1][0-2]{1}" name="ExpireMonth" id="cc-expiration" placeholder="MM" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Year</label>
+                <input type="text" class="form-control"  maxlength="4" pattern="[2-3][0][2-5][0-9]{1}" name="ExpireYear" id="cc-expiration" placeholder="YYYY" required>
                 <div class="invalid-feedback">
                   Expiration date required
                 </div>
@@ -243,7 +253,7 @@
     <script src="../../../../assets/js/vendor/popper.min.js"></script>
     <script src="../../../../dist/js/bootstrap.min.js"></script>
     <script src="../../../../assets/js/vendor/holder.min.js"></script>
-    <script>
+   <!-- Placed  <script>
       // Example starter JavaScript for disabling form submissions if there are invalid fields
       (function() {
         'use strict';
@@ -264,6 +274,6 @@
           });
         }, false);
       })();
-    </script>
+    </script>-->
   </body>
 </html>

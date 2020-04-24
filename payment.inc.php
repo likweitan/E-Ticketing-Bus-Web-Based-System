@@ -1,10 +1,11 @@
 <?php
+
  require("loginheader.php");
  $accountno = $_SESSION['id'];
         $PaymentType = $_POST['PaymentType'];
         $CardName = $_POST['CardName'];
         $CardNumber = $_POST['CardNumber'];
-        $CardExpiration = $_POST['CardExpiration'];
+        $CardExpiration = $_POST['ExpireMonth'].$_POST['ExpireYear'];
         $cvv = $_POST['CVV'];
 
         $bookingno = rand();
@@ -27,6 +28,8 @@
             $PaymentNo = $row['PaymentNo'];
         }
 
+        echo "INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingState,PaymentNo)
+        VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')";
         $insertBooking =  mysqli_query($con,"INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingStatus,PaymentNo)
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')");
 

@@ -4,7 +4,7 @@
     $inputFrom = $_GET["inputFrom"];
     $inputTo = $_GET["inputTo"];
     $inputDepartDate = $_GET["inputDepartDate"];
-    if($inputFrom == "" & $inputTo == "" & $inputDepartDate == "" )
+    if($inputFrom == "" || $inputTo == "" || $inputDepartDate == "" )
     {
       header("location:searchbus.php");
     }
