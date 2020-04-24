@@ -15,6 +15,7 @@
     $boTstamp ='';
     $paym ='';
     $update = false;
+    $showmessage = false;
 
     if(isset($_GET['edit']))
 	{
@@ -43,6 +44,7 @@
         $quanti =$_POST['quan'];
         $busS =$_POST['bSeat'];
         $bookStatus =$_POST['bStatus'];
+        $showmessage = true;
         $query = "UPDATE booking SET Quantity = '$quanti', BookingStatus ='$bookStatus',
                     BusSeat = $busS WHERE BookingNo = '$BookN'";
         //Past data information to database
@@ -50,8 +52,11 @@
             exit(mysqli_error($con));
             
         }
-       
-            
-        header("location: manageBooking.php");
+        
+        echo "<script>
+        alert('Record UpDate Successful');
+        window.location.href='manageBooking.php';
+        </script>";
+        
     }
 ?>

@@ -51,9 +51,12 @@
             exit(mysqli_error($con));
             
         }
-       
+        echo "<script>
+        alert('Record UpDate Successful');
+        window.location.href='manageUser.php';
+        </script>";
             
-        header("location: manageUser.php");
+        
     }
     if(isset($_POST['cUpate']))
 	{

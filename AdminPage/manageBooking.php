@@ -78,8 +78,13 @@
           </div>
           <!--Start the CRUD-->
           <?php require_once 'functionBooking.php'; ?>
-              
-         
+          <?php
+            if($showmessage == true):
+              echo '<script>alert("Record Updated")</script>'; 
+          ?> 
+          <?php else: ?> 
+           
+          <?php endif; ?>
           <div class = "container">
             <div class="row">
               <div class ="col-sm-6"> 

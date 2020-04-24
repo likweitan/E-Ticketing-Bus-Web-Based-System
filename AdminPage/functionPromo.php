@@ -29,7 +29,11 @@
             if (!$result = mysqli_query($con,$query)) {
             exit(mysqli_error($con));
             }
-            header("location: managePromo.php");
+        echo "<script>
+        alert('New Record Added Successful');
+        window.location.href='managePromo.php';
+        </script>";
+            
   
        
     }
@@ -68,10 +72,11 @@
         if (!$result = mysqli_query($con,$query)) {
             exit(mysqli_error($con));
         }
-       
+        echo "<script>
+        alert('Record Update Successful');
+        window.location.href='managePromo.php';
+        </script>";
             
-        
-        header("location: managePromo.php");
     }
     if(isset($_POST['cancelUpdate']))
 	{
