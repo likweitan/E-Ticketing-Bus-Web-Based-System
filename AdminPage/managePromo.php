@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-    
+    <script type="text/javascript" src="validationFunction.js"></script>
     
     
     
@@ -32,7 +32,7 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">blueBus</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="logout.php">Sign out</a>
+          <a class="nav-link" href="../logout.php">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -84,27 +84,25 @@
           
           <!--Start the CRUD-->
           <?php require_once 'functionPromo.php'; ?>
-          <?php
-            if(isset($_SESSION['message'])): ?>
-            <div class="alert alert-<?=$_SESSION['msg_type']?>">
-
-          <?php
-              echo $_SESSION['message'];
-              unset ($_SESSION['message']);
-          ?>
-          </div>
-          <?php endif ?>      
+             
          
           <div class = "container">
             <div class="row">
               <div class ="col-sm-5"> 
                 <div class="row justify-content-center">
-                  <form action = "functionPromo.php" method="POST">
+                  <form name="promotionForm" action = "functionPromo.php" onsubmit="return managePromotionValidation()" method="POST">
                       
                       <div class="form-group">
                           <label>Promotion Code</label>
+                            <?php
+                              if($update == true):
+                            ?>
+                              <input type="text" name="upCode" class="form-control" value ="<?php echo $prCode; ?>" placeholder="Create Promotion Code" readonly>
+                            <?php else: ?>
+                              <input type="text" name="pCode" class="form-control" placeholder="Create Promotion Code">
+                            <?php endif; ?>
                           
-                            <input type="text" name="pCode" class="form-control" value ="<?php echo $prCode; ?>" placeholder="Create Promotion Code">
+                            
                           
                       </div>
                       <div class="form-group">

@@ -2,7 +2,7 @@
     
     
     include("../db.php");
-    session_start();
+    
 
     $accNo = '';
     $accRole ='';

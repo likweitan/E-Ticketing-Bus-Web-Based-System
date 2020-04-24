@@ -3,7 +3,7 @@
     
     include("../db.php");
    
-    session_start();
+   
     $scno = '';
     $scbusno = '';
     $scdepart = '';

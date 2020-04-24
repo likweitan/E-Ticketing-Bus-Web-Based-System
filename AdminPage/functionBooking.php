@@ -2,7 +2,7 @@
     
     
     include("../db.php");
-    session_start();
+    
 
     $bkNo = '';
     $acctNo ='';

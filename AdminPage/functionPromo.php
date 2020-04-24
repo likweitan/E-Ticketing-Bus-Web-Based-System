@@ -3,7 +3,7 @@
     
     include("../db.php");
    
-    session_start();
+    
     $prCode = '';
     $prcDes = '';
     $prcEnd = '';
@@ -22,22 +22,16 @@
         $proPercentage = $_POST['pPer'];
         $Sche = $_POST['Sch'];
 
-        
-        //Insert Query 
-        $query = "INSERT INTO promo_code(PromoCode, PromoCodeDescription, PromoPercentage, PromoCodeEndTimestamp,ScheduleNo,PromoCodeStartTimestamp)
-                  VALUES('$proCode', '$proCDes','$proPercentage', '$proEnd','$Sche','$proStart')";
-        //Past data information to database
-        if (!$result = mysqli_query($con,$query)) {
+            //Insert Query 
+            $query = "INSERT INTO promo_code(PromoCode, PromoCodeDescription, PromoPercentage, PromoCodeEndTimestamp,ScheduleNo,PromoCodeStartTimestamp)
+            VALUES('$proCode', '$proCDes','$proPercentage', '$proEnd','$Sche','$proStart')";
+            //Past data information to database
+            if (!$result = mysqli_query($con,$query)) {
             exit(mysqli_error($con));
-        }
-            $_SESSION['message'] = "Record has been Add";
-            $_session['msg_type'] = "warning";
-        
-            echo '<script language="javascript">';
-            echo 'alert("New Record Added successfully")';
-            echo '</script>';
-        
-        header("location: managePromo.php");
+            }
+            header("location: managePromo.php");
+  
+       
     }
 
     if(isset($_GET['edit']))
@@ -60,7 +54,7 @@
     
     if(isset($_POST['updateProm']))
     {
-        $proCode = $_POST['pCode'];
+        $proCode = $_POST['upCode'];
         $proCDes = $_POST['pcDes'];
         $proPer = $_POST['pPer'];
 		$proEnd = $_POST['pcEnd'];
@@ -75,8 +69,7 @@
             exit(mysqli_error($con));
         }
        
-            $_SESSION['message'] = "Record has been Updated";
-            $_session['msg_type'] = "warning";
+            
         
         header("location: managePromo.php");
     }

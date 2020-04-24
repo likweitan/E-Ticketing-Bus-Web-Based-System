@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
+    <script type="text/javascript" src="validationFunction.js"></script>
     <title>Manage Booking</title>
 
     <!-- Bootstrap core CSS -->
@@ -28,7 +28,7 @@
       <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">blueBus</a>
       <ul class="navbar-nav px-3">
         <li class="nav-item text-nowrap">
-          <a class="nav-link" href="logout.php">Sign out</a>
+          <a class="nav-link" href="../logout.php">Sign out</a>
         </li>
       </ul>
     </nav>
@@ -78,22 +78,13 @@
           </div>
           <!--Start the CRUD-->
           <?php require_once 'functionUser.php'; ?>
-          <?php
-            if(isset($_SESSION['message'])): ?>
-            <div class="alert alert-<?=$_SESSION['msg_type']?>">
-
-          <?php
-              echo $_SESSION['message'];
-              unset ($_SESSION['message']);
-          ?>
-          </div>
-          <?php endif ?>      
+           
          
           <div class = "container">
             <div class="row">
               <div class ="col-sm-6"> 
                 <div class="row justify-content">
-                  <form action = "functionUser.php" method="POST">
+                  <form action = "functionUser.php" method="POST" onsubmit="return manageUserValidation()" name="UserFormManagement">
                       <div class="row">
                         <div class="form-group col-sm-6">
                             <label>Account No</label>
