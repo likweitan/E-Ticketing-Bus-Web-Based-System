@@ -1,9 +1,13 @@
 <?php
     require("loginheader.php");
+
     $inputFrom = $_GET["inputFrom"];
     $inputTo = $_GET["inputTo"];
     $inputDepartDate = $_GET["inputDepartDate"];
-
+    if($inputFrom == "" & $inputTo == "" & $inputDepartDate == "" )
+    {
+      header("location:searchbus.php");
+    }
     if(isset($_GET['book_ticket'])){
      //Input Validation
     if($inputFrom != "From" & $inputTo != "To..." & $inputDepartDate != ""){
