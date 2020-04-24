@@ -1,5 +1,6 @@
 <?php
  require("loginheader.php");
+ $accountno = $_SESSION['id'];
      if(isset($_GET['book_ticket'])){
         $PaymentType = mysqli_real_escape_string($con, $_POST["PaymentType"]);
         $CardName =  mysqli_real_escape_string($con,$_POST["CardName"]);
@@ -13,9 +14,12 @@
         $ScheduleDuration = mysqli_real_escape_string($con, $_POST["ScheduleDuration"]);
         $seatno = mysqli_real_escape_string($con, $_POST["seatno"]);
         $TicketPrice = mysqli_real_escape_string($con, $_POST["TicketPrice"]);
-        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration)
-        VALUES('$PaymentType', '$CardName', '$CardNumber', '$CardExpiration') WHERE AccountNo=".$_SESSION['id']);
+        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration,AccountNO)
+        VALUES('$PaymentType', '$CardName', '$CardNumber', '$CardExpiration','$accountno')");
         $insertBooking =  mysqli_query($con,"INSERT INTO booking (ScheduleDuration,seatno)
-        VALUES('$ScheduleDuration', '$seatno') WHERE AccountNo=".$_SESSION['id']);
+        VALUES('$ScheduleDuration', '$seatno')");
+        $query = mysqli_query($con,$insertPayment);
+        $query = mysqli_query($con,$insertBooking);
+        
     }
 ?>
