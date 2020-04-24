@@ -31,4 +31,6 @@
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')";
         $insertBooking =  mysqli_query($con,"INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingStatus,PaymentNo)
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')");
+
+        header('Location: managebooking.php');
 ?>
