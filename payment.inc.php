@@ -1,25 +1,34 @@
 <?php
  require("loginheader.php");
  $accountno = $_SESSION['id'];
-     if(isset($_GET['book_ticket'])){
-        $PaymentType = mysqli_real_escape_string($con, $_POST["PaymentType"]);
-        $CardName =  mysqli_real_escape_string($con,$_POST["CardName"]);
-        $CardNumber =  mysqli_real_escape_string($con,$_POST["CardNumber"]);
-        $CardExpiration =  mysqli_real_escape_string($con, $_POST["CardExpiration"]);
-        $CVV = mysqli_real_escape_string($con, $_POST["CVV"]);
-        $BusCompany = mysqli_real_escape_string($con, $_POST["BusCompany"]);
-        $busno = mysqli_real_escape_string($con, $_POST["busno"]);
-        $inputFrom = mysqli_real_escape_string($con, $_POST["inputFrom"]);
-        $inputTo = mysqli_real_escape_string($con, $_POST["inputTo"]);
-        $ScheduleDuration = mysqli_real_escape_string($con, $_POST["ScheduleDuration"]);
-        $seatno = mysqli_real_escape_string($con, $_POST["seatno"]);
-        $TicketPrice = mysqli_real_escape_string($con, $_POST["TicketPrice"]);
-        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration,AccountNO)
-        VALUES('$PaymentType', '$CardName', '$CardNumber', '$CardExpiration','$accountno')");
-        $insertBooking =  mysqli_query($con,"INSERT INTO booking (ScheduleDuration,seatno)
-        VALUES('$ScheduleDuration', '$seatno')");
-        $query = mysqli_query($con,$insertPayment);
-        $query = mysqli_query($con,$insertBooking);
+        $PaymentType = $_POST['PaymentType'];
+        $CardName = $_POST['CardName'];
+        $CardNumber = $_POST['CardNumber'];
+        $CardExpiration = $_POST['CardExpiration'];
+        $cvv = $_POST['CVV'];
+
+        $bookingno = rand();
+        $promocode = $_GET['promocode'];
+        $scheduleno = $_GET['scheduleno'];
+        $quantity = 1;
+        $seatno = $_GET['seatno'];
+        $busdatetime = $_GET['inputdate'];
+        $bookingstate = "Confirmed";
+    
+        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration,CVV,AccountNo)
+        VALUES('$PaymentType', '$CardName', $CardNumber, '$CardExpiration',$cvv,$accountno)");
+
         
-    }
+        $sql = "SELECT PaymentNo FROM payment WHERE AccountNo =".$accountno." ORDER BY PaymentNo DESC LIMIT 1";
+        $query = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($query);
+        if($row)
+        {
+            $PaymentNo = $row['PaymentNo'];
+        }
+
+        echo "INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingState,PaymentNo)
+        VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')";
+        $insertBooking =  mysqli_query($con,"INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingStatus,PaymentNo)
+        VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')");
 ?>

@@ -170,7 +170,7 @@
                 </div>
               </div>
             </div>
-          <form class="needs-validation" novalidate action = "payment.inc.php" method="POST">
+          <form class="needs-validation" novalidate action = "payment.inc.php?promocode=<?=$promocode?>&seatno=<?=$_GET['seatno']?>&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$_GET['TicketPrice']?>" method="POST">
             <hr class="mb-4">
             
             <h4 class="mb-3">Payment</h4>
