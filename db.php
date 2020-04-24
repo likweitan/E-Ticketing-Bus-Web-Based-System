@@ -1,7 +1,7 @@
 <?php
-    $servername = "paneldatabase.humbleservers.com";
-    $username = "u900_jJRVC99eMW";
-    $password = "Gm+56vHMw+G^0U^@VhIaM9CQ";
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
     $databasename = "s900_database";
 
     $con = mysqli_connect($servername,$username,$password,$databasename);

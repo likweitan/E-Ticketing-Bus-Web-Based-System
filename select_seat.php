@@ -6,6 +6,9 @@
         header('Location: login.php');
     }
 
+    if($_GET['scheduleno']=="" || $_GET['ticketprice']=="" || $_GET['inputdate']==""){
+      header("location:searchbus.php");
+    }
     $sql = "SELECT *
             FROM bus_schedule
             WHERE ScheduleNo =".$_GET['scheduleno'];
