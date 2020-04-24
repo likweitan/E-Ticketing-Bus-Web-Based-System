@@ -1,14 +1,11 @@
 <?php
     require("loginheader.php");
-<<<<<<< HEAD
-=======
 
     if(!isset($_SESSION['id']))
     {
         header('Location: login.php');
     }
 
->>>>>>> 4f9672a4e0e8aec3ab570a628017f1d26629c460
     $sql = "SELECT *
             FROM bus_schedule
             WHERE ScheduleNo =".$_GET['scheduleno'];
@@ -76,48 +73,14 @@
         <br>
         <div class="container">
         <div class="row">
-<<<<<<< HEAD
-
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno=3&inputdate=<?=$_GET['inputdate']?>&scheduleno=<?=$_GET['scheduleno']?>&TicketPrice=<?=$row['TicketPrice']?>">03</a></button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">06</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">09</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">12</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">15</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">18</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">21</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">24</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">27</button>
-    </div>
-    <div class="col-sm">
-    <button type="button" class="btn btn-outline-primary">30</button>
-    </div>
-=======
     <?php
         for ($x = 3; $x <= 30; $x+=3)
         {
             echo '<div class="col-sm">';
-            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
+            echo '<button type="button" class="btn btn-outline-primary" name="selectSeat"><a href="payment.php?seatno='.$x.'&inputdate='.$_GET['inputdate'].'&TicketPrice'.$_GET['TicketPrice'].'&scheduleno='.$_GET['scheduleno'].'">'.$x.'</a></button>';
             echo "</div>";
         } 
     ?>
->>>>>>> 4f9672a4e0e8aec3ab570a628017f1d26629c460
   </div>
   <div class="row">
   <?php

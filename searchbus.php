@@ -155,11 +155,7 @@
             <div class="form-group col-md-4 text-left">
                <label for="inputDepartDate" style="color:white;">Depart Date</label>
                  <span style="color: red !important; display: inline; float: none;">*</span> 
-<<<<<<< HEAD
-                    <input type="date" class="form-control" id="inputDepartDate" placeholder="" name="inputDepartDate"  >
-=======
                     <input type="date" class="form-control" id="inputDepartDate" placeholder="<?php if(isset($inputDepartDate))echo$inputDepartDate;?>" name="inputDepartDate"  >
->>>>>>> 4f9672a4e0e8aec3ab570a628017f1d26629c460
              </div>
            </div>
               <!-- Book Ticket -->
