@@ -148,8 +148,7 @@
               </div>
             </div>
             </form>
-          </form>
-        </div action = <?php "payment.inc.php" ?> method="POST">
+        </div>
         <div class="col-md-8 order-md-1">
         <div class="row">
               <div class="col-md-6 mb-3">
@@ -170,7 +169,7 @@
                 </div>
               </div>
             </div>
-          <form class="needs-validation" novalidate>
+          <form class="needs-validation" novalidate action = <?php "payment.inc.php" ?> method="POST">
             <hr class="mb-4">
             
             <h4 class="mb-3">Payment</h4>
