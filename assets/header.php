@@ -38,7 +38,7 @@
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
                 echo $myFirstName." ".$myLastName;
               echo '</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 <a class="dropdown-item" href="managebooking.php">Manage Booking</a>
                 <a class="dropdown-item" href="setting.php">Setting</a>
                 <a class="dropdown-item" href="logout.php">Logout</a>

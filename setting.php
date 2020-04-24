@@ -1,5 +1,25 @@
 <?php
   require("loginheader.php");
+
+  if(!isset($_SESSION['id']))
+    {
+        header('Location: login.php');
+    }
+
+  $sql = "SELECT SUM(TicketPrice) AS Total FROM booking
+        RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo
+        WHERE AccountNo = ".$_SESSION['id'];
+        $query = mysqli_query($con,$sql);
+        $row = mysqli_fetch_array($query);
+
+        if($row['Total'])
+        {
+            $total = $row['Total'];
+        }
+        else
+        {
+          $total = 0;
+        }
 ?>
 <!doctype html>
 <html lang="en">
@@ -42,9 +62,68 @@
   
 
   <!-- HEADER-->
-  <?php
-    include('assets/header.php');
-  ?>
+  <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.php">
+    <img src="images/logo_white.png" width="30" height="30" class="d-inline-block align-top" alt="">
+    
+  </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="searchbus.php">Search Ticket</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="promotion.php">Promotions</a>
+            </li>
+            <?php if(isset($_SESSION['id']))
+            {
+            echo '
+            <li class="nav-item">
+              <a class="nav-link" href="managebooking.php">My Bookings</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="setting.php">My Account</a>
+            </li>';
+            }; ?>
+          </ul>
+            <?php
+            if(isset($_SESSION['id']))
+            {
+          echo '<form class="form-inline"><div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                echo $myFirstName." ".$myLastName;
+              echo '</a>
+              <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="managebooking.php">Manage Booking</a>
+                <a class="dropdown-item" href="setting.php">Setting</a>
+                <a class="dropdown-item" href="logout.php">Logout</a>
+              </div>
+            </li>
+          </ul>
+        </div></form>';
+            }
+            else
+            {
+              echo '<form class="form-inline mt-2 mt-md-0" action="login.php">
+              <button type="submit" class="btn btn-outline-warning my-2 my-sm-0">Login</button>
+              </form>';
+            }
+            ?>
+          
+        </div>
+        
+      </nav>
+    </header>
+  
 <?php
         if(!empty($_GET["phone"]))
         {
@@ -150,7 +229,7 @@
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Membership</h6>
         <div class="progress">
-  <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+  <div class="progress-bar bg-warning" role="progressbar" style="width: <?=$total?>%" aria-valuenow="<?=$total?>" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
     <br>
     <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
@@ -158,7 +237,7 @@
               <strong class="text-gray-dark">Member</strong>
               <a href="#" data-toggle="modal" data-target="#viewTierBenefits">View Tier Benefits</a>
             </div>
-            <span class="d-block">Get 2,304 more points to upgrade to silver.</span>
+            <span class="d-block">Get <?=1000-$total?> more points to upgrade to silver.</span>
           </div>
       </div>
       
@@ -195,7 +274,7 @@
           <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
             <div class="d-flex justify-content-between align-items-center w-100">
               <strong class="text-gray-dark">Password</strong>
-              <a href="#">Reset password</a>
+              <a href="#" data-toggle="modal" data-target="#editPassword">Reset password</a>
             </div>
             <span class="d-block">Last changed: <?=$myStartDate?></span>
           </div>

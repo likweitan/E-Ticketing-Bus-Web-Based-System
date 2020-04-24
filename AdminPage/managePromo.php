@@ -6,12 +6,16 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../../../favicon.ico">
-
-    <title>Manage Booking</title>
+    
+    
+    
+    
+    <!--<link rel="stylesheet" type="text/css" href="bootstrap-3.3.5-dist/css/bootstrap.css"/>-->
+    <title>Manage Promotion</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
     <!-- Custom styles for this template -->
     <link href="../css/dashboard.css" rel="stylesheet">
   </head>
@@ -28,13 +32,13 @@
 
     <div class="container-fluid">
       <div class="row">
-      <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <a class="nav-link active" href="#">
                   <span data-feather="home"></span>
-                  Dashboard <span class="sr-only"></span>
+                  Dashboard 
                 </a>
               </li>
               <li class="nav-item">
@@ -47,6 +51,7 @@
                 <a class="nav-link" href="#">
                   <span data-feather="shopping-cart">(current)</span>
                   Promotion
+                  <span class="sr-only"></span>
                 </a>
               </li>
               <li class="nav-item">
@@ -61,17 +66,20 @@
                   Bus
                 </a>
               </li>
-              
             </ul>
+
+            
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+         <!--this is the main contain of container-->
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Booking Management</h1>
+            <h1 class="h2">Promotion Management</h1>
           </div>
+          
           <!--Start the CRUD-->
-          <?php require_once 'functionBooking.php'; ?>
+          <?php require_once 'functionPromo.php'; ?>
           <?php
             if(isset($_SESSION['message'])): ?>
             <div class="alert alert-<?=$_SESSION['msg_type']?>">
@@ -85,95 +93,81 @@
          
           <div class = "container">
             <div class="row">
-              <div class ="col-sm-6"> 
-                <div class="row justify-content">
-                  <form action = "functionBooking.php" method="POST">
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label>Booking</label>
-                            <input type="text" name="bookNo" class="form-control" value ="<?php echo $bkNo; ?>" placeholder="Booking No" readonly>
-                            
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Account No</label>
-                            <input type="text" name="accNo" class="form-control" value ="<?php echo $acctNo; ?>" placeholder="Account No" readonly>
-                        </div>
+              <div class ="col-sm-5"> 
+                <div class="row justify-content-center">
+                  <form action = "functionPromo.php" method="POST">
+                      
+                      <div class="form-group">
+                          <label>Promotion Code</label>
+                          
+                            <input type="text" name="pCode" class="form-control" value ="<?php echo $prCode; ?>" placeholder="Create Promotion Code">
+                          
                       </div>
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label>Promotion Code</label>
-                            <input type="text" name="proCode" class="form-control" value ="<?php echo $prCode; ?>" placeholder="Promotion Code" readonly>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Schedule No</label>
-                            <input type="text" name="sNo" class="form-control" value ="<?php echo $scNo; ?>" placeholder="Schedule No" readonly>
-                        </div>
+                      <div class="form-group">
+                          <label>Promotion Code Description</label>
+                          <input type="text" name="pcDes" class="form-control" value ="<?php echo $prcDes; ?>" placeholder="Enter Promotion Code Description">
                       </div>
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label>Quantity</label>
-                            <input type="text" name="quan" class="form-control" value ="<?php echo $quant; ?>" placeholder="Quantity">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Bus Seat</label>
-                            <input type="text" name="bSeat" class="form-control" value ="<?php echo $buSeat; ?>" placeholder="Bus Seat">
-                        </div>
+                      <div class="form-group">
+                          <label>Promotion End Date</label>
+                          <input type="date" name="pcEnd" class="form-control" value ="<?php echo $prcEnd; ?>" placeholder="Insert Promotion End Date">
                       </div>
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label>Bus Date Time</label>
-                            <input type="text" name="bDtime" class="form-control" value ="<?php echo $buDtime; ?>" placeholder="Bus Date Time" readonly>
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Payment No</label>
-                            <input type="text" name="pa" class="form-control" value ="<?php echo $paym; ?>" placeholder="Payment No" readonly>
-                        </div>
+                      <div class="form-group">
+                          <label>Promotion Start Date</label>
+                          <input type="datetime-local" name="pcStart" class="form-control" value ="<?php echo $prcStart; ?>" placeholder="Insert Promotion Start Date">
                       </div>
-                      <div class="row">
-                        <div class="form-group col-sm-6">
-                            <label>Booking Status</label>
-                            <input type="text" name="bStatus" class="form-control" value ="<?php echo $boStatus; ?>" placeholder="Booking Status">
-                        </div>
-                        <div class="form-group col-sm-6">
-                            <label>Booking Time Stamp </label>
-                            <input type="text" name="bTstamp" class="form-control" value ="<?php echo $boTstamp; ?>" placeholder="Booking Time Stamp" readonly>
-                        </div>
+                      <div class="form-group">
+                          <label>Promotion Percentage</label>
+                          <input type="text" name="pPer" class="form-control" value ="<?php echo $prcPer; ?>" placeholder="Insert Promotion Percentage">
+                      </div>
+                      <div class="form-group">
+                          <label>Schedule No</label>
+                          <select name = "sn" class="form-control">
+                          <?php
+                              include("../db.php");
+                              $result1 = $con->query("SELECT ScheduleNo FROM bus_schedule") or die($con->error());
+                              
+                              while($rows = $result1->fetch_assoc()):
+                                $schedule_no = $rows['ScheduleNo'];?>
+                                
+                                  <option name="Sch" value ="<?php echo $psch; ?>"><?php echo $schedule_no; ?></option>
+                                
+                          <?php endwhile; ?>
+                          </select>
                       </div>
                       <div class="form-group">
                           <?php
                             if($update == true):
                           ?>
-                              <button type="submit" name="uBooking" class="btn btn-info" >Update</button>
-                              <button type="submit" name="cancelUpdate" class="btn btn-secondary" >Cancel</button>
+                            <button type="submit" name="updateProm" class="btn btn-info" >Update</button>
+                            <button type="submit" name="cancelUpdate" class="btn btn-secondary" >Cancel</button>
                             <?php else: ?>
-                            
+                            <button type="submit" name="addProm" class="btn btn-primary" >Add</button>
                           <?php endif; ?>
                       </div>
                   </form> 
                 </div>
               </div>
-              <div class = "col-sm-5">
+              <div class = "col-sm-7">
                 <?php //Display Promotion code From database
                     include("../db.php");
-                    $result = $con->query("SELECT * FROM booking") or die($con->error());  
+                    $result = $con->query("SELECT * FROM promo_code") or die($con->error());  
                 ?>
                 <div class="row justify-content-center">
                     <table id="showtable" class="table">
                       <thead>
                         <tr>
-                            <th>Booking No </th>
-                            <th>Account No</th>
+                            <th>Promotion Code </th>
+                            <th>Promotion Start Date</th>
                             <th colspan="2">Action</th>
                         </tr>
                       </thead>
                       <?php
                           while ($row = $result->fetch_assoc()): ?>
                           <tr>
-                              <td><?php echo $row['BookingNo'] ?></td>
-                              <td><?php echo $row['AccountNo'] ?></td>
+                              <td><?php echo $row['PromoCode'] ?></td>
+                              <td><?php echo $row['PromoCodeStartTimestamp'] ?></td>
                               <td>
-                              
-                                <a href="manageBooking.php? edit=<?php echo $row['BookingNo']; ?>"
+                                <a href="managePromo.php? edit=<?php echo $row['PromoCode']; ?>"
                                   class="btn btn-info">Edit</a>
                               </td>
                           </tr>
@@ -183,10 +177,11 @@
               </div>
             </div>
           </div>           
-          <!--End the CRUD-->
+          <!--End the CRUD--> 
         </main>
-      </div>
+      </div>  
     </div>
+         
 
     <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -194,6 +189,10 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- Table script -->
+    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>                          
     
     <!-- Icons -->
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
