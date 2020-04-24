@@ -9,6 +9,7 @@
     $prcEnd = '';
     $prcStart = '';
     $prcPer = '';
+    $psch='';
     $update = false;
     
     if(isset($_POST['addProm']))
@@ -63,7 +64,7 @@
         $proCDes = $_POST['pcDes'];
         $proPer = $_POST['pPer'];
 		$proEnd = $_POST['pcEnd'];
-        $proStart = $_POST['pcStart'];
+        $proStart = $_POST['upcStart'];
         $prcSche = $_POST['Sch'];
         $query = "UPDATE promo_code SET PromoCodeDescription = '$proCDes', 
                     PromoPercentage = $proPer ,PromoCodeEndTimestamp = '$proEnd',

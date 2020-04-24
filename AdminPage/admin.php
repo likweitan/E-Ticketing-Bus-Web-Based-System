@@ -132,12 +132,6 @@ break;
                   Bus
                 </a>
               </li>
-              <!--li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="layers"></span>
-                  Integrations
-                </a>
-              </li-->
             </ul>
 
             

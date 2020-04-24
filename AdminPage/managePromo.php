@@ -1,3 +1,10 @@
+<?php
+  require("../loginheader.php");
+  if($myAccountRole != "Admin")
+  {
+    header('Location:../index.php');
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -35,40 +42,37 @@
         <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard 
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bookmark"></span>
-                  Ticket
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart">(current)</span>
-                  Promotion
-                  <span class="sr-only"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customer
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="truck"></span>
-                  Bus
-                </a>
-              </li>
-            </ul>
-
-            
+                <li class="nav-item">
+                  <a class="nav-link active" href="admin.php">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBooking.php">
+                    <span data-feather="bookmark"></span>
+                    Ticket
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="managePromo.php">
+                    <span data-feather="shopping-cart">(current)</span>
+                    Promotion
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageUser.php">
+                    <span data-feather="users"></span>
+                    Customer
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBus.php">
+                    <span data-feather="truck"></span>
+                    Bus
+                  </a>
+                </li> 
+              </ul>
           </div>
         </nav>
 
@@ -113,7 +117,14 @@
                       </div>
                       <div class="form-group">
                           <label>Promotion Start Date</label>
-                          <input type="datetime-local" name="pcStart" class="form-control" value ="<?php echo $prcStart; ?>" placeholder="Insert Promotion Start Date">
+                          <?php
+                            if($update == true):
+                          ?>
+                            <input type="text" name="upcStart" class="form-control" value ="<?php echo $prcStart; ?>" placeholder="Insert Promotion Start Date">
+                           <?php else: ?>
+                            <input type="datetime-local" name="pcStart" class="form-control" placeholder="Insert Promotion Start Date">
+                          <?php endif; ?>
+                          
                       </div>
                       <div class="form-group">
                           <label>Promotion Percentage</label>
@@ -121,15 +132,15 @@
                       </div>
                       <div class="form-group">
                           <label>Schedule No</label>
-                          <select name = "sn" class="form-control">
+                          <select name="Sch" class="form-control">
                           <?php
                               include("../db.php");
-                              $result1 = $con->query("SELECT ScheduleNo FROM bus_schedule") or die($con->error());
-                              
-                              while($rows = $result1->fetch_assoc()):
+                              $result1 = $con->query("SELECT ScheduleNo FROM bus_schedule") or die($con->error());   
+                          ?>
+                              <option  value ="<?php echo $psch; ?>"><?php echo $psch; ?></option>
+                          <?php while($rows = $result1->fetch_assoc()):
                                 $schedule_no = $rows['ScheduleNo'];?>
-                                
-                                  <option name="Sch" value ="<?php echo $psch; ?>"><?php echo $schedule_no; ?></option>
+                              <option  value ="<?php echo $schedule_no; ?>"><?php echo $schedule_no; ?></option>
                                 
                           <?php endwhile; ?>
                           </select>

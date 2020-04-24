@@ -1,3 +1,10 @@
+<?php
+  require("../loginheader.php");
+  if($myAccountRole != "Admin")
+  {
+    header('Location:../index.php');
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -32,36 +39,35 @@
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
               <li class="nav-item">
-                <a class="nav-link active" href="#">
+                <a class="nav-link active" href="admin.php">
                   <span data-feather="home"></span>
                   Dashboard <span class="sr-only"></span>
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageBooking.php">
                   <span data-feather="bookmark"></span>
                   Ticket
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="managePromo.php">
                   <span data-feather="shopping-cart">(current)</span>
                   Promotion
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageUser.php">
                   <span data-feather="users"></span>
                   Customer
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageBus.php">
                   <span data-feather="truck"></span>
                   Bus
                 </a>
-              </li>
-              
+              </li> 
             </ul>
           </div>
         </nav>
@@ -175,23 +181,60 @@
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Bus No</label>
-                            <input type="text" name="sbNo" class="form-control" value ="<?php echo $scbusno; ?>" placeholder="Bus No" >
+                              <select name="sbNo" class="form-control" placeholder="Bus No" >
+                                <?php
+                                    include("../db.php");
+                                    $result1 = $con->query("SELECT * FROM bus") or die($con->error());   
+                                ?>
+                                    <option  value ="<?php echo $scbusno; ?>"><?php echo $scbusno; ?></option>
+                                <?php while($rows = $result1->fetch_assoc()):
+                                      $BusNo = $rows['BusNo'];?>
+                                    <option  value ="<?php echo $BusNo; ?>"><?php echo $BusNo; ?></option>
+                                      
+                                <?php endwhile; ?>
+                              </select>
                         </div>
                       </div>
                       <div class="row">
                         <div class="form-group col-sm-6">
                             <label>Schedule Depart</label>
-                            <input type="text" name="scd" class="form-control" value ="<?php echo $scdepart; ?>" placeholder="Schedule Depart">
+                            <select name="scd" class="form-control" >
+                                    <option  value ="<?php echo $scdepart; ?>"><?php echo $scdepart; ?></option>
+                                    <option  value ="Johor‎">Johor‎</option>
+                                    <option  value ="Kedah‎">Kedah‎</option>
+                                    <option  value ="Kelantan‎">Kelantan‎</option>
+                                    <option  value ="Malacca‎">Malacca‎</option>
+                                    <option  value ="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option  value ="Pahang‎">Pahang‎</option>
+                                    <option  value ="Penang">Penang</option>
+                                    <option  value ="Ipoh">Ipoh</option>
+                                    <option  value ="Perlis‎">Perlis‎</option>
+                                    <option  value ="Selangor">Selangor</option>
+                                    <option  value ="Terengganu‎">Terengganu‎</option>
+                              </select>
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Schedule Arrive</label>
-                            <input type="text" name="sca" class="form-control" value ="<?php echo $scarrive; ?>" placeholder="Schedule Arrive">
+                              <select name="sca" class="form-control" >
+                                    <option  value ="<?php echo $scarrive; ?>"><?php echo $scarrive; ?></option>
+                                    <option  value ="Johor‎">Johor‎</option>
+                                    <option  value ="Kedah‎">Kedah‎</option>
+                                    <option  value ="Kelantan‎">Kelantan‎</option>
+                                    <option  value ="Malacca‎">Malacca‎</option>
+                                    <option  value ="Negeri Sembilan">Negeri Sembilan</option>
+                                    <option  value ="Pahang‎">Pahang‎</option>
+                                    <option  value ="Penang">Penang</option>
+                                    <option  value ="Ipoh">Ipoh</option>
+                                    <option  value ="Perlis‎">Perlis‎</option>
+                                    <option  value ="Selangor">Selangor</option>
+                                    <option  value ="Terengganu‎">Terengganu‎</option>
+                              </select>
                         </div>
                       </div>
                       <div class="row">
                         <div class="form-group col-sm-6">
                             <label>Schedule Start Time</label>
-                            <input type="text" name="sst" class="form-control" value ="<?php echo $sstime; ?>" placeholder="Schedule Start Time">
+                            <input type="time" name="sst" class="form-control" value ="<?php echo $sstime; ?>" placeholder="Schedule Start Time">
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Schedule Duration</label>
@@ -229,6 +272,7 @@
                         <tr>
                             <th>Schedule No</th>
                             <th>Bus No </th>
+                            <th>Ticket Price </th>
                             <th colspan="2">Action</th>
                         </tr>
                       </thead>
@@ -237,6 +281,7 @@
                           <tr>
                               <td><?php echo $row['ScheduleNo'] ?></td>
                               <td><?php echo $row['BusNo'] ?></td>
+                              <td><?php echo $row['TicketPrice'] ?></td>
                               
                               <td>
                               

@@ -1,3 +1,10 @@
+<?php
+  require("../loginheader.php");
+  if($myAccountRole != "Admin")
+  {
+    header('Location:../index.php');
+  }
+?>
 <!doctype html>
 <html lang="en">
   <head>
@@ -31,44 +38,43 @@
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
           <div class="sidebar-sticky">
             <ul class="nav flex-column">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">
-                  <span data-feather="home"></span>
-                  Dashboard <span class="sr-only"></span>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="bookmark"></span>
-                  Ticket
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="shopping-cart">(current)</span>
-                  Promotion
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="users"></span>
-                  Customer
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  <span data-feather="truck"></span>
-                  Bus
-                </a>
-              </li>
-              
-            </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" href="admin.php">
+                    <span data-feather="home"></span>
+                    Dashboard <span class="sr-only"></span>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBooking.php">
+                    <span data-feather="bookmark"></span>
+                    Ticket
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="managePromo.php">
+                    <span data-feather="shopping-cart">(current)</span>
+                    Promotion
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageUser.php">
+                    <span data-feather="users"></span>
+                    Customer
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="manageBus.php">
+                    <span data-feather="truck"></span>
+                    Bus
+                  </a>
+                </li> 
+              </ul>
           </div>
         </nav>
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2">Booking Management</h1>
+            <h1 class="h2">Ticket Management</h1>
           </div>
           <!--Start the CRUD-->
           <?php require_once 'functionBooking.php'; ?>
@@ -131,8 +137,13 @@
                       </div>
                       <div class="row">
                         <div class="form-group col-sm-6">
-                            <label>Booking Status</label>
-                            <input type="text" name="bStatus" class="form-control" value ="<?php echo $boStatus; ?>" placeholder="Booking Status">
+                            <label>Booking Status</label> 
+                            <select name="bStatus" class="form-control" >
+                                  <option  value ="<?php echo $boStatus; ?>"><?php echo $boStatus; ?></option>
+                                  <option  value ="Cancelled">Cancelled</option>
+                                  <option  value ="Completed">Completed</option>
+                                  <option  value ="Confirmed">Confirmed</option>
+                            </select>
                         </div>
                         <div class="form-group col-sm-6">
                             <label>Booking Time Stamp </label>
