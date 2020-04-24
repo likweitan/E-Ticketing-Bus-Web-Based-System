@@ -69,7 +69,7 @@
                 <a class="dropdown-item" href="setting.php">Setting</a>';
                 if($myAccountRole == "Admin")
                 {
-                  echo '<a class="dropdown-item" href="setting.php">Setting</a>';
+                  echo '<a class="dropdown-item" href="AdminPage/admin.php">Admin Panel</a>';
                 }
                 echo '<a class="dropdown-item" href="logout.php">Logout</a>
               </div>
