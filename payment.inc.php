@@ -1,23 +1,5 @@
 <?php
  require("loginheader.php");
-<<<<<<< HEAD
-     if(isset($_GET['book_ticket'])){
-        $PaymentType = mysqli_real_escape_string($con, $_POST["PaymentType"]);
-        $CardName =  mysqli_real_escape_string($con,$_POST["CardName"]);
-        $CardNumber =  mysqli_real_escape_string($con,$_POST["CardNumber"]);
-        $CardExpiration =  mysqli_real_escape_string($con, $_POST["CardExpiration"]);
-        $CVV = mysqli_real_escape_string($con, $_POST["CVV"]);
-        
-        
-       
-        $seatno = mysqli_real_escape_string($con, $_POST["seatno"]);
-        $insertPayment =  mysqli_query($con,"INSERT INTO payment (PaymentType,CardName,CardNumber,CardExpiration)
-        VALUES('$PaymentType', '$CardName', '$CardNumber', '$CardExpiration') WHERE AccountNo=".$_SESSION['id']);
-        $insertBooking =  mysqli_query($con,"INSERT INTO booking (seatno)
-        VALUES('$seatno') WHERE AccountNo=".$_SESSION['id']);
-    }
-    else echo "invalid";
-=======
  $accountno = $_SESSION['id'];
         $PaymentType = $_POST['PaymentType'];
         $CardName = $_POST['CardName'];
@@ -51,5 +33,4 @@
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')");
 
         header('Location: managebooking.php');
->>>>>>> 0b96fa0d3fa759d9dd2ccf9f5f75226cee03eaa1
 ?>
