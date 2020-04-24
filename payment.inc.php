@@ -1,6 +1,5 @@
 <?php
- require("db.php");
- session_start();
+ require("loginheader.php");
      if(isset($_GET['book_ticket'])){
         $PaymentType = mysqli_real_escape_string($con, $_POST["PaymentType"]);
         $CardName =  mysqli_real_escape_string($con,$_POST["CardName"]);
