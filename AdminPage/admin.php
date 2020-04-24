@@ -109,25 +109,25 @@ break;
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageBooking.php">
                   <span data-feather="bookmark"></span>
                   Ticket
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="managePromo.php">
                   <span data-feather="shopping-cart">(current)</span>
                   Promotion
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageUser.php">
                   <span data-feather="users"></span>
                   Customer
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="manageBus.php">
                   <span data-feather="truck"></span>
                   Bus
                 </a>
