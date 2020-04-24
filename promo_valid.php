@@ -13,12 +13,13 @@
 	    while($rs = mysqli_fetch_array($promo)){
             $valid = $rs['PromoCode'];
             $ScheduleNo = $rs['ScheduleNo'];
+            $promopercentage = $rs['PromoPercentage'];
         }
        }
 
         if($PromoCode==$valid &  $scheduleno1==$ScheduleNo){
             $TotalPrice = $TicketPrice - ($TicketPrice * $valid/100);
-            header("location: payment.php?scheduleno=".$scheduleno1."&PromoCode=".$PromoCode."&TicketPrice=".$TotalPrice);
+            header("location: payment.php?seatno=".$seatno."&inputdate=".$inputDepartDate."&scheduleno=".$scheduleno1."&PromoCode=".$PromoCode);
             }
             else
             echo"invalid Code";

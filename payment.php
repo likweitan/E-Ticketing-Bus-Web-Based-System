@@ -1,9 +1,7 @@
 <?php
     require("loginheader.php");
 
-        $seatno = $_GET["seatno"];
-        $inputDepartDate = $_GET['inputdate'];
-        $TotalPrice = $_GET['TicketPrice'];
+        
         $sql = "SELECT *
         FROM bus_schedule
         LEFT JOIN bus ON bus_schedule.BusNo = bus.BusNo 
@@ -22,6 +20,29 @@
         $ScheduleDuration = $row['ScheduleDuration'];
         $TicketPrice = $row['TicketPrice'];
     }
+
+    $seatno = $_GET["seatno"];
+        $inputDepartDate = $_GET['inputdate'];
+        if(isset($_GET['PromoCode']))
+        {
+          $promocode = $_GET['PromoCode'];
+
+          $sql = "SELECT * FROM promo_code WHERE PromoCode ='".$promocode."'";
+    $query = mysqli_query($con,$sql);
+    $row = mysqli_fetch_array($query);
+
+    if($row)
+    {
+        $promopercent = $row['PromoPercentage'];
+    }
+    $TotalPrice = $TicketPrice - ($TicketPrice * ($promopercent/100));
+  }
+        else
+        {
+          $promocode = "";
+          $TotalPrice = $TicketPrice;
+        }
+          
 
     
 ?>
@@ -111,7 +132,7 @@
               <div class="text-success">
                 <h6 class="my-0">Promo code</h6>
               </div>
-              <span class="text-success"></span>
+              <span class="text-success"><?=$promocode?></span>
             </li>
             <li class="list-group-item d-flex justify-content-between">
               <span>Total (MYR)</span>
