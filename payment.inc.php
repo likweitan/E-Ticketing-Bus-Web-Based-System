@@ -9,7 +9,10 @@
         $cvv = $_POST['CVV'];
 
         $bookingno = rand();
+        if($_GET['promocode'])
         $promocode = $_GET['promocode'];
+        else
+        $promocode = "none";
         $scheduleno = $_GET['scheduleno'];
         $quantity = 1;
         $seatno = $_GET['seatno'];
@@ -27,8 +30,8 @@
         {
             $PaymentNo = $row['PaymentNo'];
         }
-
-        echo "INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingState,PaymentNo)
+        
+        echo "INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingStatus,PaymentNo)
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')";
         $insertBooking =  mysqli_query($con,"INSERT INTO booking (BookingNo,AccountNo,PromoCode,ScheduleNo,Quantity,BusSeat,BusDateTime,BookingStatus,PaymentNo)
         VALUES('$bookingno','$accountno','$promocode', '$scheduleno', '$quantity', '$seatno', '$busdatetime', '$bookingstate', '$PaymentNo')");
