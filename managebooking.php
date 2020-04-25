@@ -5,12 +5,12 @@
     {
         $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM booking
         RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo 
-        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP() AND BookingStatus = 'Confirmed'
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime >= CURRENT_TIMESTAMP()
         ORDER BY BusDateTime ASC";
         $query_upcoming = mysqli_query($con,$sql);
         $sql = "SELECT *, DATE(BusDateTime) AS ScheduleDate FROM booking
         RIGHT JOIN bus_schedule ON booking.ScheduleNo = bus_schedule.ScheduleNo 
-        WHERE BookingStatus IN ('Completed','Cancelled') AND booking.AccountNo =".$_SESSION['id']."
+        WHERE AccountNo =".$_SESSION['id']." AND BusDateTime < CURRENT_TIMESTAMP()
         ORDER BY BusDateTime DESC";
         $query_past = mysqli_query($con,$sql);
     }
