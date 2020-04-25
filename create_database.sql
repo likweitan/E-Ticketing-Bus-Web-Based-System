@@ -80,7 +80,7 @@ VALUES
     'Tan',
     'likweitan@gmail.com',
     '012-2939932',
-    'admin',
+    '21232f297a57a5a743894a0e4a801fc3',
     'male',
     '1998-04-08',
     'admin',
@@ -128,7 +128,7 @@ VALUES
     '2020-04-30 00:00:00',
     '2020-04-16 00:00:00'
   );
-  INSERT INTO `s900_database`.`promo_code` (
+INSERT INTO `s900_database`.`promo_code` (
     `PromoCode`,
     `ScheduleNo`,
     `PromoCodeDescription`,
