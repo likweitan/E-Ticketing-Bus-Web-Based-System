@@ -23,14 +23,6 @@ CREATE TABLE payment (
   AccountNo int NOT NULL,
   FOREIGN KEY (AccountNo) REFERENCES account(AccountNo)
 );
-CREATE TABLE promo_code (
-  PromoCode varchar(50) NOT NULL PRIMARY KEY,
-  PromoCodeDescription varchar(50) NOT NULL,
-  PromoPercentage int NOT NULL,
-  PromoCodeEndTimestamp date NOT NULL,
-  FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
-  PromoCodeStartTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-);
 CREATE TABLE bus (
   BusNo varchar(50) NOT NULL PRIMARY KEY,
   BusCompany varchar(50) NOT NULL,
@@ -45,6 +37,15 @@ CREATE TABLE bus_schedule (
   ScheduleDuration int(50) NOT NULL,
   TicketPrice float(10) NOT NULL,
   FOREIGN KEY (BusNo) REFERENCES bus(BusNo)
+);
+CREATE TABLE promo_code (
+  PromoCode varchar(50) NOT NULL PRIMARY KEY,
+  ScheduleNo varchar(50) NOT NULL,
+  PromoCodeDescription varchar(50) NOT NULL,
+  PromoPercentage int NOT NULL,
+  PromoCodeEndTimestamp date NOT NULL,
+  FOREIGN KEY (ScheduleNo) REFERENCES bus_schedule(ScheduleNo),
+  PromoCodeStartTimestamp timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 );
 CREATE TABLE booking (
   BookingNo varchar(50) NOT NULL PRIMARY KEY,
