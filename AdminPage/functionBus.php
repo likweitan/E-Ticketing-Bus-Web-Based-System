@@ -31,8 +31,11 @@
         }
             $_SESSION['message'] = "Record has been Add";
             $_session['msg_type'] = "Success";
+        echo "<script>
+        alert('New Record Added Successful');
+        window.location.href='manageBus.php';
+        </script>";
         
-        header("location: manageBus.php");
     }
     if(isset($_POST['addSchedule']))
 	{
@@ -57,7 +60,10 @@
             $_SESSION['message'] = "Record has been Add";
             $_session['msg_type'] = "Success";
         
-        header("location: manageBus.php");
+        echo "<script>
+        alert('New Record Added Successful');
+        window.location.href='manageBus.php';
+        </script>";
     }
 
     if(isset($_GET['edit']))
@@ -105,7 +111,11 @@
             $_SESSION['message'] = "Record has been Updated";
             $_session['msg_type'] = "warning";
         
-        header("location: manageBus.php");
+        echo "<script>
+        alert('Record Update Successful');
+        window.location.href='manageBus.php';
+        </script>";
+        
     }
   
     if(isset($_GET['deleteRecord']))
@@ -119,8 +129,10 @@
        
             $_SESSION['message'] = "Record has been Deleted";
             $_session['msg_type'] = "Danger";
-        
-        header("location: manageBus.php");
+        echo "<script>
+        alert('Record had deleted');
+        window.location.href='manageBus.php';
+        </script>";
     }
     if(isset($_POST['cancelDelete']))
 	{
