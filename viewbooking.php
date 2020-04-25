@@ -1,5 +1,10 @@
 <?php
     include('loginheader.php');
+
+    if(!isset($_SESSION['id']))
+    {
+        header('Location: login.php');
+    }
 ?>
 <!doctype html>
 <html lang="en">
