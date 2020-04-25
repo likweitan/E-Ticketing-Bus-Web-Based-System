@@ -1,10 +1,10 @@
+CREATE DATABASE IF NOT EXISTS s900_database;
 USE s900_database;
 CREATE TABLE account (
   AccountNo int AUTO_INCREMENT NOT NULL PRIMARY KEY,
   FirstName varchar(50) NOT NULL,
   LastName varchar(50) NOT NULL,
   Email varchar(50) NOT NULL,
-  Phone varchar(50) NOT NULL,
   Password varchar(50) NOT NULL,
   Gender varchar(50) NOT NULL,
   BirthDate date NOT NULL,
@@ -67,6 +67,7 @@ INSERT INTO `s900_database`.`account` (
     `FirstName`,
     `LastName`,
     `Email`,
+    `PhoneNumber`,
     `Password`,
     `Gender`,
     `BirthDate`,
@@ -78,30 +79,12 @@ VALUES
     'Lik Wei',
     'Tan',
     'likweitan@gmail.com',
+    '012-2939932',
     'admin',
     'male',
     '1998-04-08',
     'admin',
     'malaysian'
-  );
-INSERT INTO `s900_database`.`booking` (
-    `BookingNo`,
-    `AccountNo`,
-    `Quantity`,
-    `BusNo`,
-    `BusSeat`,
-    `BusDateTime`,
-    `PromoCode`
-  )
-VALUES
-  (
-    '1',
-    '1',
-    '1',
-    'JJP2930',
-    '23',
-    '2020-04-17 10:00:00',
-    '1'
   );
 INSERT INTO `s900_database`.`bus` (`BusNo`, `BusCompany`, `BusCapacity`)
 VALUES
@@ -130,33 +113,79 @@ VALUES
   );
 INSERT INTO `s900_database`.`promo_code` (
     `PromoCode`,
+    `ScheduleNo`,
     `PromoCodeDescription`,
+    `PromoPercentage`,
     `PromoCodeEndTimestamp`,
     `PromoCodeStartTimestamp`
   )
 VALUES
   (
     'NEW2KL',
+    '1',
     'New to KL!',
+    '10',
     '2020-04-30 00:00:00',
     '2020-04-16 00:00:00'
   );
-INSERT INTO `s900_database`.`booking` (
-    `BookingNo`,
+INSERT INTO `s900_database`.`payment` (
+    `PaymentNo`,
     `AccountNo`,
-    `PromoCode`,
-    `ScheduleNo`,
-    `Quantity`,
-    `BusSeat`,
-    `BusDateTime`
+    `PaymentType`,
+    `CardName`,
+    `CardNumber`,
+    `CardExpiration`,
+    `CVV`
   )
 VALUES
   (
-    '133123',
     '1',
+    '1',
+    'Debit',
+    'TAN LIK WEI',
+    '2132324534321234',
+    '122020',
+    '232'
+  );
+INSERT INTO `s900_database`.`booking` (
+    `BookingNo`,
+    `ScheduleNo`,
+    `AccountNo`,
+    `Quantity`,
+    `BusSeat`,
+    `BusDateTime`,
+    `PromoCode`,
+    `PaymentNo`
+  )
+VALUES
+  (
+    '1',
+    '1',
+    '1',
+    '1',
+    '23',
+    '2020-04-17 10:00:00',
     'NEW2KL',
+    '1'
+  );
+INSERT INTO `s900_database`.`booking` (
+    `BookingNo`,
+    `ScheduleNo`,
+    `AccountNo`,
+    `Quantity`,
+    `BusSeat`,
+    `BusDateTime`,
+    `PromoCode`,
+    `PaymentNo`
+  )
+VALUES
+  (
+    '2364523',
     '1',
     '1',
-    '2',
-    '2020-04-27 10:00:00'
+    '1',
+    '24',
+    '2020-04-22 10:00:00',
+    'NEW2KL',
+    '1'
   );
