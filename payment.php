@@ -3,7 +3,7 @@
     if($_GET['seatno']=="" || $_GET['inputdate']=="" || $_GET['TicketPrice']=="" || $_GET['scheduleno']==""){
       header("location:searchbus.php");
     }
-    if($_GET['PromoCode']=="" ){
+    if($_GET['PromoCode']=="none" ){
       $promopercent = 0;
     }
         

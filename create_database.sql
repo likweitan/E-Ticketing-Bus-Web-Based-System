@@ -128,6 +128,23 @@ VALUES
     '2020-04-30 00:00:00',
     '2020-04-16 00:00:00'
   );
+  INSERT INTO `s900_database`.`promo_code` (
+    `PromoCode`,
+    `ScheduleNo`,
+    `PromoCodeDescription`,
+    `PromoPercentage`,
+    `PromoCodeEndTimestamp`,
+    `PromoCodeStartTimestamp`
+  )
+VALUES
+  (
+    'none',
+    '1',
+    'none',
+    '0',
+    '2020-12-31 00:00:00',
+    '2020-04-16 00:00:00'
+  );
 INSERT INTO `s900_database`.`payment` (
     `PaymentNo`,
     `AccountNo`,
