@@ -83,7 +83,7 @@ VALUES
     '21232f297a57a5a743894a0e4a801fc3',
     'male',
     '1998-04-08',
-    'admin',
+    'Admin',
     'malaysian'
   );
 INSERT INTO `s900_database`.`bus` (`BusNo`, `BusCompany`, `BusCapacity`)
