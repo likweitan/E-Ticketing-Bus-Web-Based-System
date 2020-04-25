@@ -104,7 +104,10 @@ VALUES
   );
 INSERT INTO `s900_database`.`bus` (`BusNo`, `BusCompany`, `BusCapacity`)
 VALUES
-  ('JQL2938', 'KKKL', '40');
+  ('JQL2938', 'KKKL', '30');
+INSERT INTO `s900_database`.`bus` (`BusNo`, `BusCompany`, `BusCapacity`)
+VALUES
+  ('JMA', 'JJJB', '30');
 INSERT INTO `s900_database`.`bus_schedule` (
     `ScheduleNo`,
     `BusNo`,
