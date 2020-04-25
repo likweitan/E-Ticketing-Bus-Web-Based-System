@@ -9,8 +9,8 @@
         $cvv = $_POST['CVV'];
 
         $bookingno = rand();
-        if($_GET['promocode'])
-        $promocode = $_GET['promocode'];
+        if($_GET['PromoCode'])
+        $promocode = $_GET['PromoCode'];
         else
         $promocode = "none";
         $scheduleno = $_GET['scheduleno'];
